@@ -1,13 +1,19 @@
 import type { RankedActivity, NextUnlock } from '../../utils/goldPerHour'
+import type { ActivityDefinition } from '../../data/activities'
+import type { MarketPrice } from '../../types/market'
 import { formatGold, activityDisplayName } from '../../utils/formatGold'
 import { ItemIcon } from '../ui/Icon'
+import { useMarketPriceDetail } from '../../hooks/useMarketPriceDetail'
+import { comparePriceToAverage } from '../../utils/priceComparison'
 
 export function ActivityRanking({
   ranked,
   nextUnlocks,
+  marketPrices,
 }: {
   ranked: RankedActivity[]
   nextUnlocks: NextUnlock[]
+  marketPrices: MarketPrice[]
 }) {
   if (ranked.length === 0) {
     return (
@@ -18,25 +24,18 @@ export function ActivityRanking({
     )
   }
 
+  const priceByItemId = new Map(marketPrices.map((p) => [p.itemId, p]))
+
   return (
     <div className="space-y-4">
       <div className="space-y-2">
         {ranked.slice(0, 15).map(({ activity, goldPerHour }) => (
-          <div
+          <ActivityRow
             key={activity.id}
-            className="flex items-center justify-between rounded-lg border border-gray-300 bg-white p-3"
-          >
-            <div className="flex items-center gap-2">
-              {activity.outputItems[0] && <ItemIcon itemId={activity.outputItems[0].itemId} />}
-              <div>
-                <div className="font-medium text-gray-900">{activityDisplayName(activity)}</div>
-                <div className="text-xs text-gray-400">
-                  {activity.skillKey} · level {activity.levelRequired}
-                </div>
-              </div>
-            </div>
-            <div className="font-medium text-green-700">{formatGold(goldPerHour)}/hr</div>
-          </div>
+            activity={activity}
+            goldPerHour={goldPerHour}
+            outputPrice={activity.outputItems[0] ? priceByItemId.get(activity.outputItems[0].itemId) : undefined}
+          />
         ))}
       </div>
 
@@ -58,6 +57,47 @@ export function ActivityRanking({
               <span className="font-medium text-green-700">{formatGold(goldPerHour)}/hr</span>
             </div>
           ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function ActivityRow({
+  activity,
+  goldPerHour,
+  outputPrice,
+}: {
+  activity: ActivityDefinition
+  goldPerHour: number
+  outputPrice: MarketPrice | undefined
+}) {
+  const output = activity.outputItems[0]
+  // 7d average only comes from the per-item comprehensive endpoint, not the
+  // bulk price list — one extra request per visible row, deduped/cached by
+  // TanStack Query.
+  const { data: detail } = useMarketPriceDetail(output ? output.itemId : null)
+  const comparison =
+    outputPrice && detail ? comparePriceToAverage(outputPrice.highestBuyPrice, detail.averagePrice7Days) : null
+
+  return (
+    <div className="rounded-lg border border-gray-300 bg-white p-3">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          {output && <ItemIcon itemId={output.itemId} />}
+          <div>
+            <div className="font-medium text-gray-900">{activityDisplayName(activity)}</div>
+            <div className="text-xs text-gray-400">
+              {activity.skillKey} · level {activity.levelRequired}
+            </div>
+          </div>
+        </div>
+        <div className="font-medium text-green-700">{formatGold(goldPerHour)}/hr</div>
+      </div>
+      {outputPrice && (
+        <div className="mt-1 pl-8 text-xs text-gray-400">
+          {formatGold(outputPrice.highestPriceVolume)} buying · {formatGold(outputPrice.highestBuyPrice)}g
+          {comparison && <> · {comparison.symbol} {comparison.label}</>}
         </div>
       )}
     </div>

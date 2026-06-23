@@ -124,7 +124,7 @@ function AccountOptimizerPanel({
   const nextUnlocks = SKILL_KEYS.map((skillKey) =>
     getNextUnlock(skillKey, profile.skills[skillKey.toLowerCase()]?.level ?? 0, marketPrices),
   ).filter((u): u is NonNullable<typeof u> => u !== null)
-  return <ActivityRanking ranked={ranked} nextUnlocks={nextUnlocks} />
+  return <ActivityRanking ranked={ranked} nextUnlocks={nextUnlocks} marketPrices={marketPrices} />
 }
 
 function TeamSummary({
