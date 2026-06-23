@@ -13,7 +13,7 @@ import {
 } from '../utils/goldPerHour'
 import { ActivityRanking } from '../components/optimizer/ActivityRanking'
 import { IronmanActivityRanking } from '../components/optimizer/IronmanActivityRanking'
-import { formatGold, toDisplayName } from '../utils/formatGold'
+import { formatGold, activityDisplayName } from '../utils/formatGold'
 
 const SLOTS = ['main', 'alt1', 'alt2'] as const
 type Slot = (typeof SLOTS)[number]
@@ -155,7 +155,7 @@ function TeamSummary({
         return {
           slot,
           account,
-          bestName: best ? toDisplayName(best.activity.name) : null,
+          bestName: best ? activityDisplayName(best.activity) : null,
           bestGoldPerHour: best ? best.fullPipelineGoldPerHour ?? best.materialsFreeGoldPerHour : null,
         }
       }
@@ -166,7 +166,7 @@ function TeamSummary({
       return {
         slot,
         account,
-        bestName: best ? toDisplayName(best.activity.name) : null,
+        bestName: best ? activityDisplayName(best.activity) : null,
         bestGoldPerHour: best ? best.goldPerHour : null,
       }
     })
