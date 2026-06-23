@@ -91,6 +91,7 @@ export function DashboardPage() {
                 key={slot}
                 slot={slot}
                 title={team.accounts[slot].username ?? slot}
+                username={team.accounts[slot].username}
               />
             ))}
           </div>

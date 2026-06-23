@@ -4,6 +4,7 @@ import { RoleBadge } from './RoleBadge'
 import { Skeleton } from '../ui/Skeleton'
 import { ErrorMessage } from '../ui/ErrorMessage'
 import { EmptyState } from '../ui/EmptyState'
+import { SkillIcon } from '../ui/Icon'
 
 function AccountCardSkeleton() {
   return (
@@ -48,9 +49,12 @@ export function AccountCard({ account }: { account: AccountSlot }) {
           </p>
           <div className="grid grid-cols-2 gap-1 text-xs sm:grid-cols-3">
             {Object.entries(profile.skills).map(([name, skill]) => (
-              <div key={name} className="flex justify-between rounded bg-gray-900 px-2 py-1">
-                <span className="text-gray-400">{name}</span>
-                <span className="text-white">{skill.level}</span>
+              <div
+                key={name}
+                className="flex items-center justify-between gap-1 rounded bg-gray-900 px-2 py-1"
+              >
+                <SkillIcon name={name} />
+                <span className="shrink-0 text-white">{skill.level}</span>
               </div>
             ))}
           </div>

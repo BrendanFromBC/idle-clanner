@@ -1,22 +1,54 @@
 import { GEAR } from '../../data/gear'
+import { ITEMS_BY_ID } from '../../data/items'
 import { useOwnedItemsStore, type AccountSlotKey } from '../../store/ownedItemsStore'
+import { usePlayerProfile } from '../../hooks/usePlayerProfile'
+import { ItemIcon } from '../ui/Icon'
 
-const COMBAT_GEAR = GEAR.filter((g) => g.category === 'combat')
 const TOOL_GEAR = GEAR.filter((g) => g.category === 'tool')
 const TOOL_SKILLS = [...new Set(TOOL_GEAR.map((g) => g.skill!))]
 
-// Self-contained: only needs a slot to read/write. No dependency on player
-// profile, role, or page layout — safe to drop anywhere (Dashboard now,
-// wherever the redesign wants it later).
-export function GearOwnershipChecklist({ slot, title }: { slot: AccountSlotKey; title?: string }) {
-  const ownedIds = useOwnedItemsStore((s) => s.ownedByAccount[slot])
-  const setOwned = useOwnedItemsStore((s) => s.setOwned)
-  const setOwnedInGroup = useOwnedItemsStore((s) => s.setOwnedInGroup)
+// Live-equipped display, not self-report — the API actually exposes this
+// (unlike inventory), so there's nothing to ask the player to track. Raw
+// equipment slot keys verified against a real profile response, 2026-06-23
+// (`ammunition`/`belt` in particular aren't in equipmentSlots.ts's curated
+// GearSlot mapping, since that file only covers slots gear.ts curates BiS
+// for — going straight to the raw API keys here instead).
+const EQUIPPED_SLOTS: { label: string; rawSlot: string }[] = [
+  { label: 'Pet', rawSlot: 'pet' },
+  { label: 'Helmet', rawSlot: 'head' },
+  { label: 'Cape', rawSlot: 'cape' },
+  { label: 'Weapon', rawSlot: 'rightHand' },
+  { label: 'Body', rawSlot: 'body' },
+  { label: 'Off-hand', rawSlot: 'leftHand' },
+  { label: 'Gloves', rawSlot: 'gloves' },
+  { label: 'Legs', rawSlot: 'legs' },
+  { label: 'Toolbelt', rawSlot: 'belt' },
+  { label: 'Boots', rawSlot: 'boots' },
+  { label: 'Ammo', rawSlot: 'ammunition' },
+]
 
-  const totalGroups = COMBAT_GEAR.length + TOOL_SKILLS.length
-  const ownedGroups =
-    COMBAT_GEAR.filter((g) => ownedIds.includes(g.id)).length +
-    TOOL_SKILLS.filter((skill) => TOOL_GEAR.some((g) => g.skill === skill && ownedIds.includes(g.id))).length
+// Self-contained: only needs a slot (+ username, to look up live equipment)
+// to read/write. No dependency on player role or page layout — safe to drop
+// anywhere (Dashboard now, wherever the redesign wants it later).
+export function GearOwnershipChecklist({
+  slot,
+  title,
+  username,
+}: {
+  slot: AccountSlotKey
+  title?: string
+  username: string | null
+}) {
+  const ownedIds = useOwnedItemsStore((s) => s.ownedByAccount[slot])
+  const setOwnedInGroup = useOwnedItemsStore((s) => s.setOwnedInGroup)
+  const { data: profile } = usePlayerProfile(username)
+
+  // Tools are still self-reported (mutually-exclusive tier per skill) — this
+  // count only covers that now that Combat shows live-equipped data instead.
+  const totalGroups = TOOL_SKILLS.length
+  const ownedGroups = TOOL_SKILLS.filter((skill) =>
+    TOOL_GEAR.some((g) => g.skill === skill && ownedIds.includes(g.id)),
+  ).length
 
   return (
     <div className="rounded-lg border border-gray-300 bg-white p-4">
@@ -29,24 +61,33 @@ export function GearOwnershipChecklist({ slot, title }: { slot: AccountSlotKey; 
 
       <div className="space-y-3">
         <div>
-          <p className="mb-1 text-xs uppercase text-gray-400">Combat</p>
-          <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
-            {COMBAT_GEAR.map((item) => (
-              <label key={item.id} className="flex items-center gap-2 text-sm text-gray-700">
-                <input
-                  type="checkbox"
-                  checked={ownedIds.includes(item.id)}
-                  onChange={(e) => setOwned(slot, item.id, e.target.checked)}
-                />
-                {item.displayName}
-              </label>
-            ))}
+          <p className="mb-1 text-xs uppercase text-gray-400">Equipped</p>
+          <div className="grid grid-cols-3 gap-1">
+            {EQUIPPED_SLOTS.map(({ label, rawSlot }) => {
+              const itemId = profile?.equipment[rawSlot]
+              const item = itemId !== undefined ? ITEMS_BY_ID.get(itemId) : undefined
+              return (
+                <div key={rawSlot} className="rounded border border-gray-200 px-2 py-1.5 text-xs">
+                  <div className="text-gray-400">{label}</div>
+                  {item ? (
+                    <div className="mt-0.5 flex items-center gap-1">
+                      <ItemIcon itemId={item.id} size={16} />
+                      <span className="truncate text-gray-900" title={item.displayName}>
+                        {item.displayName}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="mt-0.5 text-gray-300">Empty</div>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
 
         <div>
           <p className="mb-1 text-xs uppercase text-gray-400">Tools — select the tier you own</p>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <div className="space-y-1">
             {TOOL_SKILLS.map((skill) => {
               const tiers = TOOL_GEAR.filter((g) => g.skill === skill).sort((a, b) => a.tier - b.tier)
               const groupItemIds = tiers.map((t) => t.id)
@@ -54,9 +95,9 @@ export function GearOwnershipChecklist({ slot, title }: { slot: AccountSlotKey; 
 
               return (
                 <label key={skill} className="flex items-center justify-between gap-2 text-sm text-gray-700">
-                  <span className="capitalize">{skill}</span>
+                  <span className="w-20 shrink-0 capitalize">{skill}</span>
                   <select
-                    className="rounded border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900"
+                    className="min-w-0 flex-1 rounded border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900"
                     value={ownedTierId}
                     onChange={(e) => {
                       const itemId = e.target.value === '' ? null : Number(e.target.value)

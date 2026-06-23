@@ -3988,3 +3988,93 @@ export const MONSTER_ICON_URLS: Map<number, string> = new Map([
     "https://idleclans.wiki/w/images/b/b9/Citadel_guard.png"
   ]
 ])
+
+// Keyed by the raw skill name as the API returns it (e.g. "woodcutting"),
+// same key space as PlayerProfile.skills. "attack" resolves to the wiki's
+// Combat.png — see WIKI_TITLE_OVERRIDES above for why.
+export const SKILL_ICON_URLS: Map<string, string> = new Map([
+  [
+    "agility",
+    "https://idleclans.wiki/w/images/1/14/Agility.png"
+  ],
+  [
+    "archery",
+    "https://idleclans.wiki/w/images/9/98/Archery.png"
+  ],
+  [
+    "brewing",
+    "https://idleclans.wiki/w/images/e/ed/Brewing.png"
+  ],
+  [
+    "carpentry",
+    "https://idleclans.wiki/w/images/b/b2/Carpentry.png"
+  ],
+  [
+    "attack",
+    "https://idleclans.wiki/w/images/7/7c/Combat.png"
+  ],
+  [
+    "cooking",
+    "https://idleclans.wiki/w/images/f/f4/Cooking.png"
+  ],
+  [
+    "crafting",
+    "https://idleclans.wiki/w/images/f/ff/Crafting.png"
+  ],
+  [
+    "defence",
+    "https://idleclans.wiki/w/images/4/41/Defence.png"
+  ],
+  [
+    "enchanting",
+    "https://idleclans.wiki/w/images/d/d3/Enchanting.png"
+  ],
+  [
+    "farming",
+    "https://idleclans.wiki/w/images/1/18/Farming.png"
+  ],
+  [
+    "fishing",
+    "https://idleclans.wiki/w/images/1/19/Fishing.png"
+  ],
+  [
+    "foraging",
+    "https://idleclans.wiki/w/images/b/ba/Foraging.png"
+  ],
+  [
+    "health",
+    "https://idleclans.wiki/w/images/9/94/Health.png"
+  ],
+  [
+    "magic",
+    "https://idleclans.wiki/w/images/f/f7/Magic.png"
+  ],
+  [
+    "mining",
+    "https://idleclans.wiki/w/images/4/41/Mining.png"
+  ],
+  [
+    "plundering",
+    "https://idleclans.wiki/w/images/d/d3/Plundering.png"
+  ],
+  [
+    "smithing",
+    "https://idleclans.wiki/w/images/8/84/Smithing.png"
+  ],
+  [
+    "strength",
+    "https://idleclans.wiki/w/images/8/8b/Strength.png"
+  ],
+  [
+    "woodcutting",
+    "https://idleclans.wiki/w/images/d/df/Woodcutting.png"
+  ],
+  [
+    "exterminating",
+    "https://idleclans.wiki/w/images/3/3b/Exterminating.png"
+  ],
+  [
+    "invocation",
+    "https://idleclans.wiki/w/images/b/bd/Invocation.png"
+  ]
+])
