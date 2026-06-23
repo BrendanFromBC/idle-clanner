@@ -49,7 +49,7 @@ export function OptimizerPage() {
   return (
     <div className="mx-auto max-w-2xl space-y-6 p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-semibold text-gray-900">Gold/hr Optimizer</h2>
+        <h2 className="text-xl font-semibold text-gray-900">Profit Calculator</h2>
         <label className="flex items-center gap-2 text-sm text-gray-600">
           <input
             type="checkbox"

@@ -22,8 +22,8 @@ function App() {
         <NavLink to="/gear" className={navLinkClass}>
           Gear
         </NavLink>
-        <NavLink to="/optimizer" className={navLinkClass}>
-          Optimizer
+        <NavLink to="/profit-calculator" className={navLinkClass}>
+          Profit Calculator
         </NavLink>
         <NavLink to="/loot" className={navLinkClass}>
           Loot
@@ -36,7 +36,7 @@ function App() {
         <Route path="/" element={<DashboardPage />} />
         <Route path="/market" element={<MarketPage />} />
         <Route path="/gear" element={<GearPage />} />
-        <Route path="/optimizer" element={<OptimizerPage />} />
+        <Route path="/profit-calculator" element={<OptimizerPage />} />
         <Route path="/loot" element={<LootPage />} />
         <Route path="/planner" element={<PlannerPage />} />
       </Routes>
