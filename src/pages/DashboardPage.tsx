@@ -12,14 +12,14 @@ export function DashboardPage() {
   return (
     <div className="space-y-6">
       <TeamSetup />
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 p-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 p-4 sm:p-6 md:grid-cols-3">
         <AccountCard account={team.accounts.main} />
         <AccountCard account={team.accounts.alt1} />
         <AccountCard account={team.accounts.alt2} />
       </div>
 
       {accountsWithUsernames.length > 0 && (
-        <div className="mx-auto max-w-5xl space-y-4 p-6">
+        <div className="mx-auto max-w-5xl space-y-4 p-4 sm:p-6">
           <h3 className="text-lg font-semibold text-gray-900">Self-reported gear</h3>
           <p className="text-xs text-gray-400">
             The game's API only shows equipped gear, not inventory — mark items you own but

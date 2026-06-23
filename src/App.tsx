@@ -7,12 +7,12 @@ import { LootPage } from './pages/LootPage'
 import { PlannerPage } from './pages/PlannerPage'
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `text-sm font-medium ${isActive ? 'text-gray-900' : 'text-gray-500'}`
+  `whitespace-nowrap text-sm font-medium ${isActive ? 'text-gray-900' : 'text-gray-500'}`
 
 function App() {
   return (
     <div>
-      <nav className="flex gap-4 border-b border-gray-200 px-6 py-3">
+      <nav className="flex gap-4 overflow-x-auto border-b border-gray-200 px-4 py-3 sm:px-6">
         <NavLink to="/" end className={navLinkClass}>
           Dashboard
         </NavLink>

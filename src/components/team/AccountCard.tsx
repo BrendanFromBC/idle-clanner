@@ -6,7 +6,7 @@ function AccountCardSkeleton() {
   return (
     <div className="animate-pulse space-y-2">
       <div className="h-4 w-2/3 rounded bg-gray-200" />
-      <div className="grid grid-cols-3 gap-1">
+      <div className="grid grid-cols-2 gap-1 sm:grid-cols-3">
         {Array.from({ length: 21 }).map((_, i) => (
           <div key={i} className="h-6 rounded bg-gray-200" />
         ))}
@@ -51,7 +51,7 @@ export function AccountCard({ account }: { account: AccountSlot }) {
               </>
             )}
           </p>
-          <div className="grid grid-cols-3 gap-1 text-xs">
+          <div className="grid grid-cols-2 gap-1 text-xs sm:grid-cols-3">
             {Object.entries(profile.skills).map(([name, skill]) => (
               <div key={name} className="flex justify-between rounded bg-gray-900 px-2 py-1">
                 <span className="text-gray-400">{name}</span>

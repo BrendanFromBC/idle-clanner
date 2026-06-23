@@ -36,15 +36,15 @@ export function LootPage() {
   }, [profile])
 
   return (
-    <div className="mx-auto max-w-2xl space-y-4 p-6">
+    <div className="mx-auto max-w-2xl space-y-4 p-4 sm:p-6">
       <h2 className="text-xl font-semibold text-gray-900">Loot Odds</h2>
 
-      <div className="flex items-center justify-between">
-        <div className="flex gap-2 border-b border-gray-200">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex gap-2 overflow-x-auto border-b border-gray-200">
           <button
             type="button"
             onClick={() => setMode('monster')}
-            className={`px-3 py-2 text-sm font-medium ${
+            className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
               mode === 'monster' ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
             }`}
           >
@@ -53,7 +53,7 @@ export function LootPage() {
           <button
             type="button"
             onClick={() => setMode('item')}
-            className={`px-3 py-2 text-sm font-medium ${
+            className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
               mode === 'item' ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
             }`}
           >

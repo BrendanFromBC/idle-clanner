@@ -47,8 +47,8 @@ export function OptimizerPage() {
   }, [mainProfile.data, alt1Profile.data, alt2Profile.data])
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6 p-6">
-      <div className="flex items-center justify-between">
+    <div className="mx-auto max-w-2xl space-y-6 p-4 sm:p-6">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-semibold text-gray-900">Gold/hr Optimizer</h2>
         <label className="flex items-center gap-2 text-sm text-gray-600">
           <input
@@ -63,13 +63,13 @@ export function OptimizerPage() {
       <TeamSummary marketPrices={marketPrices} ironmanMode={ironmanMode} teamSkillLevels={teamSkillLevels} />
 
       <div>
-        <div className="flex gap-2 border-b border-gray-200">
+        <div className="flex gap-2 overflow-x-auto border-b border-gray-200">
           {SLOTS.map((slot) => (
             <button
               key={slot}
               type="button"
               onClick={() => setActiveSlot(slot)}
-              className={`px-3 py-2 text-sm font-medium ${
+              className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
                 activeSlot === slot ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
               }`}
             >
