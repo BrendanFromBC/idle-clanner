@@ -35,3 +35,16 @@ export interface RawMarketPriceDetail {
   averagePrice30Days: number
   tradeVolume1Day: number
 }
+
+// GET /api/PlayerMarket/items/prices/history/{itemId} — verified live
+// 2026-06-23. Takes the numeric itemId, not the item name CLAUDE.md's
+// original doc implied. Rolling ~24h window, irregular intervals (roughly
+// half-hourly). `lowesSellPrice` is the API's own typo, kept verbatim.
+export interface RawMarketPriceHistoryPoint {
+  itemId: number
+  timestamp: string
+  lowesSellPrice: number
+  highestSellPrice: number
+  averagePrice: number
+  tradeVolume: number
+}

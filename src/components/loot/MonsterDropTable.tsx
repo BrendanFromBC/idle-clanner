@@ -4,6 +4,7 @@ import { toDisplayName } from '../../utils/formatGold'
 import { getWeaknessLabel } from '../../utils/combatStyle'
 import { getAreaLabel } from '../../utils/monsterAreas'
 import { getKillEstimate, type CombatLoadout } from '../../utils/combatCalc'
+import { ItemIcon, MonsterIcon } from '../ui/Icon'
 
 export function MonsterDropTable({
   monster,
@@ -18,7 +19,8 @@ export function MonsterDropTable({
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <h3 className="font-semibold text-gray-900">
+        <h3 className="flex items-center gap-2 font-semibold text-gray-900">
+          <MonsterIcon monsterId={monster.id} />
           {toDisplayName(monster.name)}
           {monster.isBoss && (
             <span className="ml-2 rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-700">
@@ -78,7 +80,8 @@ export function MonsterDropTable({
               key={drop.itemId}
               className="flex items-center justify-between rounded border border-gray-200 bg-white px-3 py-2 text-sm"
             >
-              <span className="text-gray-900">
+              <span className="flex items-center gap-2 text-gray-900">
+                <ItemIcon itemId={drop.itemId} />
                 {item?.displayName ?? `Item #${drop.itemId}`}
                 {drop.quantityMin > 0 && (
                   <span className="text-gray-400"> ({drop.quantityMin}-{drop.quantityMax})</span>

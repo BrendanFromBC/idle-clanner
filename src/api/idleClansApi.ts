@@ -1,4 +1,9 @@
-import type { RawPlayerProfile, RawMarketPrice, RawMarketPriceDetail } from './types'
+import type {
+  RawPlayerProfile,
+  RawMarketPrice,
+  RawMarketPriceDetail,
+  RawMarketPriceHistoryPoint,
+} from './types'
 
 const BASE_URL = 'https://query.idleclans.com'
 
@@ -20,4 +25,8 @@ export function fetchMarketPrices(): Promise<RawMarketPrice[]> {
 
 export function fetchMarketPriceDetail(itemId: number): Promise<RawMarketPriceDetail> {
   return getJson<RawMarketPriceDetail>(`/api/PlayerMarket/items/prices/latest/comprehensive/${itemId}`)
+}
+
+export function fetchMarketPriceHistory(itemId: number): Promise<RawMarketPriceHistoryPoint[]> {
+  return getJson<RawMarketPriceHistoryPoint[]>(`/api/PlayerMarket/items/prices/history/${itemId}`)
 }

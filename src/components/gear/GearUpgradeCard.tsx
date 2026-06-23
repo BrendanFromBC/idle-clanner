@@ -4,6 +4,7 @@ import type { MarketPrice } from '../../types/market'
 import { getAcquisitionCost } from '../../utils/gearHelpers'
 import { formatGold } from '../../utils/formatGold'
 import { useOwnedItemsStore, type AccountSlotKey } from '../../store/ownedItemsStore'
+import { ItemIcon } from '../ui/Icon'
 
 // Ownership is self-reported on the Dashboard (see GearOwnershipChecklist) —
 // this card only reads that state to avoid showing a misleading "buy this"
@@ -48,7 +49,12 @@ export function GearUpgradeCard({
           {currentName ?? (currentItemId === null ? 'Nothing equipped' : `Unknown item #${currentItemId}`)}
         </span>
         {!isEquipped && <span className="text-gray-400">→</span>}
-        {!isEquipped && <span className="font-medium text-gray-900">{bisItem.displayName}</span>}
+        {!isEquipped && (
+          <span className="flex items-center gap-2 font-medium text-gray-900">
+            <ItemIcon itemId={bisItem.id} />
+            {bisItem.displayName}
+          </span>
+        )}
       </div>
 
       {!owned && (

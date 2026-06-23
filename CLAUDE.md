@@ -79,6 +79,7 @@ src/data/
   gear.ts         CURATED — 25 BiS items, selection hand-picked from wiki, stats from API (scripts/generate-gear.mjs)
   activities.ts   GENERATED — all 232 non-combat tasks across 13 skills (scripts/generate-activities.mjs)
   monsters.ts     GENERATED — all 79 combat encounters, derived drop rates (scripts/generate-monsters.mjs)
+  icons.ts        GENERATED — item/monster id -> wiki-hosted icon URL (scripts/generate-icons.mjs)
   upgrades.ts     not yet built
 ```
 
@@ -484,11 +485,13 @@ idle-clanner/
       gear.ts              # CURATED — see scripts/generate-gear.mjs (selection hand-picked, stats generated)
       activities.ts        # GENERATED — see scripts/generate-activities.mjs, do not hand-edit
       monsters.ts          # GENERATED — see scripts/generate-monsters.mjs, do not hand-edit
+      icons.ts             # GENERATED — see scripts/generate-icons.mjs, do not hand-edit
       upgrades.ts          # not yet built
     hooks/
       usePlayerProfile.ts      # TanStack Query wrapper
       useMarketPrices.ts       # TanStack Query wrapper
       useMarketPriceDetail.ts  # TanStack Query wrapper, per-item averages/volume
+      useMarketPriceHistory.ts # TanStack Query wrapper, rolling ~24h price/volume points
       useTeam.ts                # Zustand store selectors (incl. useWishlistActions)
       useDebouncedCallback.ts   # generic debounce helper (used by TeamSetup's username input)
     pages/
@@ -521,6 +524,7 @@ idle-clanner/
     generate-monsters.mjs    # regenerates src/data/monsters.ts (Tasks.Combat)
     generate-activities.mjs  # regenerates src/data/activities.ts (Tasks.<skill>)
     generate-gear.mjs        # regenerates src/data/gear.ts from a hand-curated item-id list + live stats
+    generate-icons.mjs       # regenerates src/data/icons.ts by resolving names against the idleclans.wiki MediaWiki API
   CLAUDE.md
   package.json
   vite.config.ts
@@ -608,6 +612,25 @@ createRoot(document.getElementById('root')!).render(
 
 ## Notes and gotchas
 
+- **Item/monster icons have no official source.** `Configuration/game-data`
+  is pure stat data — no icon field anywhere, confirmed by inspecting a raw
+  item object. The only available source is the community wiki
+  (idleclans.wiki, MediaWiki-based). Its `action=query&prop=imageinfo` API
+  resolves a `File:<Name>.png` title to the real, hash-prefixed image URL
+  (e.g. `/w/images/5/59/Spruce_log.png`) — the hash directory can't be
+  guessed/constructed, so this requires a real per-name lookup, not a
+  formula. Filename convention: sentence-case of the raw snake_case name,
+  underscores → spaces (`outstanding_scimitar` → `Outstanding scimitar.png`)
+  — verified NOT the same as our Title-Case `displayName`, which fails to
+  resolve. `scripts/generate-icons.mjs` re-fetches game-data for item/monster
+  names, batches lookups 50-at-a-time against the wiki API, and writes
+  resolved URLs to `src/data/icons.ts` (914/999 items, 80/80 monsters
+  resolved as of 2026-06-23 — coverage isn't 100% for items, some have no
+  matching wiki file). Icons are **hotlinked** from the wiki at runtime (the
+  generated file stores wiki URLs, not local copies) — a deliberate choice
+  over self-hosting, made 2026-06-23. `src/components/ui/Icon.tsx`
+  (`ItemIcon`, `MonsterIcon`) renders nothing if an id has no resolved URL,
+  rather than a broken-image icon.
 - The API has no auth requirement for public data, but rate limits exist. Lean
   on TanStack Query caching — don't refetch unnecessarily.
 - For serious projects, the game developer offers higher rate limit API keys.

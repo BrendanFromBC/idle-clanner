@@ -40,7 +40,7 @@ export function IronmanActivityRanking({
                 <div className="text-xs text-gray-400">full pipeline</div>
               </div>
             </div>
-            {materialsFreeGoldPerHour !== null && materialsFreeGoldPerHour !== fullPipelineGoldPerHour && (
+            {activity.inputItems.length > 0 && materialsFreeGoldPerHour !== null && (
               <div className="mt-1 text-xs text-gray-500">
                 {formatGold(materialsFreeGoldPerHour)}/hr if materials are already stocked up
               </div>

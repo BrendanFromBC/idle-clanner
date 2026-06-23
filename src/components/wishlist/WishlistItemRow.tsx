@@ -3,6 +3,7 @@ import { ITEMS_BY_ID } from '../../data/items'
 import type { MarketPrice } from '../../types/market'
 import { useWishlistActions } from '../../hooks/useTeam'
 import { formatGold } from '../../utils/formatGold'
+import { ItemIcon } from '../ui/Icon'
 
 const PRIORITIES: WishlistPriority[] = ['low', 'medium', 'high']
 
@@ -33,7 +34,10 @@ export function WishlistItemRow({
             checked={wishlistItem.acquired}
             onChange={() => toggleWishlistAcquired(wishlistItem.id)}
           />
-          <span className={`font-medium text-gray-900 ${wishlistItem.acquired ? 'line-through' : ''}`}>
+          <span
+            className={`flex items-center gap-2 font-medium text-gray-900 ${wishlistItem.acquired ? 'line-through' : ''}`}
+          >
+            <ItemIcon itemId={wishlistItem.itemId} />
             {item?.displayName ?? `Item #${wishlistItem.itemId}`}
           </span>
         </label>
