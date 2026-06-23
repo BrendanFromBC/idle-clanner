@@ -1,14 +1,17 @@
 import type { AccountSlot } from '../../store/teamStore'
 import { usePlayerProfile } from '../../hooks/usePlayerProfile'
 import { RoleBadge } from './RoleBadge'
+import { Skeleton } from '../ui/Skeleton'
+import { ErrorMessage } from '../ui/ErrorMessage'
+import { EmptyState } from '../ui/EmptyState'
 
 function AccountCardSkeleton() {
   return (
-    <div className="animate-pulse space-y-2">
-      <div className="h-4 w-2/3 rounded bg-gray-200" />
+    <div className="space-y-2">
+      <Skeleton className="h-4 w-2/3" />
       <div className="grid grid-cols-2 gap-1 sm:grid-cols-3">
         {Array.from({ length: 21 }).map((_, i) => (
-          <div key={i} className="h-6 rounded bg-gray-200" />
+          <Skeleton key={i} className="h-6" />
         ))}
       </div>
     </div>
@@ -19,11 +22,7 @@ export function AccountCard({ account }: { account: AccountSlot }) {
   const { data: profile, isLoading, isError } = usePlayerProfile(account.username)
 
   if (!account.username) {
-    return (
-      <div className="rounded-lg border border-dashed border-gray-300 bg-white p-4 text-center text-sm text-gray-500">
-        No account set
-      </div>
-    )
+    return <EmptyState>No account set</EmptyState>
   }
 
   return (
@@ -34,11 +33,7 @@ export function AccountCard({ account }: { account: AccountSlot }) {
       </div>
 
       {isLoading && <AccountCardSkeleton />}
-      {isError && (
-        <p className="text-sm text-red-500">
-          Couldn't find a player named "{account.username}".
-        </p>
-      )}
+      {isError && <ErrorMessage>Couldn't find a player named "{account.username}".</ErrorMessage>}
 
       {profile && (
         <div className="space-y-2">

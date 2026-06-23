@@ -8,6 +8,7 @@ import { getAreaLabel } from '../utils/monsterAreas'
 import { useTeam } from '../hooks/useTeam'
 import { usePlayerProfile } from '../hooks/usePlayerProfile'
 import { getCombatLoadout, type CombatLoadout } from '../utils/combatCalc'
+import { EmptyState } from '../components/ui/EmptyState'
 
 const SORTED_MONSTERS = [...MONSTERS].sort(
   (a, b) => a.areaSortOrder - b.areaSortOrder || a.name.localeCompare(b.name),
@@ -25,8 +26,10 @@ type Slot = (typeof SLOTS)[number]
 export function LootPage() {
   const [mode, setMode] = useState<'monster' | 'item'>('monster')
   const team = useTeam()
+  const configuredSlots = SLOTS.filter((slot) => team.accounts[slot].username)
   const [activeSlot, setActiveSlot] = useState<Slot>('main')
-  const { data: profile } = usePlayerProfile(team.accounts[activeSlot].username)
+  const effectiveSlot = configuredSlots.includes(activeSlot) ? activeSlot : configuredSlots[0]
+  const { data: profile } = usePlayerProfile(effectiveSlot ? team.accounts[effectiveSlot].username : null)
 
   const loadout: CombatLoadout | null = useMemo(() => {
     if (!profile) return null
@@ -60,17 +63,19 @@ export function LootPage() {
             Best monster for an item
           </button>
         </div>
-        <select
-          value={activeSlot}
-          onChange={(e) => setActiveSlot(e.target.value as Slot)}
-          className="rounded border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900"
-        >
-          {SLOTS.map((slot) => (
-            <option key={slot} value={slot}>
-              {team.accounts[slot].username ?? slot.toUpperCase()}
-            </option>
-          ))}
-        </select>
+        {configuredSlots.length > 0 && (
+          <select
+            value={effectiveSlot}
+            onChange={(e) => setActiveSlot(e.target.value as Slot)}
+            className="rounded border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900"
+          >
+            {configuredSlots.map((slot) => (
+              <option key={slot} value={slot}>
+                {team.accounts[slot].username}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
 
       {mode === 'monster' ? <MonsterBrowser loadout={loadout} /> : <ItemReverseLookup />}
@@ -129,6 +134,10 @@ function ItemReverseLookup() {
         }}
         className="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900"
       />
+
+      {!selectedItem && search.trim().length > 0 && matches.length === 0 && (
+        <EmptyState>No items match "{search}".</EmptyState>
+      )}
 
       {!selectedItem && matches.length > 0 && (
         <div className="space-y-1">

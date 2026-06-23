@@ -2,6 +2,9 @@ import { useMemo, useState } from 'react'
 import { useMarketPrices } from '../hooks/useMarketPrices'
 import { MarketSearch } from '../components/market/MarketSearch'
 import { PriceCard } from '../components/market/PriceCard'
+import { CardRowSkeletonList } from '../components/ui/Skeleton'
+import { ErrorMessage } from '../components/ui/ErrorMessage'
+import { EmptyState } from '../components/ui/EmptyState'
 
 export function MarketPage() {
   const { data: prices, isLoading, isError } = useMarketPrices()
@@ -36,19 +39,23 @@ export function MarketPage() {
       <h2 className="text-xl font-semibold text-gray-900">Market</h2>
       <MarketSearch value={search} onChange={setSearch} />
 
-      {isLoading && <p className="text-sm text-gray-500">Loading market prices…</p>}
-      {isError && <p className="text-sm text-red-500">Couldn't load market prices.</p>}
+      {isLoading && <CardRowSkeletonList count={8} />}
+      {isError && <ErrorMessage>Couldn't load market prices. Try refreshing the page.</ErrorMessage>}
 
       {prices && isSearching && (
         <>
           <p className="text-xs text-gray-400">
             {filtered.length} of {prices.length} tradeable items
           </p>
-          <div className="space-y-2">
-            {filtered.map((price) => (
-              <PriceCard key={price.itemId} price={price} />
-            ))}
-          </div>
+          {filtered.length === 0 ? (
+            <EmptyState>No items match "{search}".</EmptyState>
+          ) : (
+            <div className="space-y-2">
+              {filtered.map((price) => (
+                <PriceCard key={price.itemId} price={price} />
+              ))}
+            </div>
+          )}
         </>
       )}
 

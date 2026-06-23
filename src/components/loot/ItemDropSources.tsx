@@ -1,6 +1,7 @@
 import { MONSTERS } from '../../data/monsters'
 import { toDisplayName } from '../../utils/formatGold'
 import { MonsterIcon } from '../ui/Icon'
+import { EmptyState } from '../ui/EmptyState'
 
 export function ItemDropSources({ itemId }: { itemId: number }) {
   const sources = MONSTERS.flatMap((monster) => {
@@ -9,7 +10,7 @@ export function ItemDropSources({ itemId }: { itemId: number }) {
   }).sort((a, b) => b.drop.dropRate - a.drop.dropRate)
 
   if (sources.length === 0) {
-    return <p className="text-sm text-gray-500">No monster in our data drops this item.</p>
+    return <EmptyState>No monster in our data drops this item.</EmptyState>
   }
 
   return (

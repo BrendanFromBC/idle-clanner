@@ -5,6 +5,8 @@ import { useMarketPriceHistory } from '../../hooks/useMarketPriceHistory'
 import { formatGold } from '../../utils/formatGold'
 import { PriceHistoryChart } from './PriceHistoryChart'
 import { ItemIcon } from '../ui/Icon'
+import { Skeleton } from '../ui/Skeleton'
+import { ErrorMessage } from '../ui/ErrorMessage'
 
 export function PriceCard({ price }: { price: MarketPrice }) {
   const [expanded, setExpanded] = useState(false)
@@ -38,7 +40,16 @@ export function PriceCard({ price }: { price: MarketPrice }) {
 
       {expanded && (
         <div className="mt-3 border-t border-gray-200 pt-3 text-sm text-gray-600">
-          {isLoading && <p>Loading price history…</p>}
+          {isLoading && (
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="space-y-1">
+                  <Skeleton className="h-3 w-12" />
+                  <Skeleton className="h-4 w-16" />
+                </div>
+              ))}
+            </div>
+          )}
           {detail && (
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               <Stat label="1d avg" value={formatGold(detail.averagePrice1Day)} />
@@ -50,8 +61,8 @@ export function PriceCard({ price }: { price: MarketPrice }) {
 
           <div className="mt-3 border-t border-gray-200 pt-3">
             <div className="mb-1 text-xs text-gray-400">Last ~24h average price</div>
-            {isHistoryLoading && <p>Loading chart…</p>}
-            {isHistoryError && <p className="text-red-500">Couldn't load price history.</p>}
+            {isHistoryLoading && <Skeleton className="h-16 w-full" />}
+            {isHistoryError && <ErrorMessage>Couldn't load price history.</ErrorMessage>}
             {history && <PriceHistoryChart points={history} />}
           </div>
         </div>

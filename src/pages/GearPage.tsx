@@ -1,10 +1,14 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useTeam } from '../hooks/useTeam'
 import { usePlayerProfile } from '../hooks/usePlayerProfile'
 import { useMarketPrices } from '../hooks/useMarketPrices'
 import { GEAR } from '../data/gear'
 import { getEquippedItemId } from '../utils/equipmentSlots'
 import { GearUpgradeCard } from '../components/gear/GearUpgradeCard'
+import { CardRowSkeletonList } from '../components/ui/Skeleton'
+import { ErrorMessage } from '../components/ui/ErrorMessage'
+import { EmptyState } from '../components/ui/EmptyState'
 
 const SLOTS = ['main', 'alt1', 'alt2'] as const
 type Slot = (typeof SLOTS)[number]
@@ -24,31 +28,45 @@ const BIS_TOOL_GEAR = Object.values(
 
 export function GearPage() {
   const team = useTeam()
+  const configuredSlots = SLOTS.filter((slot) => team.accounts[slot].username)
   const [activeSlot, setActiveSlot] = useState<Slot>('main')
-  const account = team.accounts[activeSlot]
+  const effectiveSlot = configuredSlots.includes(activeSlot) ? activeSlot : configuredSlots[0]
+  const account = effectiveSlot ? team.accounts[effectiveSlot] : null
 
   return (
     <div className="mx-auto max-w-2xl space-y-4 p-4 sm:p-6">
       <h2 className="text-xl font-semibold text-gray-900">Gear Guide</h2>
 
-      <div className="flex gap-2 overflow-x-auto border-b border-gray-200">
-        {SLOTS.map((slot) => (
-          <button
-            key={slot}
-            type="button"
-            onClick={() => setActiveSlot(slot)}
-            className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
-              activeSlot === slot
-                ? 'border-b-2 border-gray-900 text-gray-900'
-                : 'text-gray-500'
-            }`}
-          >
-            {team.accounts[slot].username ?? slot.toUpperCase()}
-          </button>
-        ))}
-      </div>
+      {configuredSlots.length > 0 && (
+        <div className="flex gap-2 overflow-x-auto border-b border-gray-200">
+          {configuredSlots.map((slot) => (
+            <button
+              key={slot}
+              type="button"
+              onClick={() => setActiveSlot(slot)}
+              className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
+                effectiveSlot === slot
+                  ? 'border-b-2 border-gray-900 text-gray-900'
+                  : 'text-gray-500'
+              }`}
+            >
+              {team.accounts[slot].username}
+            </button>
+          ))}
+        </div>
+      )}
 
-      <AccountGearPanel account={account} slot={activeSlot} />
+      {account && effectiveSlot ? (
+        <AccountGearPanel account={account} slot={effectiveSlot} />
+      ) : (
+        <EmptyState>
+          No accounts set up yet.{' '}
+          <Link to="/" className="font-medium text-gray-700 underline">
+            Add your team on the Dashboard
+          </Link>
+          .
+        </EmptyState>
+      )}
     </div>
   )
 }
@@ -64,10 +82,18 @@ function AccountGearPanel({
   const { data: marketPrices } = useMarketPrices()
 
   if (!account.username) {
-    return <p className="text-sm text-gray-500">No account set for this slot.</p>
+    return (
+      <EmptyState>
+        No account set for this slot.{' '}
+        <Link to="/" className="font-medium text-gray-700 underline">
+          Add one on the Dashboard
+        </Link>
+        .
+      </EmptyState>
+    )
   }
-  if (isLoading) return <p className="text-sm text-gray-500">Loading profile…</p>
-  if (isError) return <p className="text-sm text-red-500">Couldn't load this player.</p>
+  if (isLoading) return <CardRowSkeletonList count={6} />
+  if (isError) return <ErrorMessage>Couldn't find a player named "{account.username}".</ErrorMessage>
   if (!profile || !marketPrices) return null
 
   // Role drives which gear set this account sees: "main" trains combat, the

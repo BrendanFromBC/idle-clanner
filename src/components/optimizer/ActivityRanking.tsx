@@ -5,6 +5,7 @@ import { formatGold, activityDisplayName } from '../../utils/formatGold'
 import { ItemIcon } from '../ui/Icon'
 import { useMarketPriceDetail } from '../../hooks/useMarketPriceDetail'
 import { comparePriceToAverage } from '../../utils/priceComparison'
+import { EmptyState } from '../ui/EmptyState'
 
 export function ActivityRanking({
   ranked,
@@ -17,10 +18,10 @@ export function ActivityRanking({
 }) {
   if (ranked.length === 0) {
     return (
-      <p className="text-sm text-gray-500">
+      <EmptyState>
         No profitable activities found at this account's current levels (or market data is
         missing for the relevant items).
-      </p>
+      </EmptyState>
     )
   }
 

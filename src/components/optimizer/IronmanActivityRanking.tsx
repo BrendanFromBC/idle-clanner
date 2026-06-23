@@ -1,6 +1,7 @@
 import type { RankedIronmanActivity, IronmanNextUnlock } from '../../utils/goldPerHour'
 import { formatGold, activityDisplayName } from '../../utils/formatGold'
 import { ItemIcon } from '../ui/Icon'
+import { EmptyState } from '../ui/EmptyState'
 
 export function IronmanActivityRanking({
   ranked,
@@ -11,9 +12,7 @@ export function IronmanActivityRanking({
 }) {
   if (ranked.length === 0) {
     return (
-      <p className="text-sm text-gray-500">
-        No sellable-to-shop activities found at this account's current levels.
-      </p>
+      <EmptyState>No sellable-to-shop activities found at this account's current levels.</EmptyState>
     )
   }
 

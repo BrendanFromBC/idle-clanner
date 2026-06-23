@@ -2,8 +2,10 @@ import { useMemo, useState } from 'react'
 import { ITEMS } from '../../data/items'
 import { useTeam, useWishlistActions } from '../../hooks/useTeam'
 import { useMarketPrices } from '../../hooks/useMarketPrices'
+import { Link } from 'react-router-dom'
 import { WishlistItemRow } from './WishlistItemRow'
 import type { AccountSlot } from '../../store/teamStore'
+import { EmptyState } from '../ui/EmptyState'
 
 const SLOTS = ['main', 'alt1', 'alt2'] as const
 type Slot = (typeof SLOTS)[number]
@@ -13,7 +15,9 @@ export function WishlistPanel() {
   const { addWishlistItem } = useWishlistActions()
   const { data: marketPrices } = useMarketPrices()
   const [search, setSearch] = useState('')
+  const accountsWithUsernames = SLOTS.filter((slot) => team.accounts[slot].username)
   const [forSlot, setForSlot] = useState<Slot>('main')
+  const effectiveForSlot = accountsWithUsernames.includes(forSlot) ? forSlot : accountsWithUsernames[0]
 
   const matches = useMemo(() => {
     const query = search.trim().toLowerCase()
@@ -21,53 +25,62 @@ export function WishlistPanel() {
     return ITEMS.filter((i) => i.displayName.toLowerCase().includes(query)).slice(0, 10)
   }, [search])
 
-  const accountsWithUsernames = SLOTS.filter((slot) => team.accounts[slot].username)
-
   return (
     <div className="space-y-4">
-      <div className="space-y-2 rounded-lg border border-gray-300 bg-white p-4">
-        <h3 className="text-sm font-semibold text-gray-900">Add a wishlist goal</h3>
-        <div className="flex gap-2">
-          <input
-            type="text"
-            placeholder="Search for an item…"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900"
-          />
-          <select
-            value={forSlot}
-            onChange={(e) => setForSlot(e.target.value as Slot)}
-            className="rounded border border-gray-300 bg-white px-2 py-2 text-sm text-gray-900"
-          >
-            {SLOTS.map((slot) => (
-              <option key={slot} value={slot}>
-                {team.accounts[slot].username ?? slot.toUpperCase()}
-              </option>
-            ))}
-          </select>
-        </div>
-        {matches.length > 0 && (
-          <div className="space-y-1">
-            {matches.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => {
-                  addWishlistItem(item.id, forSlot)
-                  setSearch('')
-                }}
-                className="block w-full rounded border border-gray-200 bg-white px-3 py-2 text-left text-sm text-gray-900 hover:bg-gray-50"
-              >
-                {item.displayName}
-              </button>
-            ))}
+      {accountsWithUsernames.length === 0 ? (
+        <EmptyState>
+          No accounts set up yet.{' '}
+          <Link to="/" className="font-medium text-gray-700 underline">
+            Add your team on the Dashboard
+          </Link>{' '}
+          to start a wishlist.
+        </EmptyState>
+      ) : (
+        <div className="space-y-2 rounded-lg border border-gray-300 bg-white p-4">
+          <h3 className="text-sm font-semibold text-gray-900">Add a wishlist goal</h3>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              placeholder="Search for an item…"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="flex-1 rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900"
+            />
+            <select
+              value={effectiveForSlot}
+              onChange={(e) => setForSlot(e.target.value as Slot)}
+              className="rounded border border-gray-300 bg-white px-2 py-2 text-sm text-gray-900"
+            >
+              {accountsWithUsernames.map((slot) => (
+                <option key={slot} value={slot}>
+                  {team.accounts[slot].username}
+                </option>
+              ))}
+            </select>
           </div>
-        )}
-      </div>
+          {matches.length > 0 && (
+            <div className="space-y-1">
+              {matches.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => {
+                    if (!effectiveForSlot) return
+                    addWishlistItem(item.id, effectiveForSlot)
+                    setSearch('')
+                  }}
+                  className="block w-full rounded border border-gray-200 bg-white px-3 py-2 text-left text-sm text-gray-900 hover:bg-gray-50"
+                >
+                  {item.displayName}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {team.wishlist.length === 0 && (
-        <p className="text-sm text-gray-500">No wishlist goals yet — search above to add one.</p>
+        <EmptyState>No wishlist goals yet — search above to add one.</EmptyState>
       )}
 
       {marketPrices &&
