@@ -5,6 +5,9 @@ import { MonsterDropTable } from '../components/loot/MonsterDropTable'
 import { ItemDropSources } from '../components/loot/ItemDropSources'
 import { toDisplayName } from '../utils/formatGold'
 import { getAreaLabel } from '../utils/monsterAreas'
+import { useTeam } from '../hooks/useTeam'
+import { usePlayerProfile } from '../hooks/usePlayerProfile'
+import { getCombatLoadout, type CombatLoadout } from '../utils/combatCalc'
 
 const SORTED_MONSTERS = [...MONSTERS].sort(
   (a, b) => a.areaSortOrder - b.areaSortOrder || a.name.localeCompare(b.name),
@@ -16,40 +19,66 @@ const MONSTERS_BY_AREA = Object.entries(
   }, {}),
 ).sort(([, a], [, b]) => a[0].areaSortOrder - b[0].areaSortOrder)
 
+const SLOTS = ['main', 'alt1', 'alt2'] as const
+type Slot = (typeof SLOTS)[number]
+
 export function LootPage() {
   const [mode, setMode] = useState<'monster' | 'item'>('monster')
+  const team = useTeam()
+  const [activeSlot, setActiveSlot] = useState<Slot>('main')
+  const { data: profile } = usePlayerProfile(team.accounts[activeSlot].username)
+
+  const loadout: CombatLoadout | null = useMemo(() => {
+    if (!profile) return null
+    const attackLevel = profile.skills.attack?.level ?? 0
+    const strengthLevel = profile.skills.strength?.level ?? 0
+    return getCombatLoadout(profile.equipment, attackLevel, strengthLevel)
+  }, [profile])
 
   return (
     <div className="mx-auto max-w-2xl space-y-4 p-6">
       <h2 className="text-xl font-semibold text-gray-900">Loot Odds</h2>
 
-      <div className="flex gap-2 border-b border-gray-200">
-        <button
-          type="button"
-          onClick={() => setMode('monster')}
-          className={`px-3 py-2 text-sm font-medium ${
-            mode === 'monster' ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
-          }`}
+      <div className="flex items-center justify-between">
+        <div className="flex gap-2 border-b border-gray-200">
+          <button
+            type="button"
+            onClick={() => setMode('monster')}
+            className={`px-3 py-2 text-sm font-medium ${
+              mode === 'monster' ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
+            }`}
+          >
+            By monster
+          </button>
+          <button
+            type="button"
+            onClick={() => setMode('item')}
+            className={`px-3 py-2 text-sm font-medium ${
+              mode === 'item' ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
+            }`}
+          >
+            Best monster for an item
+          </button>
+        </div>
+        <select
+          value={activeSlot}
+          onChange={(e) => setActiveSlot(e.target.value as Slot)}
+          className="rounded border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900"
         >
-          By monster
-        </button>
-        <button
-          type="button"
-          onClick={() => setMode('item')}
-          className={`px-3 py-2 text-sm font-medium ${
-            mode === 'item' ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
-          }`}
-        >
-          Best monster for an item
-        </button>
+          {SLOTS.map((slot) => (
+            <option key={slot} value={slot}>
+              {team.accounts[slot].username ?? slot.toUpperCase()}
+            </option>
+          ))}
+        </select>
       </div>
 
-      {mode === 'monster' ? <MonsterBrowser /> : <ItemReverseLookup />}
+      {mode === 'monster' ? <MonsterBrowser loadout={loadout} /> : <ItemReverseLookup />}
     </div>
   )
 }
 
-function MonsterBrowser() {
+function MonsterBrowser({ loadout }: { loadout: CombatLoadout | null }) {
   const [selectedId, setSelectedId] = useState<number | null>(SORTED_MONSTERS[0]?.id ?? null)
   const monster = MONSTERS.find((m) => m.id === selectedId)
 
@@ -71,7 +100,7 @@ function MonsterBrowser() {
           </optgroup>
         ))}
       </select>
-      {monster && <MonsterDropTable monster={monster} />}
+      {monster && <MonsterDropTable monster={monster} loadout={loadout} />}
     </div>
   )
 }

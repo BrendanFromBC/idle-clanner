@@ -26,6 +26,7 @@ export interface MonsterDefinition {
   defenceBonus: number
   archeryDefenceBonus: number
   magicDefenceBonus: number
+  defenceLevel: number
   drops: MonsterDrop[]
 }
 
@@ -43,6 +44,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": -25,
     "archeryDefenceBonus": 0,
     "magicDefenceBonus": 0,
+    "defenceLevel": 0,
     "drops": [
       {
         "itemId": 110,
@@ -80,6 +82,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 2,
     "archeryDefenceBonus": 0,
     "magicDefenceBonus": 0,
+    "defenceLevel": 3,
     "drops": [
       {
         "itemId": 110,
@@ -159,6 +162,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 5,
     "archeryDefenceBonus": 0,
     "magicDefenceBonus": 0,
+    "defenceLevel": 5,
     "drops": [
       {
         "itemId": 110,
@@ -238,6 +242,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 7,
     "archeryDefenceBonus": 6,
     "magicDefenceBonus": 6,
+    "defenceLevel": 8,
     "drops": [
       {
         "itemId": 110,
@@ -310,6 +315,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 12,
     "archeryDefenceBonus": 4,
     "magicDefenceBonus": 8,
+    "defenceLevel": 14,
     "drops": [
       {
         "itemId": 110,
@@ -424,6 +430,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 12,
     "archeryDefenceBonus": 12,
     "magicDefenceBonus": 6,
+    "defenceLevel": 10,
     "drops": [
       {
         "itemId": 110,
@@ -510,6 +517,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 8,
     "archeryDefenceBonus": 6,
     "magicDefenceBonus": 6,
+    "defenceLevel": 6,
     "drops": [
       {
         "itemId": 110,
@@ -596,6 +604,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 15,
     "archeryDefenceBonus": 16,
     "magicDefenceBonus": 16,
+    "defenceLevel": 13,
     "drops": [
       {
         "itemId": 110,
@@ -682,6 +691,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 10,
     "archeryDefenceBonus": 12,
     "magicDefenceBonus": 12,
+    "defenceLevel": 11,
     "drops": [
       {
         "itemId": 110,
@@ -768,6 +778,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 20,
     "archeryDefenceBonus": 12,
     "magicDefenceBonus": 12,
+    "defenceLevel": 15,
     "drops": [
       {
         "itemId": 110,
@@ -854,6 +865,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 30,
     "archeryDefenceBonus": 18,
     "magicDefenceBonus": 28,
+    "defenceLevel": 25,
     "drops": [
       {
         "itemId": 110,
@@ -947,6 +959,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 31,
     "archeryDefenceBonus": 22,
     "magicDefenceBonus": 24,
+    "defenceLevel": 30,
     "drops": [
       {
         "itemId": 268,
@@ -1054,6 +1067,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 25,
     "archeryDefenceBonus": 14,
     "magicDefenceBonus": 12,
+    "defenceLevel": 25,
     "drops": [
       {
         "itemId": 271,
@@ -1161,6 +1175,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 12,
     "archeryDefenceBonus": 18,
     "magicDefenceBonus": 32,
+    "defenceLevel": 24,
     "drops": [
       {
         "itemId": 270,
@@ -1282,6 +1297,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 29,
     "archeryDefenceBonus": 30,
     "magicDefenceBonus": 32,
+    "defenceLevel": 34,
     "drops": [
       {
         "itemId": 267,
@@ -1396,6 +1412,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 33,
     "archeryDefenceBonus": 31,
     "magicDefenceBonus": 27,
+    "defenceLevel": 40,
     "drops": [
       {
         "itemId": 272,
@@ -1503,6 +1520,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 35,
     "archeryDefenceBonus": 32,
     "magicDefenceBonus": 39,
+    "defenceLevel": 40,
     "drops": [
       {
         "itemId": 269,
@@ -1617,6 +1635,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 32,
     "archeryDefenceBonus": 32,
     "magicDefenceBonus": 36,
+    "defenceLevel": 37,
     "drops": [
       {
         "itemId": 267,
@@ -1724,6 +1743,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 37,
     "archeryDefenceBonus": 37,
     "magicDefenceBonus": 36,
+    "defenceLevel": 45,
     "drops": [
       {
         "itemId": 270,
@@ -1824,6 +1844,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 39,
     "archeryDefenceBonus": 39,
     "magicDefenceBonus": 38,
+    "defenceLevel": 44,
     "drops": [
       {
         "itemId": 269,
@@ -1924,6 +1945,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 25,
     "archeryDefenceBonus": 32,
     "magicDefenceBonus": 45,
+    "defenceLevel": 32,
     "drops": [
       {
         "itemId": 271,
@@ -2045,6 +2067,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 49,
     "archeryDefenceBonus": 44,
     "magicDefenceBonus": 46,
+    "defenceLevel": 54,
     "drops": [
       {
         "itemId": 272,
@@ -2152,6 +2175,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 54,
     "archeryDefenceBonus": 49,
     "magicDefenceBonus": 48,
+    "defenceLevel": 55,
     "drops": [
       {
         "itemId": 268,
@@ -2266,6 +2290,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 65,
     "archeryDefenceBonus": 55,
     "magicDefenceBonus": 62,
+    "defenceLevel": 55,
     "drops": [
       {
         "itemId": 272,
@@ -2380,6 +2405,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 72,
     "archeryDefenceBonus": 75,
     "magicDefenceBonus": 65,
+    "defenceLevel": 66,
     "drops": [
       {
         "itemId": 271,
@@ -2487,6 +2513,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 81,
     "archeryDefenceBonus": 75,
     "magicDefenceBonus": 74,
+    "defenceLevel": 70,
     "drops": [
       {
         "itemId": 270,
@@ -2594,6 +2621,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 86,
     "archeryDefenceBonus": 75,
     "magicDefenceBonus": 88,
+    "defenceLevel": 72,
     "drops": [
       {
         "itemId": 269,
@@ -2715,6 +2743,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 92,
     "archeryDefenceBonus": 95,
     "magicDefenceBonus": 74,
+    "defenceLevel": 83,
     "drops": [
       {
         "itemId": 268,
@@ -2822,6 +2851,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 98,
     "archeryDefenceBonus": 91,
     "magicDefenceBonus": 96,
+    "defenceLevel": 87,
     "drops": [
       {
         "itemId": 267,
@@ -2936,6 +2966,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 120,
     "archeryDefenceBonus": 140,
     "magicDefenceBonus": 125,
+    "defenceLevel": 108,
     "drops": [
       {
         "itemId": 267,
@@ -3015,6 +3046,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 128,
     "archeryDefenceBonus": 149,
     "magicDefenceBonus": 138,
+    "defenceLevel": 112,
     "drops": [
       {
         "itemId": 272,
@@ -3094,6 +3126,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 139,
     "archeryDefenceBonus": 152,
     "magicDefenceBonus": 132,
+    "defenceLevel": 116,
     "drops": [
       {
         "itemId": 270,
@@ -3173,6 +3206,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 140,
     "archeryDefenceBonus": 135,
     "magicDefenceBonus": 135,
+    "defenceLevel": 122,
     "drops": [
       {
         "itemId": 271,
@@ -3252,6 +3286,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 140,
     "archeryDefenceBonus": 142,
     "magicDefenceBonus": 142,
+    "defenceLevel": 110,
     "drops": [
       {
         "itemId": 268,
@@ -3331,6 +3366,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 188,
     "archeryDefenceBonus": 175,
     "magicDefenceBonus": 182,
+    "defenceLevel": 130,
     "drops": [
       {
         "itemId": 269,
@@ -3410,6 +3446,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 180,
     "archeryDefenceBonus": 165,
     "magicDefenceBonus": 160,
+    "defenceLevel": 195,
     "drops": [
       {
         "itemId": 230,
@@ -3608,6 +3645,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 170,
     "archeryDefenceBonus": 175,
     "magicDefenceBonus": 180,
+    "defenceLevel": 175,
     "drops": [
       {
         "itemId": 230,
@@ -3806,6 +3844,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 145,
     "archeryDefenceBonus": 140,
     "magicDefenceBonus": 180,
+    "defenceLevel": 175,
     "drops": [
       {
         "itemId": 230,
@@ -3997,6 +4036,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 145,
     "archeryDefenceBonus": 140,
     "magicDefenceBonus": 180,
+    "defenceLevel": 175,
     "drops": [
       {
         "itemId": 230,
@@ -4188,6 +4228,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 155,
     "archeryDefenceBonus": 140,
     "magicDefenceBonus": 180,
+    "defenceLevel": 175,
     "drops": [
       {
         "itemId": 230,
@@ -4386,6 +4427,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 175,
     "archeryDefenceBonus": 155,
     "magicDefenceBonus": 145,
+    "defenceLevel": 205,
     "drops": [
       {
         "itemId": 230,
@@ -4584,6 +4626,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 175,
     "archeryDefenceBonus": 175,
     "magicDefenceBonus": 175,
+    "defenceLevel": 250,
     "drops": [
       {
         "itemId": 899,
@@ -4642,6 +4685,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 200,
     "archeryDefenceBonus": 200,
     "magicDefenceBonus": 200,
+    "defenceLevel": 255,
     "drops": [
       {
         "itemId": 19,
@@ -4728,6 +4772,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 255,
     "archeryDefenceBonus": 255,
     "magicDefenceBonus": 255,
+    "defenceLevel": 275,
     "drops": [
       {
         "itemId": 926,
@@ -4891,6 +4936,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 28,
     "archeryDefenceBonus": 31,
     "magicDefenceBonus": 25,
+    "defenceLevel": 42,
     "drops": [
       {
         "itemId": 19,
@@ -4956,6 +5002,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 44,
     "archeryDefenceBonus": 44,
     "magicDefenceBonus": 44,
+    "defenceLevel": 45,
     "drops": [
       {
         "itemId": 19,
@@ -5007,6 +5054,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 48,
     "archeryDefenceBonus": 48,
     "magicDefenceBonus": 48,
+    "defenceLevel": 49,
     "drops": [
       {
         "itemId": 19,
@@ -5058,6 +5106,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 57,
     "archeryDefenceBonus": 56,
     "magicDefenceBonus": 57,
+    "defenceLevel": 55,
     "drops": [
       {
         "itemId": 19,
@@ -5102,6 +5151,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 75,
     "archeryDefenceBonus": 72,
     "magicDefenceBonus": 74,
+    "defenceLevel": 71,
     "drops": [
       {
         "itemId": 835,
@@ -5153,6 +5203,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 80,
     "archeryDefenceBonus": 80,
     "magicDefenceBonus": 80,
+    "defenceLevel": 71,
     "drops": [
       {
         "itemId": 19,
@@ -5197,6 +5248,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 92,
     "archeryDefenceBonus": 92,
     "magicDefenceBonus": 92,
+    "defenceLevel": 80,
     "drops": [
       {
         "itemId": 19,
@@ -5269,6 +5321,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 99,
     "archeryDefenceBonus": 99,
     "magicDefenceBonus": 99,
+    "defenceLevel": 102,
     "drops": [
       {
         "itemId": 19,
@@ -5320,6 +5373,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 115,
     "archeryDefenceBonus": 115,
     "magicDefenceBonus": 115,
+    "defenceLevel": 120,
     "drops": [
       {
         "itemId": 19,
@@ -5364,6 +5418,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 107,
     "archeryDefenceBonus": 107,
     "magicDefenceBonus": 107,
+    "defenceLevel": 105,
     "drops": [
       {
         "itemId": 19,
@@ -5415,6 +5470,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 120,
     "archeryDefenceBonus": 120,
     "magicDefenceBonus": 120,
+    "defenceLevel": 130,
     "drops": [
       {
         "itemId": 19,
@@ -5480,6 +5536,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 130,
     "archeryDefenceBonus": 130,
     "magicDefenceBonus": 130,
+    "defenceLevel": 128,
     "drops": [
       {
         "itemId": 19,
@@ -5538,6 +5595,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 147,
     "archeryDefenceBonus": 147,
     "magicDefenceBonus": 147,
+    "defenceLevel": 170,
     "drops": [
       {
         "itemId": 19,
@@ -5596,6 +5654,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 165,
     "archeryDefenceBonus": 165,
     "magicDefenceBonus": 165,
+    "defenceLevel": 179,
     "drops": [
       {
         "itemId": 19,
@@ -5668,6 +5727,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 189,
     "archeryDefenceBonus": 189,
     "magicDefenceBonus": 189,
+    "defenceLevel": 175,
     "drops": [
       {
         "itemId": 19,
@@ -5733,6 +5793,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 180,
     "archeryDefenceBonus": 180,
     "magicDefenceBonus": 180,
+    "defenceLevel": 190,
     "drops": [
       {
         "itemId": 19,
@@ -5784,6 +5845,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 190,
     "archeryDefenceBonus": 190,
     "magicDefenceBonus": 190,
+    "defenceLevel": 205,
     "drops": [
       {
         "itemId": 19,
@@ -5835,6 +5897,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 42,
     "archeryDefenceBonus": 38,
     "magicDefenceBonus": 39,
+    "defenceLevel": 35,
     "drops": [
       {
         "itemId": 965,
@@ -5858,6 +5921,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 45,
     "archeryDefenceBonus": 43,
     "magicDefenceBonus": 44,
+    "defenceLevel": 45,
     "drops": [
       {
         "itemId": 966,
@@ -5881,6 +5945,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 46,
     "archeryDefenceBonus": 46,
     "magicDefenceBonus": 46,
+    "defenceLevel": 55,
     "drops": [
       {
         "itemId": 967,
@@ -5904,6 +5969,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 65,
     "archeryDefenceBonus": 65,
     "magicDefenceBonus": 65,
+    "defenceLevel": 68,
     "drops": [
       {
         "itemId": 968,
@@ -5927,6 +5993,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 70,
     "archeryDefenceBonus": 70,
     "magicDefenceBonus": 70,
+    "defenceLevel": 68,
     "drops": [
       {
         "itemId": 969,
@@ -5950,6 +6017,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 80,
     "archeryDefenceBonus": 80,
     "magicDefenceBonus": 80,
+    "defenceLevel": 80,
     "drops": [
       {
         "itemId": 970,
@@ -5973,6 +6041,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 95,
     "archeryDefenceBonus": 95,
     "magicDefenceBonus": 95,
+    "defenceLevel": 90,
     "drops": [
       {
         "itemId": 971,
@@ -5996,6 +6065,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 99,
     "archeryDefenceBonus": 99,
     "magicDefenceBonus": 99,
+    "defenceLevel": 104,
     "drops": [
       {
         "itemId": 972,
@@ -6019,6 +6089,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 104,
     "archeryDefenceBonus": 105,
     "magicDefenceBonus": 103,
+    "defenceLevel": 107,
     "drops": [
       {
         "itemId": 973,
@@ -6042,6 +6113,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 140,
     "archeryDefenceBonus": 140,
     "magicDefenceBonus": 140,
+    "defenceLevel": 120,
     "drops": [
       {
         "itemId": 977,
@@ -6065,6 +6137,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 145,
     "archeryDefenceBonus": 145,
     "magicDefenceBonus": 145,
+    "defenceLevel": 125,
     "drops": [
       {
         "itemId": 978,
@@ -6088,6 +6161,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 152,
     "archeryDefenceBonus": 152,
     "magicDefenceBonus": 152,
+    "defenceLevel": 140,
     "drops": [
       {
         "itemId": 979,
@@ -6111,6 +6185,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 205,
     "archeryDefenceBonus": 205,
     "magicDefenceBonus": 205,
+    "defenceLevel": 150,
     "drops": [
       {
         "itemId": 980,
@@ -6134,6 +6209,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 215,
     "archeryDefenceBonus": 215,
     "magicDefenceBonus": 215,
+    "defenceLevel": 170,
     "drops": [
       {
         "itemId": 981,
@@ -6157,6 +6233,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 225,
     "archeryDefenceBonus": 225,
     "magicDefenceBonus": 225,
+    "defenceLevel": 180,
     "drops": [
       {
         "itemId": 982,
@@ -6180,6 +6257,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 230,
     "archeryDefenceBonus": 230,
     "magicDefenceBonus": 230,
+    "defenceLevel": 220,
     "drops": [
       {
         "itemId": 983,
@@ -6210,6 +6288,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 245,
     "archeryDefenceBonus": 245,
     "magicDefenceBonus": 245,
+    "defenceLevel": 240,
     "drops": [
       {
         "itemId": 984,
@@ -6240,6 +6319,7 @@ export const MONSTERS: MonsterDefinition[] = [
     "defenceBonus": 260,
     "archeryDefenceBonus": 260,
     "magicDefenceBonus": 260,
+    "defenceLevel": 260,
     "drops": [
       {
         "itemId": 985,

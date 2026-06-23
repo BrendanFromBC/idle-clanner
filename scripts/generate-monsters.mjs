@@ -41,6 +41,9 @@ const monsters = monsterTasks
       defenceBonus: m.EnemyDefenceBonus,
       archeryDefenceBonus: m.EnemyArcheryDefenceBonus,
       magicDefenceBonus: m.EnemyMagicDefenceBonus,
+      // Single shared defence level across all incoming attack styles
+      // (validated for melee only — see src/utils/combatCalc.ts).
+      defenceLevel: m.EnemyDefenceLevel,
       drops: m.Loot.map((drop) => ({
         itemId: drop.ItemId,
         quantityMin: drop.ItemAmountMin,
@@ -81,6 +84,7 @@ export interface MonsterDefinition {
   defenceBonus: number
   archeryDefenceBonus: number
   magicDefenceBonus: number
+  defenceLevel: number
   drops: MonsterDrop[]
 }
 

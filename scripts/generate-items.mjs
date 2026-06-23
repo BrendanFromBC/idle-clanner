@@ -32,6 +32,16 @@ const entries = items.map((item) => ({
   // guessing) — decode only once a feature actually needs them (Phase 3/4).
   category: item.Category,
   equipmentSlot: item.EquipmentSlot,
+  // Combat stat bonuses, for any equippable item (not just curated gear.ts).
+  // Lets the combat calculator (src/utils/combatCalc.ts) sum up whatever a
+  // player actually has equipped, not just our hand-picked BiS set.
+  strengthBonus: item.StrengthBonus || 0,
+  accuracyBonus: item.AccuracyBonus || 0,
+  defenceBonus: item.DefenceBonus || 0,
+  // Weapon-only fields (0 for everything else). `style` uses the same code
+  // as monsters.ts's attackStyleWeakness — verified in src/utils/combatStyle.ts.
+  attackInterval: item.AttackInterval || 0,
+  style: item.Style || 0,
 }))
 
 entries.sort((a, b) => a.id - b.id)
@@ -49,6 +59,11 @@ export interface ItemDefinition {
   shopSellable: boolean // false for the ~25 items the local shop won't buy at all
   category: number       // raw API enum code, not yet decoded
   equipmentSlot: number  // raw API enum code, not yet decoded
+  strengthBonus: number
+  accuracyBonus: number
+  defenceBonus: number
+  attackInterval: number // weapons only, 0 otherwise
+  style: number           // weapons only, 0 otherwise — raw code, see combatStyle.ts
 }
 
 export const ITEMS: ItemDefinition[] = `

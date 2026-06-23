@@ -359,6 +359,13 @@ follow-ups wanted later:
         `rankIronmanActivitiesForSkills`, `getIronmanNextUnlock` — parallel
         to the non-ironman functions rather than a shared abstraction, since
         the two pricing models don't overlap enough to unify cleanly.
+      - **Known simplification**: this models strict solo-ironman
+        self-sufficiency. **Group Ironman** accounts can trade freely within
+        their own group (just not the wider market), so `findGatherSource()`
+        is likely too strict for them — a groupmate outside the app's
+        tracked main/alt1/alt2 team could supply a material the calculator
+        treats as unobtainable. Deliberately left as-is (user's call,
+        2026-06-23) — revisit if it matters in practice.
 
 ### Phase 6 — Loot odds + planner ✅ (initial pass)
 **Goal**: Drop table browser and cross-account goal tracking.
@@ -389,27 +396,63 @@ follow-ups wanted later:
       quest, etc.) for arbitrary wishlist items is wanted later.
 - [x] Acquired toggle (`toggleWishlistAcquired`) — checkbox, strikes through
       + fades the row, doesn't remove it (so progress is visible at a glance).
-- [x] **No DPS/kills-per-hour ranking — deliberately.** Drop rate alone
-      doesn't tell you effective farm rate; that also depends on weapon
-      DPS and the monster's weakness. Investigated building a real DPS/
-      kills-per-hour calculator and stopped: the wiki's own Combat page says
-      its documented hit-chance formula is "no longer accurate," and the
-      real calculator is locked behind an in-game **premium membership**
-      panel — there's no authoritative source to build a real formula from,
-      and fabricating one would violate "game data is curated, not guessed."
-      Instead, `MonsterDropTable` surfaces raw comparable stats (health,
-      defence bonuses per style, the BiS weapon's strength/accuracy/attack
-      interval, and a decoded "Weak to" style) so the player can judge by eye.
-      `attackStyleWeakness` **is decoded** (`src/utils/combatStyle.ts`,
-      `getWeaknessLabel()`) — verified, not guessed: cross-referenced each
-      boss's wiki-recommended weapon type against its known code (Hades(1)
-      uses spear/longsword → Stab, Medusa(2) scimitar → Slash, Devil(3)
-      heavy hammer/club → Pound, Griffin(4) battleaxe → Crush, Zeus(5) bow
-      → Archery, Chimera(6) staff → Magic). Code 0 (6/79 monsters) is the
-      field's unset default ("None"); code 7 only appears on Kronos, who the
-      wiki lists under all three style headings — inferred as "no single
-      weakness," less certain than 1-6. `style`/`weaponClass` on weapons
-      remain undecoded — no analogous cross-reference done yet for those.
+- [x] **DPS/kills-per-hour calculator — melee only** (`src/utils/combatCalc.ts`).
+      First attempt stopped here: the wiki's Combat page flags its own
+      hit-chance formula as "no longer accurate," and the real in-game
+      calculator needs a **premium membership** token — no authoritative
+      source, and fabricating a formula would violate "game data is
+      curated, not guessed." Resolved properly on 2026-06-23: the user has
+      premium and supplied 10 real Damage-Calcs-panel readings (2 weapons ×
+      5 monsters, varied weakness match/mismatch) plus 10 max-hit readings.
+      Findings, each checked against the data rather than assumed:
+      - **Max hit and both 20% weakness bonuses (defence -20%, max hit
+        +20%) are exactly correct as the wiki documents them** — confirmed
+        to the exact integer against all 10 readings, no fitting needed.
+        (Verified the weakness-on-defence effect is real, not just a damage
+        effect, by refitting with it removed — fit got dramatically worse,
+        concentrated on exactly the matched-weakness points.)
+      - **Only the hit-chance ACC-vs-DEF curve itself was wrong.** Replaced
+        with one fitted to the 10 readings: `hit% = 1 / (1 + 1.08 ×
+        (DEF/ACC)^2.52)`, same augmented-stat inputs as the wiki
+        (`(stat+64)×(level+8)/10`). Mean error ~1.6 percentage points, max
+        ~3.25, across all 10 points. The exponent/coefficient are curve-fit
+        values, not confirmed internal game constants — good estimate, not
+        exact.
+      - Kills/hr = the above combined with a standard expected-damage model
+        (`avgDamagePerHit = maxHit/2`, attack interval, monster health,
+        2.55s respawn) — this combination itself hasn't been checked
+        against an observed kill rate, only its two inputs have.
+      - **Scope: melee only** (weapon style codes 1-4). Archery/magic use
+        the same wiki formula structure but have zero test data — don't
+        extend without separately validating, same as melee was.
+      - `getCombatLoadout()` sums accuracy/strength from **whatever's
+        actually equipped** (`items.ts` now carries `strengthBonus`/
+        `accuracyBonus`/`defenceBonus`/`attackInterval`/`style` for all 999
+        items, not just the 116 curated in `gear.ts`) — reflects the
+        player's real gear, not a hypothetical BiS loadout.
+      - `monsters.ts` gained `defenceLevel` (was missing — needed alongside
+        `defenceBonus` for the augmented-defence formula).
+      - Loot page has an account selector (main/alt1/alt2) so the
+        hit-chance/max-hit/kills-per-hr numbers use that account's real
+        Attack/Strength levels and equipped gear; falls back to "no melee
+        weapon equipped" (raw stats only) if the selected account's
+        `rightHand` item isn't a melee weapon.
+      - **Known simplification, not yet accounted for**: Group Ironman
+        trading (same caveat as the Optimizer's ironman mode), and the
+        wiki's documented dodge-chance/Agility mechanic (not folded into
+        the kill-time model).
+      - `attackStyleWeakness` (monsters) and `style` (weapons) **are
+        decoded** (`src/utils/combatStyle.ts`, `getWeaknessLabel()`) —
+        verified by cross-referencing each boss's wiki-recommended weapon
+        type against its known code (Hades(1) spear/longsword → Stab,
+        Medusa(2) scimitar → Slash, Devil(3) heavy hammer/club → Pound,
+        Griffin(4) battleaxe → Crush, Zeus(5) bow → Archery, Chimera(6)
+        staff → Magic) — and confirmed weapons use the *identical* encoding
+        (Outstanding Scimitar/Spear/Staff/Bow/Heavy Hammer all matched).
+        Code 0 (6/79 monsters) is the field's unset default ("None"); code
+        7 only appears on Kronos, who the wiki lists under all three style
+        headings — inferred as "no single weakness," less certain than 1-6.
+        `weaponClass` remains undecoded.
 
 ### Phase 7 — Polish
 - [ ] Mobile-responsive layout
@@ -470,6 +513,7 @@ idle-clanner/
       goldPerHour.ts       # getActivityGoldPerHour/rankActivitiesForSkills/getNextUnlock + ironman-mode variants
       combatStyle.ts       # getWeaknessLabel() — decoded attackStyleWeakness codes
       monsterAreas.ts      # getAreaLabel() — display labels for monsters.ts's areaId
+      combatCalc.ts        # getCombatLoadout/getHitChance/getMaxHit/getKillEstimate — melee only, see Phase 6
     App.tsx
     main.tsx
   scripts/
