@@ -4,8 +4,17 @@ import { ITEMS } from '../data/items'
 import { MonsterDropTable } from '../components/loot/MonsterDropTable'
 import { ItemDropSources } from '../components/loot/ItemDropSources'
 import { toDisplayName } from '../utils/formatGold'
+import { getAreaLabel } from '../utils/monsterAreas'
 
-const SORTED_MONSTERS = [...MONSTERS].sort((a, b) => a.name.localeCompare(b.name))
+const SORTED_MONSTERS = [...MONSTERS].sort(
+  (a, b) => a.areaSortOrder - b.areaSortOrder || a.name.localeCompare(b.name),
+)
+const MONSTERS_BY_AREA = Object.entries(
+  SORTED_MONSTERS.reduce<Record<string, typeof MONSTERS>>((acc, m) => {
+    ;(acc[m.areaId] ??= []).push(m)
+    return acc
+  }, {}),
+).sort(([, a], [, b]) => a[0].areaSortOrder - b[0].areaSortOrder)
 
 export function LootPage() {
   const [mode, setMode] = useState<'monster' | 'item'>('monster')
@@ -51,11 +60,15 @@ function MonsterBrowser() {
         value={selectedId ?? ''}
         onChange={(e) => setSelectedId(Number(e.target.value))}
       >
-        {SORTED_MONSTERS.map((m) => (
-          <option key={m.id} value={m.id}>
-            {toDisplayName(m.name)}
-            {m.isBoss ? ' (Boss)' : ''}
-          </option>
+        {MONSTERS_BY_AREA.map(([areaId, areaMonsters]) => (
+          <optgroup key={areaId} label={getAreaLabel(areaId)}>
+            {areaMonsters.map((m) => (
+              <option key={m.id} value={m.id}>
+                {toDisplayName(m.name)}
+                {m.isBoss ? ' (Boss)' : ''}
+              </option>
+            ))}
+          </optgroup>
         ))}
       </select>
       {monster && <MonsterDropTable monster={monster} />}

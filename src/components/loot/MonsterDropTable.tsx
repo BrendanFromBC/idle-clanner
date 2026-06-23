@@ -3,6 +3,7 @@ import { ITEMS_BY_ID } from '../../data/items'
 import { GEAR } from '../../data/gear'
 import { toDisplayName } from '../../utils/formatGold'
 import { getWeaknessLabel } from '../../utils/combatStyle'
+import { getAreaLabel } from '../../utils/monsterAreas'
 
 const BIS_WEAPON = GEAR.find((g) => g.slot === 'weapon')
 
@@ -20,7 +21,9 @@ export function MonsterDropTable({ monster }: { monster: MonsterDefinition }) {
             </span>
           )}
         </h3>
-        <span className="text-xs text-gray-400">Combat level {monster.combatLevelRequirement}</span>
+        <span className="text-xs text-gray-400">
+          {getAreaLabel(monster.areaId)} · Combat level {monster.combatLevelRequirement}
+        </span>
       </div>
 
       <div className="rounded border border-gray-200 bg-gray-50 p-3 text-xs text-gray-600">

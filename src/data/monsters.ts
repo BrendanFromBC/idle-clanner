@@ -16,6 +16,8 @@ export interface MonsterDrop {
 export interface MonsterDefinition {
   id: number
   name: string
+  areaId: string // raw CustomId from the API, e.g. "haunted_graveyard" — see src/utils/combatStyle.ts for display labels
+  areaSortOrder: number // matches in-game area difficulty progression
   isBoss: boolean
   isClanBoss: boolean
   combatLevelRequirement: number
@@ -31,6 +33,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 0,
     "name": "turkey",
+    "areaId": "woods",
+    "areaSortOrder": 0,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -66,6 +70,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 1,
     "name": "fox",
+    "areaId": "woods",
+    "areaSortOrder": 0,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -143,6 +149,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 2,
     "name": "wolf",
+    "areaId": "woods",
+    "areaSortOrder": 0,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -220,6 +228,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 3,
     "name": "boar",
+    "areaId": "woods",
+    "areaSortOrder": 0,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -290,6 +300,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 4,
     "name": "bear",
+    "areaId": "woods",
+    "areaSortOrder": 0,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -402,6 +414,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 5,
     "name": "scorpion",
+    "areaId": "cave",
+    "areaSortOrder": 1,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -486,6 +500,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 6,
     "name": "snake",
+    "areaId": "cave",
+    "areaSortOrder": 1,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -570,6 +586,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 7,
     "name": "crocodile",
+    "areaId": "cave",
+    "areaSortOrder": 1,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -654,6 +672,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 8,
     "name": "goblin",
+    "areaId": "cave",
+    "areaSortOrder": 1,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -738,6 +758,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 9,
     "name": "cave_dweller",
+    "areaId": "cave",
+    "areaSortOrder": 1,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -822,6 +844,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 10,
     "name": "orange_dragon",
+    "areaId": "cave",
+    "areaSortOrder": 1,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -913,6 +937,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 11,
     "name": "troll",
+    "areaId": "wilderness",
+    "areaSortOrder": 2,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1018,6 +1044,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 12,
     "name": "wandering_warrior",
+    "areaId": "wilderness",
+    "areaSortOrder": 2,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1123,6 +1151,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 13,
     "name": "druid",
+    "areaId": "wilderness",
+    "areaSortOrder": 2,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1242,6 +1272,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 14,
     "name": "gorilla",
+    "areaId": "wilderness",
+    "areaSortOrder": 2,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1354,6 +1386,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 15,
     "name": "giant",
+    "areaId": "wilderness",
+    "areaSortOrder": 2,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1459,6 +1493,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 16,
     "name": "green_dragon",
+    "areaId": "wilderness",
+    "areaSortOrder": 2,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1571,6 +1607,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 17,
     "name": "ghost",
+    "areaId": "haunted_graveyard",
+    "areaSortOrder": 3,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1676,6 +1714,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 18,
     "name": "zombie",
+    "areaId": "haunted_graveyard",
+    "areaSortOrder": 3,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1774,6 +1814,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 19,
     "name": "possessed_bear",
+    "areaId": "haunted_graveyard",
+    "areaSortOrder": 3,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1872,6 +1914,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 20,
     "name": "witch",
+    "areaId": "haunted_graveyard",
+    "areaSortOrder": 3,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -1991,6 +2035,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 21,
     "name": "demon",
+    "areaId": "haunted_graveyard",
+    "areaSortOrder": 3,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2096,6 +2142,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 22,
     "name": "red_dragon",
+    "areaId": "haunted_graveyard",
+    "areaSortOrder": 3,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2208,6 +2256,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 23,
     "name": "mad_wizard",
+    "areaId": "uncharted_grounds",
+    "areaSortOrder": 4,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2320,6 +2370,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 24,
     "name": "vampire",
+    "areaId": "uncharted_grounds",
+    "areaSortOrder": 4,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2425,6 +2477,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 25,
     "name": "werewolf",
+    "areaId": "uncharted_grounds",
+    "areaSortOrder": 4,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2530,6 +2584,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 26,
     "name": "dark_wizard",
+    "areaId": "uncharted_grounds",
+    "areaSortOrder": 4,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2649,6 +2705,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 27,
     "name": "cerberus",
+    "areaId": "uncharted_grounds",
+    "areaSortOrder": 4,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2754,6 +2812,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 28,
     "name": "black_dragon",
+    "areaId": "uncharted_grounds",
+    "areaSortOrder": 4,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2866,6 +2926,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 29,
     "name": "hydra",
+    "areaId": "lair_of_beasts",
+    "areaSortOrder": 5,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -2943,6 +3005,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 30,
     "name": "manticore",
+    "areaId": "lair_of_beasts",
+    "areaSortOrder": 5,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -3020,6 +3084,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 31,
     "name": "minotaur",
+    "areaId": "lair_of_beasts",
+    "areaSortOrder": 5,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -3097,6 +3163,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 32,
     "name": "centaur",
+    "areaId": "lair_of_beasts",
+    "areaSortOrder": 5,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -3174,6 +3242,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 33,
     "name": "necromancer",
+    "areaId": "lair_of_beasts",
+    "areaSortOrder": 5,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -3251,6 +3321,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 34,
     "name": "mutated_dragon",
+    "areaId": "lair_of_beasts",
+    "areaSortOrder": 5,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -3328,6 +3400,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 35,
     "name": "griffin",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -3524,6 +3598,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 36,
     "name": "devil",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -3720,6 +3796,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 37,
     "name": "hades",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -3909,6 +3987,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 38,
     "name": "zeus",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -4098,6 +4178,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 39,
     "name": "medusa",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -4294,6 +4376,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 40,
     "name": "chimera",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -4490,6 +4574,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 41,
     "name": "sobek",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -4546,6 +4632,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 42,
     "name": "kronos",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -4628,918 +4716,10 @@ export const MONSTERS: MonsterDefinition[] = [
     ]
   },
   {
-    "id": 43,
-    "name": "golem",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 30,
-    "health": 60,
-    "attackStyleWeakness": 6,
-    "defenceBonus": 28,
-    "archeryDefenceBonus": 31,
-    "magicDefenceBonus": 25,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 12,
-        "quantityMax": 40,
-        "weight": 30,
-        "dropRate": 0.3
-      },
-      {
-        "itemId": 828,
-        "quantityMin": 20,
-        "quantityMax": 40,
-        "weight": 20,
-        "dropRate": 0.2
-      },
-      {
-        "itemId": 829,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.1
-      },
-      {
-        "itemId": 30,
-        "quantityMin": 10,
-        "quantityMax": 30,
-        "weight": 10,
-        "dropRate": 0.1
-      },
-      {
-        "itemId": 31,
-        "quantityMin": 10,
-        "quantityMax": 25,
-        "weight": 10,
-        "dropRate": 0.1
-      },
-      {
-        "itemId": 32,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.1
-      },
-      {
-        "itemId": 33,
-        "quantityMin": 10,
-        "quantityMax": 15,
-        "weight": 10,
-        "dropRate": 0.1
-      }
-    ]
-  },
-  {
-    "id": 44,
-    "name": "mammoth",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 40,
-    "health": 80,
-    "attackStyleWeakness": 5,
-    "defenceBonus": 44,
-    "archeryDefenceBonus": 44,
-    "magicDefenceBonus": 44,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 20,
-        "quantityMax": 60,
-        "weight": 20,
-        "dropRate": 0.2
-      },
-      {
-        "itemId": 830,
-        "quantityMin": 20,
-        "quantityMax": 40,
-        "weight": 20,
-        "dropRate": 0.2
-      },
-      {
-        "itemId": 831,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.1
-      },
-      {
-        "itemId": 112,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 30,
-        "dropRate": 0.3
-      },
-      {
-        "itemId": 245,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 20,
-        "dropRate": 0.2
-      }
-    ]
-  },
-  {
-    "id": 45,
-    "name": "basilisk",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 50,
-    "health": 80,
-    "attackStyleWeakness": 1,
-    "defenceBonus": 48,
-    "archeryDefenceBonus": 48,
-    "magicDefenceBonus": 48,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 40,
-        "quantityMax": 80,
-        "weight": 69,
-        "dropRate": 0.69
-      },
-      {
-        "itemId": 832,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 1,
-        "dropRate": 0.01
-      },
-      {
-        "itemId": 15,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.1
-      },
-      {
-        "itemId": 157,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.1
-      },
-      {
-        "itemId": 161,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.1
-      }
-    ]
-  },
-  {
-    "id": 46,
-    "name": "banshee",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 55,
-    "health": 100,
-    "attackStyleWeakness": 3,
-    "defenceBonus": 57,
-    "archeryDefenceBonus": 56,
-    "magicDefenceBonus": 57,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 50,
-        "quantityMax": 100,
-        "weight": 99.69999694824219,
-        "dropRate": 0.9969999998638779
-      },
-      {
-        "itemId": 845,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0010000000453740372
-      },
-      {
-        "itemId": 846,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0010000000453740372
-      },
-      {
-        "itemId": 847,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0010000000453740372
-      }
-    ]
-  },
-  {
-    "id": 47,
-    "name": "gargoyle",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 60,
-    "health": 100,
-    "attackStyleWeakness": 2,
-    "defenceBonus": 75,
-    "archeryDefenceBonus": 72,
-    "magicDefenceBonus": 74,
-    "drops": [
-      {
-        "itemId": 835,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.000999999999627471
-      },
-      {
-        "itemId": 19,
-        "quantityMin": 60,
-        "quantityMax": 120,
-        "weight": 69.9000015258789,
-        "dropRate": 0.6990000045824796
-      },
-      {
-        "itemId": 36,
-        "quantityMin": 5,
-        "quantityMax": 15,
-        "weight": 10,
-        "dropRate": 0.099999998472631
-      },
-      {
-        "itemId": 43,
-        "quantityMin": 5,
-        "quantityMax": 12,
-        "weight": 10,
-        "dropRate": 0.099999998472631
-      },
-      {
-        "itemId": 45,
-        "quantityMin": 5,
-        "quantityMax": 8,
-        "weight": 10,
-        "dropRate": 0.099999998472631
-      }
-    ]
-  },
-  {
-    "id": 48,
-    "name": "cockatrice",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 65,
-    "health": 200,
-    "attackStyleWeakness": 5,
-    "defenceBonus": 80,
-    "archeryDefenceBonus": 80,
-    "magicDefenceBonus": 80,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 500,
-        "quantityMax": 600,
-        "weight": 99.69999694824219,
-        "dropRate": 0.9969999998638779
-      },
-      {
-        "itemId": 848,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0010000000453740372
-      },
-      {
-        "itemId": 849,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0010000000453740372
-      },
-      {
-        "itemId": 850,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0010000000453740372
-      }
-    ]
-  },
-  {
-    "id": 49,
-    "name": "roc",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 70,
-    "health": 200,
-    "attackStyleWeakness": 4,
-    "defenceBonus": 92,
-    "archeryDefenceBonus": 92,
-    "magicDefenceBonus": 92,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 70,
-        "quantityMax": 140,
-        "weight": 39.95000076293945,
-        "dropRate": 0.3995000045784749
-      },
-      {
-        "itemId": 836,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.05000000074505806,
-        "dropRate": 0.0005000000036321581
-      },
-      {
-        "itemId": 126,
-        "quantityMin": 2,
-        "quantityMax": 4,
-        "weight": 10,
-        "dropRate": 0.0999999992363155
-      },
-      {
-        "itemId": 127,
-        "quantityMin": 2,
-        "quantityMax": 4,
-        "weight": 10,
-        "dropRate": 0.0999999992363155
-      },
-      {
-        "itemId": 128,
-        "quantityMin": 2,
-        "quantityMax": 4,
-        "weight": 10,
-        "dropRate": 0.0999999992363155
-      },
-      {
-        "itemId": 129,
-        "quantityMin": 2,
-        "quantityMax": 4,
-        "weight": 10,
-        "dropRate": 0.0999999992363155
-      },
-      {
-        "itemId": 130,
-        "quantityMin": 2,
-        "quantityMax": 3,
-        "weight": 10,
-        "dropRate": 0.0999999992363155
-      },
-      {
-        "itemId": 131,
-        "quantityMin": 2,
-        "quantityMax": 3,
-        "weight": 10,
-        "dropRate": 0.0999999992363155
-      }
-    ]
-  },
-  {
-    "id": 50,
-    "name": "dire_wolf",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 75,
-    "health": 200,
-    "attackStyleWeakness": 1,
-    "defenceBonus": 99,
-    "archeryDefenceBonus": 99,
-    "magicDefenceBonus": 99,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 80,
-        "quantityMax": 160,
-        "weight": 99.3499984741211,
-        "dropRate": 0.9934999998045899
-      },
-      {
-        "itemId": 837,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.05000000074505806,
-        "dropRate": 0.0005000000150315465
-      },
-      {
-        "itemId": 851,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.20000000298023224,
-        "dropRate": 0.002000000060126186
-      },
-      {
-        "itemId": 852,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.20000000298023224,
-        "dropRate": 0.002000000060126186
-      },
-      {
-        "itemId": 853,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.20000000298023224,
-        "dropRate": 0.002000000060126186
-      }
-    ]
-  },
-  {
-    "id": 51,
-    "name": "behemoth",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 80,
-    "health": 200,
-    "attackStyleWeakness": 6,
-    "defenceBonus": 115,
-    "archeryDefenceBonus": 115,
-    "magicDefenceBonus": 115,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 100,
-        "quantityMax": 200,
-        "weight": 69.80000305175781,
-        "dropRate": 0.6980000091955063
-      },
-      {
-        "itemId": 838,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0009999999843537813
-      },
-      {
-        "itemId": 245,
-        "quantityMin": 10,
-        "quantityMax": 30,
-        "weight": 30,
-        "dropRate": 0.29999999083578616
-      },
-      {
-        "itemId": 881,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0009999999843537813
-      }
-    ]
-  },
-  {
-    "id": 52,
-    "name": "wyvern",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 85,
-    "health": 200,
-    "attackStyleWeakness": 3,
-    "defenceBonus": 107,
-    "archeryDefenceBonus": 107,
-    "magicDefenceBonus": 107,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 150,
-        "quantityMax": 300,
-        "weight": 89.80000305175781,
-        "dropRate": 0.8980000030860303
-      },
-      {
-        "itemId": 839,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0009999999843537813
-      },
-      {
-        "itemId": 400,
-        "quantityMin": 1,
-        "quantityMax": 3,
-        "weight": 5,
-        "dropRate": 0.04999999847263102
-      },
-      {
-        "itemId": 402,
-        "quantityMin": 1,
-        "quantityMax": 3,
-        "weight": 5,
-        "dropRate": 0.04999999847263102
-      },
-      {
-        "itemId": 882,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.0009999999843537813
-      }
-    ]
-  },
-  {
-    "id": 53,
-    "name": "drake",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 90,
-    "health": 300,
-    "attackStyleWeakness": 5,
-    "defenceBonus": 120,
-    "archeryDefenceBonus": 120,
-    "magicDefenceBonus": 120,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 175,
-        "quantityMax": 350,
-        "weight": 79.5999984741211,
-        "dropRate": 0.7959999968397616
-      },
-      {
-        "itemId": 840,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.001000000030100346
-      },
-      {
-        "itemId": 113,
-        "quantityMin": 2,
-        "quantityMax": 4,
-        "weight": 10,
-        "dropRate": 0.10000000151991846
-      },
-      {
-        "itemId": 406,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 5,
-        "dropRate": 0.05000000075995923
-      },
-      {
-        "itemId": 407,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 5,
-        "dropRate": 0.05000000075995923
-      },
-      {
-        "itemId": 895,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.001000000030100346
-      },
-      {
-        "itemId": 910,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.20000000298023224,
-        "dropRate": 0.002000000060200692
-      }
-    ]
-  },
-  {
-    "id": 54,
-    "name": "naga",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 95,
-    "health": 300,
-    "attackStyleWeakness": 2,
-    "defenceBonus": 130,
-    "archeryDefenceBonus": 130,
-    "magicDefenceBonus": 130,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 200,
-        "quantityMax": 400,
-        "weight": 69.6500015258789,
-        "dropRate": 0.6965000046206637
-      },
-      {
-        "itemId": 841,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.10000000149011612,
-        "dropRate": 0.000999999999627471
-      },
-      {
-        "itemId": 403,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 10,
-        "dropRate": 0.099999998472631
-      },
-      {
-        "itemId": 275,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.099999998472631
-      },
-      {
-        "itemId": 406,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 10,
-        "dropRate": 0.099999998472631
-      },
-      {
-        "itemId": 910,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.25,
-        "dropRate": 0.002499999961815775
-      }
-    ]
-  },
-  {
-    "id": 55,
-    "name": "kraken",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 98,
-    "health": 300,
-    "attackStyleWeakness": 6,
-    "defenceBonus": 147,
-    "archeryDefenceBonus": 147,
-    "magicDefenceBonus": 147,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 250,
-        "quantityMax": 500,
-        "weight": 84.68000030517578,
-        "dropRate": 0.8468000003703684
-      },
-      {
-        "itemId": 842,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.019999999552965164,
-        "dropRate": 0.0001999999948963523
-      },
-      {
-        "itemId": 161,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 5,
-        "dropRate": 0.04999999984167516
-      },
-      {
-        "itemId": 155,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 5,
-        "dropRate": 0.04999999984167516
-      },
-      {
-        "itemId": 561,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 5,
-        "dropRate": 0.04999999984167516
-      },
-      {
-        "itemId": 910,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.30000001192092896,
-        "dropRate": 0.003000000109709799
-      }
-    ]
-  },
-  {
-    "id": 56,
-    "name": "fury",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 101,
-    "health": 350,
-    "attackStyleWeakness": 5,
-    "defenceBonus": 165,
-    "archeryDefenceBonus": 165,
-    "magicDefenceBonus": 165,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 300,
-        "quantityMax": 600,
-        "weight": 49.630001068115234,
-        "dropRate": 0.4963000054118968
-      },
-      {
-        "itemId": 843,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.019999999552965164,
-        "dropRate": 0.00019999999340623625
-      },
-      {
-        "itemId": 138,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.09999999893829227
-      },
-      {
-        "itemId": 157,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.09999999893829227
-      },
-      {
-        "itemId": 161,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.09999999893829227
-      },
-      {
-        "itemId": 112,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.09999999893829227
-      },
-      {
-        "itemId": 113,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 10,
-        "dropRate": 0.09999999893829227
-      },
-      {
-        "itemId": 910,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.3499999940395355,
-        "dropRate": 0.0034999999032355854
-      }
-    ]
-  },
-  {
-    "id": 57,
-    "name": "phoenix",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 104,
-    "health": 350,
-    "attackStyleWeakness": 1,
-    "defenceBonus": 189,
-    "archeryDefenceBonus": 189,
-    "magicDefenceBonus": 189,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 400,
-        "quantityMax": 800,
-        "weight": 49.58000183105469,
-        "dropRate": 0.49580000920484196
-      },
-      {
-        "itemId": 844,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.019999999552965164,
-        "dropRate": 0.00019999999185651556
-      },
-      {
-        "itemId": 113,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 20,
-        "dropRate": 0.19999999632686383
-      },
-      {
-        "itemId": 400,
-        "quantityMin": 3,
-        "quantityMax": 6,
-        "weight": 10,
-        "dropRate": 0.09999999816343191
-      },
-      {
-        "itemId": 402,
-        "quantityMin": 3,
-        "quantityMax": 6,
-        "weight": 10,
-        "dropRate": 0.09999999816343191
-      },
-      {
-        "itemId": 404,
-        "quantityMin": 2,
-        "quantityMax": 5,
-        "weight": 10,
-        "dropRate": 0.09999999816343191
-      },
-      {
-        "itemId": 910,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.4000000059604645,
-        "dropRate": 0.0039999999861419205
-      }
-    ]
-  },
-  {
-    "id": 59,
-    "name": "grimwark",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 110,
-    "health": 400,
-    "attackStyleWeakness": 4,
-    "defenceBonus": 180,
-    "archeryDefenceBonus": 180,
-    "magicDefenceBonus": 180,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 300,
-        "quantityMax": 600,
-        "weight": 79.52999877929688,
-        "dropRate": 0.7952999975995831
-      },
-      {
-        "itemId": 919,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.019999999552965164,
-        "dropRate": 0.0001999999979957938
-      },
-      {
-        "itemId": 112,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.10000000123307111
-      },
-      {
-        "itemId": 113,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 10,
-        "dropRate": 0.10000000123307111
-      },
-      {
-        "itemId": 910,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.44999998807907104,
-        "dropRate": 0.004499999936278909
-      }
-    ]
-  },
-  {
-    "id": 60,
-    "name": "otherworldly_executioner",
-    "isBoss": false,
-    "isClanBoss": false,
-    "combatLevelRequirement": 115,
-    "health": 400,
-    "attackStyleWeakness": 3,
-    "defenceBonus": 190,
-    "archeryDefenceBonus": 190,
-    "magicDefenceBonus": 190,
-    "drops": [
-      {
-        "itemId": 19,
-        "quantityMin": 300,
-        "quantityMax": 600,
-        "weight": 79.4800033569336,
-        "dropRate": 0.7948000068919805
-      },
-      {
-        "itemId": 921,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.019999999552965164,
-        "dropRate": 0.0001999999888166789
-      },
-      {
-        "itemId": 112,
-        "quantityMin": 10,
-        "quantityMax": 20,
-        "weight": 10,
-        "dropRate": 0.09999999664351356
-      },
-      {
-        "itemId": 113,
-        "quantityMin": 5,
-        "quantityMax": 10,
-        "weight": 10,
-        "dropRate": 0.09999999664351356
-      },
-      {
-        "itemId": 910,
-        "quantityMin": 0,
-        "quantityMax": 0,
-        "weight": 0.5,
-        "dropRate": 0.004999999832175678
-      }
-    ]
-  },
-  {
     "id": 61,
     "name": "mesines",
+    "areaId": "valley_of_gods",
+    "areaSortOrder": 6,
     "isBoss": true,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5699,8 +4879,954 @@ export const MONSTERS: MonsterDefinition[] = [
     ]
   },
   {
+    "id": 43,
+    "name": "golem",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 30,
+    "health": 60,
+    "attackStyleWeakness": 6,
+    "defenceBonus": 28,
+    "archeryDefenceBonus": 31,
+    "magicDefenceBonus": 25,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 12,
+        "quantityMax": 40,
+        "weight": 30,
+        "dropRate": 0.3
+      },
+      {
+        "itemId": 828,
+        "quantityMin": 20,
+        "quantityMax": 40,
+        "weight": 20,
+        "dropRate": 0.2
+      },
+      {
+        "itemId": 829,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.1
+      },
+      {
+        "itemId": 30,
+        "quantityMin": 10,
+        "quantityMax": 30,
+        "weight": 10,
+        "dropRate": 0.1
+      },
+      {
+        "itemId": 31,
+        "quantityMin": 10,
+        "quantityMax": 25,
+        "weight": 10,
+        "dropRate": 0.1
+      },
+      {
+        "itemId": 32,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.1
+      },
+      {
+        "itemId": 33,
+        "quantityMin": 10,
+        "quantityMax": 15,
+        "weight": 10,
+        "dropRate": 0.1
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "mammoth",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 40,
+    "health": 80,
+    "attackStyleWeakness": 5,
+    "defenceBonus": 44,
+    "archeryDefenceBonus": 44,
+    "magicDefenceBonus": 44,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 20,
+        "quantityMax": 60,
+        "weight": 20,
+        "dropRate": 0.2
+      },
+      {
+        "itemId": 830,
+        "quantityMin": 20,
+        "quantityMax": 40,
+        "weight": 20,
+        "dropRate": 0.2
+      },
+      {
+        "itemId": 831,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.1
+      },
+      {
+        "itemId": 112,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 30,
+        "dropRate": 0.3
+      },
+      {
+        "itemId": 245,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 20,
+        "dropRate": 0.2
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "basilisk",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 50,
+    "health": 80,
+    "attackStyleWeakness": 1,
+    "defenceBonus": 48,
+    "archeryDefenceBonus": 48,
+    "magicDefenceBonus": 48,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 40,
+        "quantityMax": 80,
+        "weight": 69,
+        "dropRate": 0.69
+      },
+      {
+        "itemId": 832,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 1,
+        "dropRate": 0.01
+      },
+      {
+        "itemId": 15,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.1
+      },
+      {
+        "itemId": 157,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.1
+      },
+      {
+        "itemId": 161,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.1
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "banshee",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 55,
+    "health": 100,
+    "attackStyleWeakness": 3,
+    "defenceBonus": 57,
+    "archeryDefenceBonus": 56,
+    "magicDefenceBonus": 57,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 50,
+        "quantityMax": 100,
+        "weight": 99.69999694824219,
+        "dropRate": 0.9969999998638779
+      },
+      {
+        "itemId": 845,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0010000000453740372
+      },
+      {
+        "itemId": 846,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0010000000453740372
+      },
+      {
+        "itemId": 847,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0010000000453740372
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "gargoyle",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 60,
+    "health": 100,
+    "attackStyleWeakness": 2,
+    "defenceBonus": 75,
+    "archeryDefenceBonus": 72,
+    "magicDefenceBonus": 74,
+    "drops": [
+      {
+        "itemId": 835,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.000999999999627471
+      },
+      {
+        "itemId": 19,
+        "quantityMin": 60,
+        "quantityMax": 120,
+        "weight": 69.9000015258789,
+        "dropRate": 0.6990000045824796
+      },
+      {
+        "itemId": 36,
+        "quantityMin": 5,
+        "quantityMax": 15,
+        "weight": 10,
+        "dropRate": 0.099999998472631
+      },
+      {
+        "itemId": 43,
+        "quantityMin": 5,
+        "quantityMax": 12,
+        "weight": 10,
+        "dropRate": 0.099999998472631
+      },
+      {
+        "itemId": 45,
+        "quantityMin": 5,
+        "quantityMax": 8,
+        "weight": 10,
+        "dropRate": 0.099999998472631
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "cockatrice",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 65,
+    "health": 200,
+    "attackStyleWeakness": 5,
+    "defenceBonus": 80,
+    "archeryDefenceBonus": 80,
+    "magicDefenceBonus": 80,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 500,
+        "quantityMax": 600,
+        "weight": 99.69999694824219,
+        "dropRate": 0.9969999998638779
+      },
+      {
+        "itemId": 848,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0010000000453740372
+      },
+      {
+        "itemId": 849,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0010000000453740372
+      },
+      {
+        "itemId": 850,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0010000000453740372
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "roc",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 70,
+    "health": 200,
+    "attackStyleWeakness": 4,
+    "defenceBonus": 92,
+    "archeryDefenceBonus": 92,
+    "magicDefenceBonus": 92,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 70,
+        "quantityMax": 140,
+        "weight": 39.95000076293945,
+        "dropRate": 0.3995000045784749
+      },
+      {
+        "itemId": 836,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.05000000074505806,
+        "dropRate": 0.0005000000036321581
+      },
+      {
+        "itemId": 126,
+        "quantityMin": 2,
+        "quantityMax": 4,
+        "weight": 10,
+        "dropRate": 0.0999999992363155
+      },
+      {
+        "itemId": 127,
+        "quantityMin": 2,
+        "quantityMax": 4,
+        "weight": 10,
+        "dropRate": 0.0999999992363155
+      },
+      {
+        "itemId": 128,
+        "quantityMin": 2,
+        "quantityMax": 4,
+        "weight": 10,
+        "dropRate": 0.0999999992363155
+      },
+      {
+        "itemId": 129,
+        "quantityMin": 2,
+        "quantityMax": 4,
+        "weight": 10,
+        "dropRate": 0.0999999992363155
+      },
+      {
+        "itemId": 130,
+        "quantityMin": 2,
+        "quantityMax": 3,
+        "weight": 10,
+        "dropRate": 0.0999999992363155
+      },
+      {
+        "itemId": 131,
+        "quantityMin": 2,
+        "quantityMax": 3,
+        "weight": 10,
+        "dropRate": 0.0999999992363155
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "dire_wolf",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 75,
+    "health": 200,
+    "attackStyleWeakness": 1,
+    "defenceBonus": 99,
+    "archeryDefenceBonus": 99,
+    "magicDefenceBonus": 99,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 80,
+        "quantityMax": 160,
+        "weight": 99.3499984741211,
+        "dropRate": 0.9934999998045899
+      },
+      {
+        "itemId": 837,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.05000000074505806,
+        "dropRate": 0.0005000000150315465
+      },
+      {
+        "itemId": 851,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.20000000298023224,
+        "dropRate": 0.002000000060126186
+      },
+      {
+        "itemId": 852,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.20000000298023224,
+        "dropRate": 0.002000000060126186
+      },
+      {
+        "itemId": 853,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.20000000298023224,
+        "dropRate": 0.002000000060126186
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "behemoth",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 80,
+    "health": 200,
+    "attackStyleWeakness": 6,
+    "defenceBonus": 115,
+    "archeryDefenceBonus": 115,
+    "magicDefenceBonus": 115,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 100,
+        "quantityMax": 200,
+        "weight": 69.80000305175781,
+        "dropRate": 0.6980000091955063
+      },
+      {
+        "itemId": 838,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0009999999843537813
+      },
+      {
+        "itemId": 245,
+        "quantityMin": 10,
+        "quantityMax": 30,
+        "weight": 30,
+        "dropRate": 0.29999999083578616
+      },
+      {
+        "itemId": 881,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0009999999843537813
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "wyvern",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 85,
+    "health": 200,
+    "attackStyleWeakness": 3,
+    "defenceBonus": 107,
+    "archeryDefenceBonus": 107,
+    "magicDefenceBonus": 107,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 150,
+        "quantityMax": 300,
+        "weight": 89.80000305175781,
+        "dropRate": 0.8980000030860303
+      },
+      {
+        "itemId": 839,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0009999999843537813
+      },
+      {
+        "itemId": 400,
+        "quantityMin": 1,
+        "quantityMax": 3,
+        "weight": 5,
+        "dropRate": 0.04999999847263102
+      },
+      {
+        "itemId": 402,
+        "quantityMin": 1,
+        "quantityMax": 3,
+        "weight": 5,
+        "dropRate": 0.04999999847263102
+      },
+      {
+        "itemId": 882,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.0009999999843537813
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "drake",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 90,
+    "health": 300,
+    "attackStyleWeakness": 5,
+    "defenceBonus": 120,
+    "archeryDefenceBonus": 120,
+    "magicDefenceBonus": 120,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 175,
+        "quantityMax": 350,
+        "weight": 79.5999984741211,
+        "dropRate": 0.7959999968397616
+      },
+      {
+        "itemId": 840,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.001000000030100346
+      },
+      {
+        "itemId": 113,
+        "quantityMin": 2,
+        "quantityMax": 4,
+        "weight": 10,
+        "dropRate": 0.10000000151991846
+      },
+      {
+        "itemId": 406,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 5,
+        "dropRate": 0.05000000075995923
+      },
+      {
+        "itemId": 407,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 5,
+        "dropRate": 0.05000000075995923
+      },
+      {
+        "itemId": 895,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.001000000030100346
+      },
+      {
+        "itemId": 910,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.20000000298023224,
+        "dropRate": 0.002000000060200692
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "naga",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 95,
+    "health": 300,
+    "attackStyleWeakness": 2,
+    "defenceBonus": 130,
+    "archeryDefenceBonus": 130,
+    "magicDefenceBonus": 130,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 200,
+        "quantityMax": 400,
+        "weight": 69.6500015258789,
+        "dropRate": 0.6965000046206637
+      },
+      {
+        "itemId": 841,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.10000000149011612,
+        "dropRate": 0.000999999999627471
+      },
+      {
+        "itemId": 403,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 10,
+        "dropRate": 0.099999998472631
+      },
+      {
+        "itemId": 275,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.099999998472631
+      },
+      {
+        "itemId": 406,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 10,
+        "dropRate": 0.099999998472631
+      },
+      {
+        "itemId": 910,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.25,
+        "dropRate": 0.002499999961815775
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "kraken",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 98,
+    "health": 300,
+    "attackStyleWeakness": 6,
+    "defenceBonus": 147,
+    "archeryDefenceBonus": 147,
+    "magicDefenceBonus": 147,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 250,
+        "quantityMax": 500,
+        "weight": 84.68000030517578,
+        "dropRate": 0.8468000003703684
+      },
+      {
+        "itemId": 842,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.019999999552965164,
+        "dropRate": 0.0001999999948963523
+      },
+      {
+        "itemId": 161,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 5,
+        "dropRate": 0.04999999984167516
+      },
+      {
+        "itemId": 155,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 5,
+        "dropRate": 0.04999999984167516
+      },
+      {
+        "itemId": 561,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 5,
+        "dropRate": 0.04999999984167516
+      },
+      {
+        "itemId": 910,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.30000001192092896,
+        "dropRate": 0.003000000109709799
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "fury",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 101,
+    "health": 350,
+    "attackStyleWeakness": 5,
+    "defenceBonus": 165,
+    "archeryDefenceBonus": 165,
+    "magicDefenceBonus": 165,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 300,
+        "quantityMax": 600,
+        "weight": 49.630001068115234,
+        "dropRate": 0.4963000054118968
+      },
+      {
+        "itemId": 843,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.019999999552965164,
+        "dropRate": 0.00019999999340623625
+      },
+      {
+        "itemId": 138,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.09999999893829227
+      },
+      {
+        "itemId": 157,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.09999999893829227
+      },
+      {
+        "itemId": 161,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.09999999893829227
+      },
+      {
+        "itemId": 112,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.09999999893829227
+      },
+      {
+        "itemId": 113,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 10,
+        "dropRate": 0.09999999893829227
+      },
+      {
+        "itemId": 910,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.3499999940395355,
+        "dropRate": 0.0034999999032355854
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "phoenix",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 104,
+    "health": 350,
+    "attackStyleWeakness": 1,
+    "defenceBonus": 189,
+    "archeryDefenceBonus": 189,
+    "magicDefenceBonus": 189,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 400,
+        "quantityMax": 800,
+        "weight": 49.58000183105469,
+        "dropRate": 0.49580000920484196
+      },
+      {
+        "itemId": 844,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.019999999552965164,
+        "dropRate": 0.00019999999185651556
+      },
+      {
+        "itemId": 113,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 20,
+        "dropRate": 0.19999999632686383
+      },
+      {
+        "itemId": 400,
+        "quantityMin": 3,
+        "quantityMax": 6,
+        "weight": 10,
+        "dropRate": 0.09999999816343191
+      },
+      {
+        "itemId": 402,
+        "quantityMin": 3,
+        "quantityMax": 6,
+        "weight": 10,
+        "dropRate": 0.09999999816343191
+      },
+      {
+        "itemId": 404,
+        "quantityMin": 2,
+        "quantityMax": 5,
+        "weight": 10,
+        "dropRate": 0.09999999816343191
+      },
+      {
+        "itemId": 910,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.4000000059604645,
+        "dropRate": 0.0039999999861419205
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "name": "grimwark",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 110,
+    "health": 400,
+    "attackStyleWeakness": 4,
+    "defenceBonus": 180,
+    "archeryDefenceBonus": 180,
+    "magicDefenceBonus": 180,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 300,
+        "quantityMax": 600,
+        "weight": 79.52999877929688,
+        "dropRate": 0.7952999975995831
+      },
+      {
+        "itemId": 919,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.019999999552965164,
+        "dropRate": 0.0001999999979957938
+      },
+      {
+        "itemId": 112,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.10000000123307111
+      },
+      {
+        "itemId": 113,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 10,
+        "dropRate": 0.10000000123307111
+      },
+      {
+        "itemId": 910,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.44999998807907104,
+        "dropRate": 0.004499999936278909
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "name": "otherworldly_executioner",
+    "areaId": "exterminating",
+    "areaSortOrder": 7,
+    "isBoss": false,
+    "isClanBoss": false,
+    "combatLevelRequirement": 115,
+    "health": 400,
+    "attackStyleWeakness": 3,
+    "defenceBonus": 190,
+    "archeryDefenceBonus": 190,
+    "magicDefenceBonus": 190,
+    "drops": [
+      {
+        "itemId": 19,
+        "quantityMin": 300,
+        "quantityMax": 600,
+        "weight": 79.4800033569336,
+        "dropRate": 0.7948000068919805
+      },
+      {
+        "itemId": 921,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.019999999552965164,
+        "dropRate": 0.0001999999888166789
+      },
+      {
+        "itemId": 112,
+        "quantityMin": 10,
+        "quantityMax": 20,
+        "weight": 10,
+        "dropRate": 0.09999999664351356
+      },
+      {
+        "itemId": 113,
+        "quantityMin": 5,
+        "quantityMax": 10,
+        "weight": 10,
+        "dropRate": 0.09999999664351356
+      },
+      {
+        "itemId": 910,
+        "quantityMin": 0,
+        "quantityMax": 0,
+        "weight": 0.5,
+        "dropRate": 0.004999999832175678
+      }
+    ]
+  },
+  {
     "id": 62,
     "name": "the_hollow_watcher",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5722,6 +5848,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 63,
     "name": "bonecaller",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5743,6 +5871,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 64,
     "name": "the_marked_one",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5764,6 +5894,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 65,
     "name": "temple_guardian",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5785,6 +5917,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 66,
     "name": "totem_wraith",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5806,6 +5940,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 67,
     "name": "high_shaman",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5827,6 +5963,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 68,
     "name": "citadel_guard",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5848,6 +5986,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 69,
     "name": "citadel_commander",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5869,6 +6009,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 70,
     "name": "the_general",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5890,6 +6032,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 71,
     "name": "tomb_warden",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5911,6 +6055,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 72,
     "name": "the_entombed_prince",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5932,6 +6078,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 73,
     "name": "the_undead_pharaoh",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5953,6 +6101,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 74,
     "name": "ashenmane",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5974,6 +6124,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 75,
     "name": "hand_of_the_king",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -5995,6 +6147,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 76,
     "name": "king_silhenik",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -6016,6 +6170,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 77,
     "name": "the_primordial_beast",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -6044,6 +6200,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 78,
     "name": "the_first_ascendant",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,
@@ -6072,6 +6230,8 @@ export const MONSTERS: MonsterDefinition[] = [
   {
     "id": 79,
     "name": "aeonis_the_eternal",
+    "areaId": "invocation",
+    "areaSortOrder": 999,
     "isBoss": false,
     "isClanBoss": false,
     "combatLevelRequirement": 0,

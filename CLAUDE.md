@@ -364,7 +364,15 @@ follow-ups wanted later:
 **Goal**: Drop table browser and cross-account goal tracking.
 
 - [x] Monster loot table browser (`/loot`, "By monster" tab): select monster
-      → see all drops sorted by derived rate, using `data/monsters.ts`.
+      → see all drops sorted by derived rate, using `data/monsters.ts`. The
+      picker is grouped by in-game area (`<optgroup>`) instead of one flat
+      alphabetical list — `monsters.ts` carries `areaId`/`areaSortOrder`
+      straight from the API's `Tasks.Combat` group structure (`CustomId`/
+      `SortOrder` per group — not inferred, the game already organizes
+      monsters this way: Woods, Cave, Wilderness, Haunted Graveyard,
+      Uncharted Grounds, Lair of Beasts, The Valley of Gods, Exterminating,
+      plus two more not originally mentioned but present in the data —
+      Invocation and Misc). Display labels in `src/utils/monsterAreas.ts`.
 - [x] "Best monster to farm for [item]" — reverse lookup tab on the same
       page, searches `data/items.ts` then finds every monster whose loot
       table includes it.
@@ -460,6 +468,8 @@ idle-clanner/
       gearHelpers.ts       # getUpgradePath, getAcquisitionCost
       equipmentSlots.ts    # verified raw API slot key ↔ GearSlot taxonomy mapping
       goldPerHour.ts       # getActivityGoldPerHour/rankActivitiesForSkills/getNextUnlock + ironman-mode variants
+      combatStyle.ts       # getWeaknessLabel() — decoded attackStyleWeakness codes
+      monsterAreas.ts      # getAreaLabel() — display labels for monsters.ts's areaId
     App.tsx
     main.tsx
   scripts/
