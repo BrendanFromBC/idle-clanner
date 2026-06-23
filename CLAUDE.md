@@ -455,12 +455,47 @@ follow-ups wanted later:
         headings — inferred as "no single weakness," less certain than 1-6.
         `weaponClass` remains undecoded.
 
-### Phase 7 — Polish
-- [ ] Mobile-responsive layout
-- [ ] Shareable team URL (encode team config in query params)
-- [ ] Loading skeletons for all async content
-- [ ] Error states for API failures and unknown usernames
-- [ ] Empty states with onboarding prompts
+### Phase 7 — Polish ✅
+- [x] Mobile-responsive layout — `#root`'s leftover scaffold `text-align:
+      center` removed (see Notes/gotchas — it was also the cause of an
+      unrelated skewed-title bug on the Profit Calculator); nav and all tab
+      rows (Gear, Loot, Profit Calculator) made horizontally scrollable
+      instead of wrapping/squeezing; page padding `p-6` → `p-4 sm:p-6`;
+      AccountCard's skill grid `grid-cols-2 sm:grid-cols-3` instead of a
+      hardcoded 3.
+- [x] Shareable team URL — `src/utils/teamShareLink.ts`
+      (`buildShareSearchParams`/`parseShareSearchParams`) encodes configured
+      slots as `?main=Username:role&alt1=...`, skipping unconfigured slots
+      and malformed individual entries rather than failing the whole link.
+      `ShareTeamButton` (Dashboard) copies the link; an import banner
+      (Dashboard) shows which usernames a shared link would set with
+      explicit Load/Ignore buttons — it never silently overwrites the local
+      team. The URL is only read once on mount (a lazy `useState`
+      initializer, not a `searchParams`-watching effect) so dismissing the
+      banner and clearing the query string doesn't immediately re-trigger it.
+- [x] Loading skeletons — `src/components/ui/Skeleton.tsx`
+      (`Skeleton`/`CardRowSkeleton`/`CardRowSkeletonList`), used on Market,
+      Gear, Profit Calculator, and the expanded PriceCard detail/chart.
+      AccountCard's previously one-off skeleton now reuses the same
+      primitive.
+- [x] Error states — `src/components/ui/ErrorMessage.tsx`, a consistent red
+      bordered box replacing ad hoc red `<p>` text everywhere.
+- [x] Empty states — `src/components/ui/EmptyState.tsx`. Several now link
+      back to the Dashboard to actually fix the empty state ("No account set
+      for this slot. Add one on the Dashboard") rather than just describing
+      it. Two genuine blank-space bugs were caught and fixed in the process:
+      Market search and the Loot reverse-item-lookup rendered literally
+      nothing for a zero-result search instead of an empty-state message.
+- [x] **Scope addition beyond the original checklist, found during this
+      pass**: tabs/dropdowns on Gear, Profit Calculator, and Loot previously
+      listed all 3 slots (`main`/`alt1`/`alt2`) even when a slot had no
+      username set, showing a raw "ALT2" placeholder tab that did nothing
+      useful. All three now filter to `configuredSlots`/
+      `accountsWithUsernames` only, falling back to the first configured
+      slot if the active selection becomes unconfigured, and showing an
+      `EmptyState` (with a Dashboard link) instead of an empty tab row if
+      zero accounts are set up. `WishlistPanel`'s "for account" add-form
+      dropdown got the same treatment.
 
 ---
 
@@ -473,10 +508,10 @@ idle-clanner/
       idleClansApi.ts      # typed fetch functions for all API endpoints
       types.ts             # API response shape types
     components/
-      ui/                  # Button, Card, Badge, Spinner, Tooltip, etc.
-      team/                # TeamSetup, AccountCard, RoleBadge, SkillGrid
+      ui/                  # Icon (ItemIcon/MonsterIcon), Skeleton (+ CardRowSkeleton/List), ErrorMessage, EmptyState
+      team/                # TeamSetup, AccountCard, RoleBadge, ShareTeamButton
       gear/                # GearUpgradeCard (current → BiS + market price), GearOwnershipChecklist (self-report, on Dashboard)
-      market/              # MarketSearch, PriceCard, PriceHistory
+      market/              # MarketSearch, PriceCard, PriceHistoryChart
       optimizer/           # ActivityRanking, IronmanActivityRanking (ranked list + level-up-to-unlock callouts)
       loot/                # MonsterDropTable, ItemDropSources (reverse lookup)
       wishlist/            # WishlistPanel (add form + grouping), WishlistItemRow
@@ -492,13 +527,13 @@ idle-clanner/
       useMarketPrices.ts       # TanStack Query wrapper
       useMarketPriceDetail.ts  # TanStack Query wrapper, per-item averages/volume
       useMarketPriceHistory.ts # TanStack Query wrapper, rolling ~24h price/volume points
-      useTeam.ts                # Zustand store selectors (incl. useWishlistActions)
+      useTeam.ts                # Zustand store selectors (incl. useTeamActions, useWishlistActions)
       useDebouncedCallback.ts   # generic debounce helper (used by TeamSetup's username input)
     pages/
-      DashboardPage.tsx
+      DashboardPage.tsx    # team setup, account cards, share-link import banner, self-reported gear
       MarketPage.tsx
       GearPage.tsx
-      OptimizerPage.tsx
+      OptimizerPage.tsx    # route is /profit-calculator, nav label "Profit Calculator" — file/component name kept as-is
       LootPage.tsx
       PlannerPage.tsx
     store/
@@ -517,6 +552,8 @@ idle-clanner/
       combatStyle.ts       # getWeaknessLabel() — decoded attackStyleWeakness codes
       monsterAreas.ts      # getAreaLabel() — display labels for monsters.ts's areaId
       combatCalc.ts        # getCombatLoadout/getHitChance/getMaxHit/getKillEstimate — melee only, see Phase 6
+      priceComparison.ts   # comparePriceToAverage() — current vs 7d avg, ±10%/±50% judgment-call thresholds
+      teamShareLink.ts      # buildShareSearchParams/parseShareSearchParams — Phase 7 shareable team URL
     App.tsx
     main.tsx
   scripts/
