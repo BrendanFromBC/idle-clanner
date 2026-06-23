@@ -1,6 +1,6 @@
 import type { MonsterDefinition } from '../../data/monsters'
 import { ITEMS_BY_ID } from '../../data/items'
-import { toDisplayName, formatGold } from '../../utils/formatGold'
+import { toDisplayName } from '../../utils/formatGold'
 import { getWeaknessLabel } from '../../utils/combatStyle'
 import { getAreaLabel } from '../../utils/monsterAreas'
 import { getKillEstimate, type CombatLoadout } from '../../utils/combatCalc'
@@ -47,7 +47,7 @@ export function MonsterDropTable({
               <Stat label="Max hit" value={estimate.maxHit} />
               <Stat
                 label="Kills/hr"
-                value={estimate.killsPerHour !== null ? formatGold(estimate.killsPerHour) : 'too tanky'}
+                value={estimate.killsPerHour !== null ? estimate.killsPerHour.toFixed(2) : 'too tanky'}
               />
             </div>
           </>
@@ -78,11 +78,15 @@ export function MonsterDropTable({
               key={drop.itemId}
               className="flex items-center justify-between rounded border border-gray-200 bg-white px-3 py-2 text-sm"
             >
-              <span className="text-gray-900">{item?.displayName ?? `Item #${drop.itemId}`}</span>
+              <span className="text-gray-900">
+                {item?.displayName ?? `Item #${drop.itemId}`}
+                {drop.quantityMin > 0 && (
+                  <span className="text-gray-400"> ({drop.quantityMin}-{drop.quantityMax})</span>
+                )}
+              </span>
               <span className="text-gray-500">
-                {drop.quantityMin > 0 && `${drop.quantityMin}-${drop.quantityMax} · `}
                 {(drop.dropRate * 100).toFixed(2)}%
-                {perHour !== null && ` · ~${perHour < 1 ? perHour.toFixed(2) : formatGold(perHour)}/hr`}
+                {perHour !== null && ` · ~${perHour.toFixed(2)}/hr`}
               </span>
             </div>
           )
