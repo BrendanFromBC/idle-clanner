@@ -38,19 +38,22 @@ export function OptimizerPage() {
   const alt1Profile = usePlayerProfile(team.accounts.alt1.username)
   const alt2Profile = usePlayerProfile(team.accounts.alt2.username)
   const profilesBySlot = { main: mainProfile, alt1: alt1Profile, alt2: alt2Profile }
+  const mainData = mainProfile.data
+  const alt1Data = alt1Profile.data
+  const alt2Data = alt2Profile.data
 
   // Highest level any team member has in each skill — used in ironman mode
   // to decide whether *someone* on the team could self-gather an input.
   const teamSkillLevels = useMemo(() => {
     const levels: Record<string, number> = {}
-    for (const { data } of [mainProfile, alt1Profile, alt2Profile]) {
+    for (const data of [mainData, alt1Data, alt2Data]) {
       if (!data) continue
       for (const [skill, info] of Object.entries(data.skills)) {
         levels[skill] = Math.max(levels[skill] ?? 0, info.level)
       }
     }
     return levels
-  }, [mainProfile.data, alt1Profile.data, alt2Profile.data])
+  }, [mainData, alt1Data, alt2Data])
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 p-4 sm:p-6">
@@ -158,11 +161,14 @@ function TeamSummary({
   const mainProfile = usePlayerProfile(team.accounts.main.username)
   const alt1Profile = usePlayerProfile(team.accounts.alt1.username)
   const alt2Profile = usePlayerProfile(team.accounts.alt2.username)
+  const mainData = mainProfile.data
+  const alt1Data = alt1Profile.data
+  const alt2Data = alt2Profile.data
 
   const entries = useMemo(() => {
     return SLOTS.map((slot, i) => {
       const account = team.accounts[slot]
-      const profile = [mainProfile, alt1Profile, alt2Profile][i].data
+      const profile = [mainData, alt1Data, alt2Data][i]
       if (!account.username || !profile) {
         return { slot, account, bestName: null as string | null, bestGoldPerHour: null as number | null }
       }
@@ -188,7 +194,7 @@ function TeamSummary({
         bestGoldPerHour: best ? best.goldPerHour : null,
       }
     })
-  }, [team, marketPrices, ironmanMode, teamSkillLevels, mainProfile.data, alt1Profile.data, alt2Profile.data])
+  }, [team, marketPrices, ironmanMode, teamSkillLevels, mainData, alt1Data, alt2Data])
 
   const withAccounts = entries.filter((e) => e.account.username)
   if (withAccounts.length === 0) {

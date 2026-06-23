@@ -6,7 +6,10 @@ export function useDebouncedCallback<Args extends unknown[]>(
 ) {
   const timeoutRef = useRef<number | undefined>(undefined)
   const callbackRef = useRef(callback)
-  callbackRef.current = callback
+
+  useEffect(() => {
+    callbackRef.current = callback
+  }, [callback])
 
   useEffect(() => () => window.clearTimeout(timeoutRef.current), [])
 
