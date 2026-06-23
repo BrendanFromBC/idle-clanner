@@ -383,22 +383,25 @@ follow-ups wanted later:
       + fades the row, doesn't remove it (so progress is visible at a glance).
 - [x] **No DPS/kills-per-hour ranking — deliberately.** Drop rate alone
       doesn't tell you effective farm rate; that also depends on weapon
-      DPS and the monster's weakness. Investigated building this and
-      stopped: the wiki's own Combat page says its documented hit-chance
-      formula is "no longer accurate," and the real calculator is locked
-      behind an in-game **premium membership** panel — there's no
-      authoritative source to build a real formula from, and fabricating
-      one would violate "game data is curated, not guessed." Instead,
-      `MonsterDropTable` surfaces raw comparable stats (health, defence
-      bonuses per style, the BiS weapon's strength/accuracy/attack interval)
-      so the player can judge by eye. Captured but **not decoded**:
-      `attackStyleWeakness` on monsters and `style`/`weaponClass` on weapons
-      — cross-checked `attackStyleWeakness` against the wiki's "Melee
-      Medusa/Hades/Griffin/Devil" BiS page and found *different* codes
-      (2/1/3/4) for monsters the wiki all calls "Melee", so it's a more
-      granular sub-style (likely slash/crush/pound/stab/magic/archery), not
-      a simple 3-value enum — not confident enough in a mapping to decode it.
-      Revisit if a verified formula or enum mapping ever surfaces.
+      DPS and the monster's weakness. Investigated building a real DPS/
+      kills-per-hour calculator and stopped: the wiki's own Combat page says
+      its documented hit-chance formula is "no longer accurate," and the
+      real calculator is locked behind an in-game **premium membership**
+      panel — there's no authoritative source to build a real formula from,
+      and fabricating one would violate "game data is curated, not guessed."
+      Instead, `MonsterDropTable` surfaces raw comparable stats (health,
+      defence bonuses per style, the BiS weapon's strength/accuracy/attack
+      interval, and a decoded "Weak to" style) so the player can judge by eye.
+      `attackStyleWeakness` **is decoded** (`src/utils/combatStyle.ts`,
+      `getWeaknessLabel()`) — verified, not guessed: cross-referenced each
+      boss's wiki-recommended weapon type against its known code (Hades(1)
+      uses spear/longsword → Stab, Medusa(2) scimitar → Slash, Devil(3)
+      heavy hammer/club → Pound, Griffin(4) battleaxe → Crush, Zeus(5) bow
+      → Archery, Chimera(6) staff → Magic). Code 0 (6/79 monsters) is the
+      field's unset default ("None"); code 7 only appears on Kronos, who the
+      wiki lists under all three style headings — inferred as "no single
+      weakness," less certain than 1-6. `style`/`weaponClass` on weapons
+      remain undecoded — no analogous cross-reference done yet for those.
 
 ### Phase 7 — Polish
 - [ ] Mobile-responsive layout

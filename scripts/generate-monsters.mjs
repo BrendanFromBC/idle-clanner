@@ -26,11 +26,10 @@ const monsters = monsterTasks
       isClanBoss: m.IsClanBoss,
       combatLevelRequirement: m.LevelRequirement,
       health: m.EnemyHealth,
-      // Raw API code. NOT a simple melee/archery/magic enum — cross-checked
-      // against the wiki's "Melee Medusa/Hades/Griffin/Devil" BiS-gear page
-      // (all "Melee" recommendations) and they have *different* codes
-      // (2/1/3/4), so this is a more granular sub-style (likely
-      // slash/crush/pound/stab/magic/archery). Not decoded — surfaced raw.
+      // Raw API code (0=None, 1=Stab, 2=Slash, 3=Pound, 4=Crush, 5=Archery,
+      // 6=Magic, 7=None/varies — see src/utils/combatStyle.ts for how this
+      // was verified). Kept raw here; decode at display time via
+      // getWeaknessLabel(), not baked into the generated data.
       attackStyleWeakness: m.AttackStyleWeakness,
       defenceBonus: m.EnemyDefenceBonus,
       archeryDefenceBonus: m.EnemyArcheryDefenceBonus,
@@ -69,7 +68,7 @@ export interface MonsterDefinition {
   isClanBoss: boolean
   combatLevelRequirement: number
   health: number
-  attackStyleWeakness: number // raw API code, undecoded — see script header
+  attackStyleWeakness: number // raw code — decode via src/utils/combatStyle.ts getWeaknessLabel()
   defenceBonus: number
   archeryDefenceBonus: number
   magicDefenceBonus: number

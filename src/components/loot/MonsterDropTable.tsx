@@ -2,6 +2,7 @@ import type { MonsterDefinition } from '../../data/monsters'
 import { ITEMS_BY_ID } from '../../data/items'
 import { GEAR } from '../../data/gear'
 import { toDisplayName } from '../../utils/formatGold'
+import { getWeaknessLabel } from '../../utils/combatStyle'
 
 const BIS_WEAPON = GEAR.find((g) => g.slot === 'weapon')
 
@@ -33,7 +34,7 @@ export function MonsterDropTable({ monster }: { monster: MonsterDefinition }) {
           <Stat label="Defence" value={monster.defenceBonus} />
           <Stat label="Archery def." value={monster.archeryDefenceBonus} />
           <Stat label="Magic def." value={monster.magicDefenceBonus} />
-          <Stat label="Weakness code" value={monster.attackStyleWeakness} />
+          <Stat label="Weak to" value={getWeaknessLabel(monster.attackStyleWeakness)} />
           {BIS_WEAPON && (
             <>
               <Stat label="Your weapon str." value={BIS_WEAPON.stats.StrengthBonus ?? 0} />

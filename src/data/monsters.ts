@@ -20,7 +20,7 @@ export interface MonsterDefinition {
   isClanBoss: boolean
   combatLevelRequirement: number
   health: number
-  attackStyleWeakness: number // raw API code, undecoded — see script header
+  attackStyleWeakness: number // raw code — decode via src/utils/combatStyle.ts getWeaknessLabel()
   defenceBonus: number
   archeryDefenceBonus: number
   magicDefenceBonus: number
