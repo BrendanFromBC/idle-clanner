@@ -78,7 +78,7 @@ export function LootPage() {
         )}
       </div>
 
-      {mode === 'monster' ? <MonsterBrowser loadout={loadout} /> : <ItemReverseLookup />}
+      {mode === 'monster' ? <MonsterBrowser loadout={loadout} /> : <ItemReverseLookup loadout={loadout} />}
     </div>
   )
 }
@@ -110,7 +110,7 @@ function MonsterBrowser({ loadout }: { loadout: CombatLoadout | null }) {
   )
 }
 
-function ItemReverseLookup() {
+function ItemReverseLookup({ loadout }: { loadout: CombatLoadout | null }) {
   const [search, setSearch] = useState('')
 
   const matches = useMemo(() => {
@@ -166,7 +166,7 @@ function ItemReverseLookup() {
               Change item
             </button>
           </div>
-          <ItemDropSources itemId={selectedItem.id} />
+          <ItemDropSources itemId={selectedItem.id} loadout={loadout} />
         </div>
       )}
     </div>

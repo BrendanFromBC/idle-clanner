@@ -74,7 +74,8 @@ export function MonsterDropTable({
       <div className="space-y-1">
         {drops.map((drop) => {
           const item = ITEMS_BY_ID.get(drop.itemId)
-          const perHour = estimate?.killsPerHour ? estimate.killsPerHour * drop.dropRate : null
+          const avgQty = drop.quantityMin > 0 ? (drop.quantityMin + drop.quantityMax) / 2 : 1
+          const perHour = estimate?.killsPerHour ? estimate.killsPerHour * drop.dropRate * avgQty : null
           return (
             <div
               key={drop.itemId}
@@ -89,7 +90,9 @@ export function MonsterDropTable({
               </span>
               <span className="text-gray-500">
                 {(drop.dropRate * 100).toFixed(2)}%
-                {perHour !== null && ` · ~${perHour.toFixed(2)}/hr`}
+                {perHour !== null && (
+                  <span className="text-amber-400"> · ~{perHour.toFixed(2)}/hr</span>
+                )}
               </span>
             </div>
           )
