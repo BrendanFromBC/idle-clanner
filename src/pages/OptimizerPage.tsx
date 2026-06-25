@@ -58,8 +58,8 @@ export function OptimizerPage() {
   return (
     <div className="mx-auto max-w-2xl space-y-6 p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-semibold text-gray-900">Profit Calculator</h2>
-        <label className="flex items-center gap-2 text-sm text-gray-600">
+        <h2 className="text-xl font-semibold text-gray-100">Profit Calculator</h2>
+        <label className="flex items-center gap-2 text-sm text-gray-400">
           <input
             type="checkbox"
             checked={ironmanMode}
@@ -73,14 +73,14 @@ export function OptimizerPage() {
 
       <div>
         {configuredSlots.length > 0 && (
-          <div className="flex gap-2 overflow-x-auto border-b border-gray-200">
+          <div className="flex gap-2 overflow-x-auto border-b border-slate-700">
             {configuredSlots.map((slot) => (
               <button
                 key={slot}
                 type="button"
                 onClick={() => setActiveSlot(slot)}
                 className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
-                  effectiveSlot === slot ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
+                  effectiveSlot === slot ? 'border-b-2 border-gray-100 text-gray-100' : 'text-gray-400'
                 }`}
               >
                 {team.accounts[slot].username}
@@ -121,7 +121,7 @@ function AccountOptimizerPanel({
     return (
       <EmptyState>
         No account set for this slot.{' '}
-        <Link to="/" className="font-medium text-gray-700 underline">
+        <Link to="/" className="font-medium text-gray-300 underline">
           Add one on the Dashboard
         </Link>
         .
@@ -201,7 +201,7 @@ function TeamSummary({
     return (
       <EmptyState>
         No accounts set up yet.{' '}
-        <Link to="/" className="font-medium text-gray-700 underline">
+        <Link to="/" className="font-medium text-gray-300 underline">
           Add your team on the Dashboard
         </Link>{' '}
         to see profit estimates here.
@@ -211,16 +211,16 @@ function TeamSummary({
 
   return (
     <div className="space-y-2">
-      <h3 className="text-sm font-semibold text-gray-900">Team — best activity per account</h3>
+      <h3 className="text-sm font-semibold text-gray-100">Team — best activity per account</h3>
       {withAccounts.map(({ slot, account, bestName, bestGoldPerHour }) => (
         <div
           key={slot}
-          className="flex items-center justify-between rounded-lg border border-gray-300 bg-white p-3 text-sm"
+          className="flex items-center justify-between rounded-lg border border-slate-600 bg-slate-800 p-3 text-sm"
         >
-          <span className="font-medium text-gray-900">{account.username}</span>
+          <span className="font-medium text-gray-100">{account.username}</span>
           {bestName && bestGoldPerHour !== null ? (
-            <span className="text-gray-600">
-              {bestName} — <span className="font-medium text-green-700">{formatGold(bestGoldPerHour)}/hr</span>
+            <span className="text-gray-400">
+              {bestName} — <span className="font-medium text-emerald-400">{formatGold(bestGoldPerHour)}/hr</span>
             </span>
           ) : (
             <span className="text-gray-400">No profitable activity found</span>

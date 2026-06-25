@@ -66,8 +66,8 @@ export function DashboardPage() {
   return (
     <div className="space-y-6">
       {pendingImport && (
-        <div className="mx-auto mt-4 flex max-w-2xl items-center justify-between gap-3 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm">
-          <span className="text-gray-700">
+        <div className="mx-auto mt-4 flex max-w-2xl items-center justify-between gap-3 rounded-lg border border-amber-700 bg-amber-900/40 p-3 text-sm">
+          <span className="text-amber-300">
             This link includes a shared team setup
             {Object.values(pendingImport).length > 0 &&
               ` (${Object.values(pendingImport)
@@ -86,7 +86,7 @@ export function DashboardPage() {
             <button
               type="button"
               onClick={dismissImport}
-              className="rounded border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-50"
+              className="rounded border border-slate-600 px-3 py-1.5 text-xs font-medium text-gray-300 hover:bg-slate-700"
             >
               Ignore
             </button>
@@ -112,7 +112,7 @@ export function DashboardPage() {
 
       {accountsWithUsernames.length > 0 && (
         <div className="mx-auto max-w-5xl space-y-4 p-4 sm:p-6">
-          <h3 className="text-lg font-semibold text-gray-900">Self-reported gear</h3>
+          <h3 className="text-lg font-semibold text-gray-100">Self-reported gear</h3>
           <p className="text-xs text-gray-400">
             The game's API only shows equipped gear, not inventory — mark items you own but
             aren't currently wearing so the Gear Guide doesn't suggest buying them again.

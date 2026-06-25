@@ -51,9 +51,9 @@ export function GearOwnershipChecklist({
   ).length
 
   return (
-    <div className="rounded-lg border border-gray-300 bg-white p-4">
+    <div className="rounded-lg border border-slate-600 bg-slate-800 p-4">
       <div className="mb-2 flex items-center justify-between">
-        <h4 className="text-sm font-semibold text-gray-900">{title ?? 'Gear ownership'}</h4>
+        <h4 className="text-sm font-semibold text-gray-100">{title ?? 'Gear ownership'}</h4>
         <span className="text-xs text-gray-400">
           {ownedGroups}/{totalGroups} marked owned
         </span>
@@ -67,17 +67,17 @@ export function GearOwnershipChecklist({
               const itemId = profile?.equipment[rawSlot]
               const item = itemId !== undefined ? ITEMS_BY_ID.get(itemId) : undefined
               return (
-                <div key={rawSlot} className="rounded border border-gray-200 px-2 py-1.5 text-xs">
+                <div key={rawSlot} className="rounded border border-slate-700 px-2 py-1.5 text-xs">
                   <div className="text-gray-400">{label}</div>
                   {item ? (
                     <div className="mt-0.5 flex items-center gap-1">
                       <ItemIcon itemId={item.id} size={16} />
-                      <span className="truncate text-gray-900" title={item.displayName}>
+                      <span className="truncate text-gray-100" title={item.displayName}>
                         {item.displayName}
                       </span>
                     </div>
                   ) : (
-                    <div className="mt-0.5 text-gray-300">Empty</div>
+                    <div className="mt-0.5 text-slate-500">Empty</div>
                   )}
                 </div>
               )
@@ -94,10 +94,10 @@ export function GearOwnershipChecklist({
               const ownedTierId = tiers.find((t) => ownedIds.includes(t.id))?.id ?? ''
 
               return (
-                <label key={skill} className="flex items-center justify-between gap-2 text-sm text-gray-700">
+                <label key={skill} className="flex items-center justify-between gap-2 text-sm text-gray-300">
                   <span className="w-20 shrink-0 capitalize">{skill}</span>
                   <select
-                    className="min-w-0 flex-1 rounded border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900"
+                    className="min-w-0 flex-1 rounded border border-slate-600 bg-slate-700 px-2 py-1 text-xs text-gray-100"
                     value={ownedTierId}
                     onChange={(e) => {
                       const itemId = e.target.value === '' ? null : Number(e.target.value)

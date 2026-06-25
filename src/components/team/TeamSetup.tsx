@@ -13,7 +13,7 @@ export function TeamSetup() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-4 p-6">
-      <h2 className="text-xl font-semibold text-gray-900">Set up your team</h2>
+      <h2 className="text-xl font-semibold text-gray-100">Set up your team</h2>
       <p className="text-sm text-gray-400">
         Enter up to 3 Idle Clans usernames and assign each a role.
       </p>
@@ -42,9 +42,8 @@ function AccountRow({
   }, 400)
 
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-gray-700 p-3">
-      <span className="w-12 shrink-0 text-xs uppercase text-gray-500">{slot}</span>
-      <input
+    <div className="flex flex-wrap items-center gap-2 rounded-lg border border-slate-700 bg-slate-800 p-3 sm:flex-nowrap sm:gap-3">
+<input
         type="text"
         placeholder="Username"
         value={localUsername}
@@ -52,12 +51,12 @@ function AccountRow({
           setLocalUsername(e.target.value)
           commitUsername(e.target.value)
         }}
-        className="flex-1 rounded border border-gray-600 bg-gray-900 px-2 py-1 text-sm text-white"
+className="min-w-0 flex-1 rounded border border-slate-600 bg-slate-700 px-2 py-1 text-sm text-gray-100 placeholder-slate-500"
       />
       <select
         value={account.role}
         onChange={(e) => setAccount(slot, { role: e.target.value as AccountRole })}
-        className="rounded border border-gray-600 bg-gray-900 px-2 py-1 text-sm text-white"
+        className="w-full rounded border border-slate-600 bg-slate-700 px-2 py-1 text-sm text-gray-100 sm:w-auto"
       >
         {ROLES.map((role) => (
           <option key={role} value={role}>

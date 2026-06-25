@@ -42,20 +42,20 @@ export function ActivityRanking({
 
       {nextUnlocks.length > 0 && (
         <div className="space-y-2">
-          <h3 className="text-sm font-semibold text-gray-900">Level up to unlock</h3>
+          <h3 className="text-sm font-semibold text-gray-100">Level up to unlock</h3>
           {nextUnlocks.map(({ activity, goldPerHour, levelsNeeded }) => (
             <div
               key={activity.id}
-              className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm"
+              className="rounded-lg border border-amber-700 bg-amber-900/40 p-3 text-sm"
             >
               {activity.outputItems[0] && (
                 <ItemIcon itemId={activity.outputItems[0].itemId} size={16} />
               )}{' '}
-              <span className="font-medium text-gray-900">{activityDisplayName(activity)}</span>{' '}
-              <span className="text-gray-600">
+              <span className="font-medium text-amber-300">{activityDisplayName(activity)}</span>{' '}
+              <span className="text-gray-400">
                 ({activity.skillKey} level {activity.levelRequired}, {levelsNeeded} levels away) —{' '}
               </span>
-              <span className="font-medium text-green-700">{formatGold(goldPerHour)}/hr</span>
+              <span className="font-medium text-emerald-400">{formatGold(goldPerHour)}/hr</span>
             </div>
           ))}
         </div>
@@ -82,18 +82,18 @@ function ActivityRow({
     outputPrice && detail ? comparePriceToAverage(outputPrice.highestBuyPrice, detail.averagePrice7Days) : null
 
   return (
-    <div className="rounded-lg border border-gray-300 bg-white p-3">
+    <div className="rounded-lg border border-slate-600 bg-slate-800 p-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {output && <ItemIcon itemId={output.itemId} />}
           <div>
-            <div className="font-medium text-gray-900">{activityDisplayName(activity)}</div>
+            <div className="font-medium text-gray-100">{activityDisplayName(activity)}</div>
             <div className="text-xs text-gray-400">
               {activity.skillKey} · level {activity.levelRequired}
             </div>
           </div>
         </div>
-        <div className="font-medium text-green-700">{formatGold(goldPerHour)}/hr</div>
+        <div className="font-medium text-emerald-400">{formatGold(goldPerHour)}/hr</div>
       </div>
       {outputPrice && (
         <div className="mt-1 pl-8 text-xs text-gray-400">

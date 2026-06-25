@@ -26,7 +26,7 @@ export function WishlistItemRow({
         : 'No active market listing'
 
   return (
-    <div className={`rounded-lg border border-gray-300 bg-white p-3 ${wishlistItem.acquired ? 'opacity-50' : ''}`}>
+    <div className={`rounded-lg border border-slate-600 bg-slate-800 p-3 ${wishlistItem.acquired ? 'opacity-50' : ''}`}>
       <div className="flex items-center justify-between gap-3">
         <label className="flex items-center gap-2">
           <input
@@ -35,7 +35,7 @@ export function WishlistItemRow({
             onChange={() => toggleWishlistAcquired(wishlistItem.id)}
           />
           <span
-            className={`flex items-center gap-2 font-medium text-gray-900 ${wishlistItem.acquired ? 'line-through' : ''}`}
+            className={`flex items-center gap-2 font-medium text-gray-100 ${wishlistItem.acquired ? 'line-through' : ''}`}
           >
             <ItemIcon itemId={wishlistItem.itemId} />
             {item?.displayName ?? `Item #${wishlistItem.itemId}`}
@@ -46,7 +46,7 @@ export function WishlistItemRow({
           <select
             value={wishlistItem.priority}
             onChange={(e) => setWishlistPriority(wishlistItem.id, e.target.value as WishlistPriority)}
-            className="rounded border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900"
+            className="rounded border border-slate-600 bg-slate-700 px-2 py-1 text-xs text-gray-100"
           >
             {PRIORITIES.map((p) => (
               <option key={p} value={p}>
@@ -57,13 +57,13 @@ export function WishlistItemRow({
           <button
             type="button"
             onClick={() => removeWishlistItem(wishlistItem.id)}
-            className="text-xs text-red-500 underline"
+            className="text-xs text-rose-400 underline"
           >
             Remove
           </button>
         </div>
       </div>
-      <p className="mt-1 text-sm text-gray-600">{acquisitionText}</p>
+      <p className="mt-1 text-sm text-gray-400">{acquisitionText}</p>
     </div>
   )
 }

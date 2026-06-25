@@ -7,6 +7,7 @@ import { ErrorMessage } from '../ui/ErrorMessage'
 import { EmptyState } from '../ui/EmptyState'
 import { SkillIcon } from '../ui/Icon'
 import { formatUpgradeName } from '../../utils/upgradeLabels'
+import { xpProgress } from '../../utils/xpToLevel'
 
 function AccountCardSkeleton() {
   return (
@@ -34,9 +35,9 @@ export function AccountCard({ account }: { account: AccountSlot }) {
     : []
 
   return (
-    <div className="rounded-lg border border-gray-300 bg-white p-4">
+    <div className="rounded-lg border border-slate-600 bg-slate-800 p-4">
       <div className="mb-3 flex items-center justify-between">
-        <h3 className="font-semibold text-gray-900">{account.username}</h3>
+        <h3 className="font-semibold text-gray-100">{account.username}</h3>
         <RoleBadge role={account.role} />
       </div>
 
@@ -46,32 +47,39 @@ export function AccountCard({ account }: { account: AccountSlot }) {
       {profile && (
         <div className="space-y-2">
           <p className="text-sm text-gray-400">
-            Total level <span className="text-gray-900">{profile.totalLevel}</span>
+            Total level <span className="text-gray-100">{profile.totalLevel}</span>
             {profile.guildName && (
               <>
                 {' '}
-                · <span className="text-gray-900">{profile.guildName}</span>
+                · <span className="text-gray-100">{profile.guildName}</span>
               </>
             )}
           </p>
-          <div className="grid grid-cols-2 gap-1 text-xs sm:grid-cols-3">
-            {Object.entries(profile.skills).map(([name, skill]) => (
-              <div
-                key={name}
-                className="flex items-center justify-between gap-1 rounded bg-gray-900 px-2 py-1"
-              >
-                <SkillIcon name={name} />
-                <span className="shrink-0 text-white">{skill.level}</span>
-              </div>
-            ))}
+          <div className="grid gap-1 text-xs" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(3.5rem, 1fr))' }}>
+            {Object.entries(profile.skills).map(([name, skill]) => {
+              const progress = xpProgress(skill.xp, skill.level)
+              return (
+                <div
+                  key={name}
+                  className="relative flex items-center justify-center gap-1 overflow-hidden rounded-t bg-slate-700 px-1 py-1"
+                >
+                  <div
+                    className="absolute bottom-0 left-0 h-0.5 bg-emerald-500"
+                    style={{ width: `${progress * 100}%` }}
+                  />
+                  <SkillIcon name={name} size={24} />
+                  <span className="shrink-0 text-gray-100">{String(skill.level).padStart(2, '0')}</span>
+                </div>
+              )
+            })}
           </div>
 
           {ownedUpgrades.length > 0 && (
-            <div className="border-t border-gray-100 pt-2">
+            <div className="border-t border-slate-700 pt-2">
               <button
                 type="button"
                 onClick={() => setUpgradesOpen((o) => !o)}
-                className="flex w-full items-center justify-between text-xs text-gray-500 hover:text-gray-700"
+                className="flex w-full items-center justify-between text-xs text-gray-400 hover:text-gray-200"
               >
                 <span>Upgrades ({ownedUpgrades.length})</span>
                 <span>{upgradesOpen ? '▲' : '▼'}</span>
@@ -81,12 +89,12 @@ export function AccountCard({ account }: { account: AccountSlot }) {
                   {ownedUpgrades.map(([key, val]) => (
                     <span
                       key={key}
-                      className="rounded bg-gray-100 px-2 py-0.5 text-xs text-gray-700"
+                      className="rounded bg-slate-700 px-2 py-0.5 text-xs text-gray-300"
                       title={`${formatUpgradeName(key)}: tier ${val}`}
                     >
                       {formatUpgradeName(key)}
                       {val > 1 && (
-                        <span className="ml-1 text-gray-400">×{val}</span>
+                        <span className="ml-1 text-gray-500">×{val}</span>
                       )}
                     </span>
                   ))}

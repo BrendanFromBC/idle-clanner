@@ -25,26 +25,26 @@ export function IronmanActivityRanking({
       </p>
       <div className="space-y-2">
         {ranked.slice(0, 15).map(({ activity, fullPipelineGoldPerHour, materialsFreeGoldPerHour }) => (
-          <div key={activity.id} className="rounded-lg border border-gray-300 bg-white p-3">
+          <div key={activity.id} className="rounded-lg border border-slate-600 bg-slate-800 p-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 {activity.outputItems[0] && <ItemIcon itemId={activity.outputItems[0].itemId} />}
                 <div>
-                  <div className="font-medium text-gray-900">{activityDisplayName(activity)}</div>
+                  <div className="font-medium text-gray-100">{activityDisplayName(activity)}</div>
                   <div className="text-xs text-gray-400">
                     {activity.skillKey} · level {activity.levelRequired}
                   </div>
                 </div>
               </div>
               <div className="text-right">
-                <div className="font-medium text-green-700">
+                <div className="font-medium text-emerald-400">
                   {fullPipelineGoldPerHour !== null ? `${formatGold(fullPipelineGoldPerHour)}/hr` : '—'}
                 </div>
                 <div className="text-xs text-gray-400">full pipeline</div>
               </div>
             </div>
             {activity.inputItems.length > 0 && materialsFreeGoldPerHour !== null && (
-              <div className="mt-1 text-xs text-gray-500">
+              <div className="mt-1 text-xs text-gray-400">
                 {formatGold(materialsFreeGoldPerHour)}/hr if materials are already stocked up
               </div>
             )}
@@ -59,17 +59,17 @@ export function IronmanActivityRanking({
 
       {nextUnlocks.length > 0 && (
         <div className="space-y-2">
-          <h3 className="text-sm font-semibold text-gray-900">Level up to unlock</h3>
+          <h3 className="text-sm font-semibold text-gray-100">Level up to unlock</h3>
           {nextUnlocks.map(({ activity, fullPipelineGoldPerHour, levelsNeeded }) => (
-            <div key={activity.id} className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm">
+            <div key={activity.id} className="rounded-lg border border-amber-700 bg-amber-900/40 p-3 text-sm">
               {activity.outputItems[0] && (
                 <ItemIcon itemId={activity.outputItems[0].itemId} size={16} />
               )}{' '}
-              <span className="font-medium text-gray-900">{activityDisplayName(activity)}</span>{' '}
-              <span className="text-gray-600">
+              <span className="font-medium text-amber-300">{activityDisplayName(activity)}</span>{' '}
+              <span className="text-gray-400">
                 ({activity.skillKey} level {activity.levelRequired}, {levelsNeeded} levels away) —{' '}
               </span>
-              <span className="font-medium text-green-700">
+              <span className="font-medium text-emerald-400">
                 {fullPipelineGoldPerHour !== null ? `${formatGold(fullPipelineGoldPerHour)}/hr` : '—'}
               </span>
             </div>

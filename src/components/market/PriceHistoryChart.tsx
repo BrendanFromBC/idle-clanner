@@ -23,7 +23,7 @@ export function PriceHistoryChart({ points }: { points: RawMarketPriceHistoryPoi
   return (
     <div>
       <svg width={WIDTH} height={HEIGHT} className="overflow-visible">
-        <path d={path} fill="none" stroke="#7c3aed" strokeWidth={1.5} />
+        <path d={path} fill="none" stroke="#a78bfa" strokeWidth={1.5} />
       </svg>
       <div className="mt-1 flex justify-between text-xs text-gray-400">
         <span>Low {formatGold(min)}</span>

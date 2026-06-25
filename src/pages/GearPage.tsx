@@ -35,10 +35,10 @@ export function GearPage() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-4 p-4 sm:p-6">
-      <h2 className="text-xl font-semibold text-gray-900">Gear Guide</h2>
+      <h2 className="text-xl font-semibold text-gray-100">Gear Guide</h2>
 
       {configuredSlots.length > 0 && (
-        <div className="flex gap-2 overflow-x-auto border-b border-gray-200">
+        <div className="flex gap-2 overflow-x-auto border-b border-slate-700">
           {configuredSlots.map((slot) => (
             <button
               key={slot}
@@ -46,8 +46,8 @@ export function GearPage() {
               onClick={() => setActiveSlot(slot)}
               className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
                 effectiveSlot === slot
-                  ? 'border-b-2 border-gray-900 text-gray-900'
-                  : 'text-gray-500'
+                  ? 'border-b-2 border-gray-100 text-gray-100'
+                  : 'text-gray-400'
               }`}
             >
               {team.accounts[slot].username}
@@ -61,7 +61,7 @@ export function GearPage() {
       ) : (
         <EmptyState>
           No accounts set up yet.{' '}
-          <Link to="/" className="font-medium text-gray-700 underline">
+          <Link to="/" className="font-medium text-gray-300 underline">
             Add your team on the Dashboard
           </Link>
           .
@@ -85,7 +85,7 @@ function AccountGearPanel({
     return (
       <EmptyState>
         No account set for this slot.{' '}
-        <Link to="/" className="font-medium text-gray-700 underline">
+        <Link to="/" className="font-medium text-gray-300 underline">
           Add one on the Dashboard
         </Link>
         .
@@ -110,7 +110,7 @@ function AccountGearPanel({
 
   return (
     <div className="space-y-2">
-      <p className="text-xs uppercase text-gray-400">
+      <p className="text-xs uppercase text-gray-500">
         {isCombatRole ? 'Melee combat gear' : 'Skilling gear'} · role: {account.role}
       </p>
       {gearList.map((item) => (

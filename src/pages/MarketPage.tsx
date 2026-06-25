@@ -36,7 +36,7 @@ export function MarketPage() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-4 p-4 sm:p-6">
-      <h2 className="text-xl font-semibold text-gray-900">Market</h2>
+      <h2 className="text-xl font-semibold text-gray-100">Market</h2>
       <MarketSearch value={search} onChange={setSearch} />
 
       {isLoading && <CardRowSkeletonList count={8} />}

@@ -18,28 +18,28 @@ export function PriceCard({ price }: { price: MarketPrice }) {
   } = useMarketPriceHistory(expanded ? price.itemId : null)
 
   return (
-    <div className="rounded-lg border border-gray-300 bg-white p-3">
+    <div className="rounded-lg border border-slate-600 bg-slate-800 p-3">
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
         className="flex w-full items-center justify-between gap-4 text-left"
       >
-        <span className="flex items-center gap-2 font-medium text-gray-900">
+        <span className="flex items-center gap-2 font-medium text-gray-100">
           <ItemIcon itemId={price.itemId} />
           {price.displayName}
         </span>
         <span className="flex gap-4 text-sm">
-          <span className="text-green-700">
+          <span className="text-emerald-400">
             Sell {formatGold(price.lowestSellPrice)}
           </span>
-          <span className="text-red-600">
+          <span className="text-rose-400">
             Buy {formatGold(price.highestBuyPrice)}
           </span>
         </span>
       </button>
 
       {expanded && (
-        <div className="mt-3 border-t border-gray-200 pt-3 text-sm text-gray-600">
+        <div className="mt-3 border-t border-slate-700 pt-3 text-sm text-gray-400">
           {isLoading && (
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               {Array.from({ length: 4 }).map((_, i) => (
@@ -59,7 +59,7 @@ export function PriceCard({ price }: { price: MarketPrice }) {
             </div>
           )}
 
-          <div className="mt-3 border-t border-gray-200 pt-3">
+          <div className="mt-3 border-t border-slate-700 pt-3">
             <div className="mb-1 text-xs text-gray-400">Last ~24h average price</div>
             {isHistoryLoading && <Skeleton className="h-16 w-full" />}
             {isHistoryError && <ErrorMessage>Couldn't load price history.</ErrorMessage>}
@@ -75,7 +75,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <div className="text-xs text-gray-400">{label}</div>
-      <div className="text-gray-900">{value}</div>
+      <div className="text-gray-100">{value}</div>
     </div>
   )
 }

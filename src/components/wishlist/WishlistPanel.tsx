@@ -30,26 +30,26 @@ export function WishlistPanel() {
       {accountsWithUsernames.length === 0 ? (
         <EmptyState>
           No accounts set up yet.{' '}
-          <Link to="/" className="font-medium text-gray-700 underline">
+          <Link to="/" className="font-medium text-gray-300 underline">
             Add your team on the Dashboard
           </Link>{' '}
           to start a wishlist.
         </EmptyState>
       ) : (
-        <div className="space-y-2 rounded-lg border border-gray-300 bg-white p-4">
-          <h3 className="text-sm font-semibold text-gray-900">Add a wishlist goal</h3>
+        <div className="space-y-2 rounded-lg border border-slate-600 bg-slate-800 p-4">
+          <h3 className="text-sm font-semibold text-gray-100">Add a wishlist goal</h3>
           <div className="flex gap-2">
             <input
               type="text"
               placeholder="Search for an item…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900"
+              className="flex-1 rounded border border-slate-600 bg-slate-700 px-3 py-2 text-sm text-gray-100 placeholder-slate-500"
             />
             <select
               value={effectiveForSlot}
               onChange={(e) => setForSlot(e.target.value as Slot)}
-              className="rounded border border-gray-300 bg-white px-2 py-2 text-sm text-gray-900"
+              className="rounded border border-slate-600 bg-slate-700 px-2 py-2 text-sm text-gray-100"
             >
               {accountsWithUsernames.map((slot) => (
                 <option key={slot} value={slot}>
@@ -69,7 +69,7 @@ export function WishlistPanel() {
                     addWishlistItem(item.id, effectiveForSlot)
                     setSearch('')
                   }}
-                  className="block w-full rounded border border-gray-200 bg-white px-3 py-2 text-left text-sm text-gray-900 hover:bg-gray-50"
+                  className="block w-full rounded border border-slate-700 bg-slate-800 px-3 py-2 text-left text-sm text-gray-100 hover:bg-slate-700"
                 >
                   {item.displayName}
                 </button>
@@ -121,7 +121,7 @@ function AccountWishlist({
 
   return (
     <div className="space-y-2">
-      <h4 className="text-sm font-semibold text-gray-900">
+      <h4 className="text-sm font-semibold text-gray-100">
         {account?.username ?? slot?.toUpperCase() ?? 'Unassigned'}
       </h4>
       <div className="space-y-2">

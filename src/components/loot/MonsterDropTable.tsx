@@ -19,11 +19,11 @@ export function MonsterDropTable({
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <h3 className="flex items-center gap-2 font-semibold text-gray-900">
+        <h3 className="flex items-center gap-2 font-semibold text-gray-100">
           <MonsterIcon monsterId={monster.id} />
           {toDisplayName(monster.name)}
           {monster.isBoss && (
-            <span className="ml-2 rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-700">
+            <span className="ml-2 rounded bg-rose-950/60 px-2 py-0.5 text-xs font-medium text-rose-400">
               Boss
             </span>
           )}
@@ -33,7 +33,7 @@ export function MonsterDropTable({
         </span>
       </div>
 
-      <div className="rounded border border-gray-200 bg-gray-50 p-3 text-xs text-gray-600">
+      <div className="rounded border border-slate-700 bg-slate-900 p-3 text-xs text-gray-400">
         {estimate ? (
           <>
             <p className="mb-2 text-gray-400">
@@ -78,9 +78,9 @@ export function MonsterDropTable({
           return (
             <div
               key={drop.itemId}
-              className="flex items-center justify-between rounded border border-gray-200 bg-white px-3 py-2 text-sm"
+              className="flex items-center justify-between rounded border border-slate-700 bg-slate-800 px-3 py-2 text-sm"
             >
-              <span className="flex items-center gap-2 text-gray-900">
+              <span className="flex items-center gap-2 text-gray-100">
                 <ItemIcon itemId={drop.itemId} />
                 {item?.displayName ?? `Item #${drop.itemId}`}
                 {drop.quantityMin > 0 && (
@@ -103,7 +103,7 @@ function Stat({ label, value }: { label: string; value: number | string }) {
   return (
     <div>
       <div className="text-gray-400">{label}</div>
-      <div className="font-medium text-gray-900">{value}</div>
+      <div className="font-medium text-gray-100">{value}</div>
     </div>
   )
 }

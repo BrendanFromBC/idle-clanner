@@ -24,7 +24,7 @@ export function ShareTeamButton() {
     <button
       type="button"
       onClick={copyShareLink}
-      className="rounded border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-50"
+      className="rounded border border-slate-600 bg-slate-700 px-3 py-1.5 text-xs font-medium text-gray-300 hover:bg-slate-600"
     >
       {copied ? 'Link copied!' : 'Copy share link'}
     </button>

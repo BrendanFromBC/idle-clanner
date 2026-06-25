@@ -29,28 +29,28 @@ export function GearUpgradeCard({
   const cost = getAcquisitionCost(bisItem, marketPrices)
 
   return (
-    <div className="rounded-lg border border-gray-300 bg-white p-3">
+    <div className="rounded-lg border border-slate-600 bg-slate-800 p-3">
       <div className="flex items-center justify-between">
         <span className="text-xs uppercase text-gray-400">{bisItem.slot}</span>
         {isEquipped && (
-          <span className="rounded bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
+          <span className="rounded bg-emerald-950/60 px-2 py-0.5 text-xs font-medium text-emerald-400">
             BiS equipped
           </span>
         )}
         {!isEquipped && selfReportedOwned && (
-          <span className="rounded bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700">
+          <span className="rounded bg-blue-900/40 px-2 py-0.5 text-xs font-medium text-blue-400">
             Marked as owned
           </span>
         )}
       </div>
 
       <div className="mt-1 flex items-center justify-between gap-3">
-        <span className="text-sm text-gray-500">
+        <span className="text-sm text-gray-400">
           {currentName ?? (currentItemId === null ? 'Nothing equipped' : `Unknown item #${currentItemId}`)}
         </span>
         {!isEquipped && <span className="text-gray-400">→</span>}
         {!isEquipped && (
-          <span className="flex items-center gap-2 font-medium text-gray-900">
+          <span className="flex items-center gap-2 font-medium text-gray-100">
             <ItemIcon itemId={bisItem.id} />
             {bisItem.displayName}
           </span>
@@ -58,7 +58,7 @@ export function GearUpgradeCard({
       </div>
 
       {!owned && (
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-gray-400">
           {cost !== null
             ? `Buy from market for ${formatGold(cost)} gold`
             : 'Not currently buyable on the market'}

@@ -40,15 +40,15 @@ export function LootPage() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-4 p-4 sm:p-6">
-      <h2 className="text-xl font-semibold text-gray-900">Loot Odds</h2>
+      <h2 className="text-xl font-semibold text-gray-100">Loot Odds</h2>
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex gap-2 overflow-x-auto border-b border-gray-200">
+        <div className="flex gap-2 overflow-x-auto border-b border-slate-700">
           <button
             type="button"
             onClick={() => setMode('monster')}
             className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
-              mode === 'monster' ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
+              mode === 'monster' ? 'border-b-2 border-gray-100 text-gray-100' : 'text-gray-400'
             }`}
           >
             By monster
@@ -57,7 +57,7 @@ export function LootPage() {
             type="button"
             onClick={() => setMode('item')}
             className={`whitespace-nowrap px-3 py-2 text-sm font-medium ${
-              mode === 'item' ? 'border-b-2 border-gray-900 text-gray-900' : 'text-gray-500'
+              mode === 'item' ? 'border-b-2 border-gray-100 text-gray-100' : 'text-gray-400'
             }`}
           >
             Best monster for an item
@@ -67,7 +67,7 @@ export function LootPage() {
           <select
             value={effectiveSlot}
             onChange={(e) => setActiveSlot(e.target.value as Slot)}
-            className="rounded border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900"
+            className="rounded border border-slate-600 bg-slate-700 px-2 py-1 text-xs text-gray-100"
           >
             {configuredSlots.map((slot) => (
               <option key={slot} value={slot}>
@@ -90,7 +90,7 @@ function MonsterBrowser({ loadout }: { loadout: CombatLoadout | null }) {
   return (
     <div className="space-y-4">
       <select
-        className="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900"
+        className="w-full rounded border border-slate-600 bg-slate-700 px-3 py-2 text-sm text-gray-100"
         value={selectedId ?? ''}
         onChange={(e) => setSelectedId(Number(e.target.value))}
       >
@@ -132,7 +132,7 @@ function ItemReverseLookup() {
           setSearch(e.target.value)
           setSelectedItemId(null)
         }}
-        className="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900"
+        className="w-full rounded border border-slate-600 bg-slate-700 px-3 py-2 text-sm text-gray-100"
       />
 
       {!selectedItem && search.trim().length > 0 && matches.length === 0 && (
@@ -146,7 +146,7 @@ function ItemReverseLookup() {
               key={item.id}
               type="button"
               onClick={() => setSelectedItemId(item.id)}
-              className="block w-full rounded border border-gray-200 bg-white px-3 py-2 text-left text-sm text-gray-900 hover:bg-gray-50"
+              className="block w-full rounded border border-slate-700 bg-slate-800 px-3 py-2 text-left text-sm text-gray-100 hover:bg-slate-700"
             >
               {item.displayName}
             </button>
@@ -157,7 +157,7 @@ function ItemReverseLookup() {
       {selectedItem && (
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <h3 className="font-semibold text-gray-900">{selectedItem.displayName}</h3>
+            <h3 className="font-semibold text-gray-100">{selectedItem.displayName}</h3>
             <button
               type="button"
               onClick={() => setSelectedItemId(null)}

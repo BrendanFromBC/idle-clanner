@@ -26,3 +26,11 @@ export function xpToLevel(xp: number): number {
   }
   return level
 }
+
+// Returns 0–1 progress toward the next level. Returns 1 at max level.
+export function xpProgress(xp: number, level: number): number {
+  if (level >= MAX_LEVEL) return 1
+  const currentXp = XP_TABLE[level - 1]
+  const nextXp = XP_TABLE[level]
+  return (xp - currentXp) / (nextXp - currentXp)
+}
