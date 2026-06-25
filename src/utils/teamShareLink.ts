@@ -5,11 +5,16 @@ type Slot = (typeof SLOTS)[number]
 
 const VALID_ROLES: AccountRole[] = ['main', 'gatherer', 'crafter', 'support', 'unassigned']
 
-// One query param per slot, value "username:role" — URLSearchParams handles
-// the encoding. Slots with no username are omitted entirely so an empty
-// team doesn't produce a link full of "main=:main&alt1=:gatherer..." noise.
+export function teamTag(team: Team): string {
+  return team.name
+}
+
+// One query param per slot, value "username:role". Team name+discriminator
+// encoded as "TeamName#1234" in the "team" param — URLSearchParams encodes
+// the # as %23 automatically so it doesn't collide with the URL fragment.
 export function buildShareSearchParams(team: Team): URLSearchParams {
   const params = new URLSearchParams()
+  params.set('team', teamTag(team))
   for (const slot of SLOTS) {
     const account = team.accounts[slot]
     if (!account.username) continue
@@ -23,13 +28,18 @@ export interface SharedAccount {
   role: AccountRole
 }
 
-// Returns null if the URL has none of the expected slot params at all (the
-// common case — most visits aren't from a share link). Malformed individual
-// values (missing role, unknown role) are skipped rather than rejecting the
-// whole link, so a partially-corrupted URL still imports what it can.
-export function parseShareSearchParams(params: URLSearchParams): Partial<Record<Slot, SharedAccount>> | null {
+export interface ParsedShareLink {
+  accounts: Partial<Record<Slot, SharedAccount>>
+  teamTag?: string   // e.g. "MyTeam#4821" — undefined if param was absent
+}
+
+// Returns null if the URL has none of the expected slot params (common case —
+// most visits aren't from a share link). Malformed individual slot values are
+// skipped rather than rejecting the whole link.
+export function parseShareSearchParams(params: URLSearchParams): ParsedShareLink | null {
   let found = false
-  const result: Partial<Record<Slot, SharedAccount>> = {}
+  const accounts: Partial<Record<Slot, SharedAccount>> = {}
+
   for (const slot of SLOTS) {
     const raw = params.get(slot)
     if (!raw) continue
@@ -39,7 +49,11 @@ export function parseShareSearchParams(params: URLSearchParams): Partial<Record<
     const username = raw.slice(0, separatorIndex)
     const role = raw.slice(separatorIndex + 1) as AccountRole
     if (!username || !VALID_ROLES.includes(role)) continue
-    result[slot] = { username, role }
+    accounts[slot] = { username, role }
   }
-  return found ? result : null
+
+  const teamTagRaw = params.get('team') ?? undefined
+  if (teamTagRaw) found = true
+
+  return found ? { accounts, teamTag: teamTagRaw } : null
 }

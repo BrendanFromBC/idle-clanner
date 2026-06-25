@@ -1,13 +1,15 @@
 import { useState } from 'react'
-import type { AccountSlot } from '../../store/teamStore'
+import type { AccountRole, AccountSlot } from '../../store/teamStore'
 import { usePlayerProfile } from '../../hooks/usePlayerProfile'
-import { RoleBadge } from './RoleBadge'
+import { useTeamActions } from '../../hooks/useTeam'
+import { useDebouncedCallback } from '../../hooks/useDebouncedCallback'
 import { Skeleton } from '../ui/Skeleton'
 import { ErrorMessage } from '../ui/ErrorMessage'
-import { EmptyState } from '../ui/EmptyState'
 import { SkillIcon } from '../ui/Icon'
 import { formatUpgradeName } from '../../utils/upgradeLabels'
 import { xpProgress } from '../../utils/xpToLevel'
+
+const ROLES: AccountRole[] = ['main', 'gatherer', 'crafter', 'support', 'unassigned']
 
 function AccountCardSkeleton() {
   return (
@@ -22,13 +24,15 @@ function AccountCardSkeleton() {
   )
 }
 
-export function AccountCard({ account }: { account: AccountSlot }) {
+export function AccountCard({ account, slot }: { account: AccountSlot; slot: 'main' | 'alt1' | 'alt2' }) {
+  const { setAccount } = useTeamActions()
+  const [localUsername, setLocalUsername] = useState(account.username ?? '')
+  const commitUsername = useDebouncedCallback((value: string) => {
+    setAccount(slot, { username: value || null })
+  }, 400)
+
   const { data: profile, isLoading, isError } = usePlayerProfile(account.username)
   const [upgradesOpen, setUpgradesOpen] = useState(false)
-
-  if (!account.username) {
-    return <EmptyState>No account set</EmptyState>
-  }
 
   const ownedUpgrades = profile
     ? Object.entries(profile.upgrades).filter(([, v]) => v > 0)
@@ -36,13 +40,36 @@ export function AccountCard({ account }: { account: AccountSlot }) {
 
   return (
     <div className="rounded-lg border border-slate-600 bg-slate-800 p-4">
-      <div className="mb-3 flex items-center justify-between">
-        <h3 className="font-semibold text-gray-100">{account.username}</h3>
-        <RoleBadge role={account.role} />
+      <div className="mb-3 flex items-center gap-2">
+        <input
+          type="text"
+          placeholder="Username"
+          value={localUsername}
+          onChange={(e) => {
+            setLocalUsername(e.target.value)
+            commitUsername(e.target.value)
+          }}
+          className="min-w-0 flex-1 bg-transparent text-sm font-semibold text-gray-100 placeholder-slate-500 outline-none border-b border-slate-600 hover:border-slate-400 focus:border-amber-400 transition-colors pb-0.5"
+        />
+        <select
+          value={account.role}
+          onChange={(e) => setAccount(slot, { role: e.target.value as AccountRole })}
+          className="rounded border border-slate-600 bg-slate-700 px-1.5 py-0.5 text-xs text-gray-300"
+        >
+          {ROLES.map((role) => (
+            <option key={role} value={role}>
+              {role}
+            </option>
+          ))}
+        </select>
       </div>
 
       {isLoading && <AccountCardSkeleton />}
       {isError && <ErrorMessage>Couldn't find a player named "{account.username}".</ErrorMessage>}
+
+      {!account.username && (
+        <p className="text-xs text-slate-500">Enter a username above to load this account.</p>
+      )}
 
       {profile && (
         <div className="space-y-2">

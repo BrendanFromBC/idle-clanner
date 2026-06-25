@@ -88,7 +88,7 @@ const NAV_ITEMS = [
 ]
 
 const mobileNavClass = ({ isActive }: { isActive: boolean }) =>
-  `whitespace-nowrap text-sm font-medium ${isActive ? 'text-gray-100' : 'text-gray-400'}`
+  `whitespace-nowrap text-sm font-medium ${isActive ? 'text-amber-400' : 'text-gray-400'}`
 
 function App() {
   return (
@@ -103,7 +103,7 @@ function App() {
       </nav>
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex md:w-16 md:shrink-0 md:flex-col md:items-center md:gap-1 md:border-r md:border-slate-700 md:bg-slate-900 md:py-4">
+      <aside className="hidden md:flex md:w-16 md:shrink-0 md:flex-col md:items-center md:gap-1 md:border-r md:border-r-2 md:border-amber-300/15 md:bg-slate-900 md:py-4">
         {NAV_ITEMS.map(({ to, end, label, Icon }) => (
           <NavLink
             key={to}
@@ -113,8 +113,8 @@ function App() {
             className={({ isActive }) =>
               `group relative flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
                 isActive
-                  ? 'bg-slate-700 text-white'
-                  : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+                  ? 'bg-slate-800 text-amber-400 ring-1 ring-amber-400/30'
+                  : 'text-slate-400 hover:bg-slate-800 hover:text-amber-200'
               }`
             }
           >

@@ -1,19 +1,23 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { TeamSetup } from '../components/team/TeamSetup'
 import { AccountCard } from '../components/team/AccountCard'
 import { ClanCard } from '../components/team/ClanCard'
 import { GearOwnershipChecklist } from '../components/gear/GearOwnershipChecklist'
 import { ShareTeamButton } from '../components/team/ShareTeamButton'
 import { useTeam, useTeamActions } from '../hooks/useTeam'
 import { usePlayerProfile } from '../hooks/usePlayerProfile'
-import { parseShareSearchParams, type SharedAccount } from '../utils/teamShareLink'
+import { parseShareSearchParams, type ParsedShareLink } from '../utils/teamShareLink'
+import { useDebouncedCallback } from '../hooks/useDebouncedCallback'
 
 const SLOTS = ['main', 'alt1', 'alt2'] as const
 
 export function DashboardPage() {
   const team = useTeam()
-  const { setAccount } = useTeamActions()
+  const { setAccount, setTeamName } = useTeamActions()
+  const [localTeamName, setLocalTeamName] = useState(team.name)
+  const commitTeamName = useDebouncedCallback((value: string) => {
+    setTeamName(value || 'My Team')
+  }, 400)
   const accountsWithUsernames = SLOTS.filter((slot) => team.accounts[slot].username)
 
   // Fetch profiles for all 3 slots (disabled for unconfigured slots) to detect
@@ -44,15 +48,19 @@ export function DashboardPage() {
   // Lazy initializer runs once on mount only — intentional. Re-deriving this
   // from searchParams on every render would re-show the banner right after
   // the user dismisses it, since clearing the params is itself a change.
-  const [pendingImport, setPendingImport] = useState<Partial<Record<(typeof SLOTS)[number], SharedAccount>> | null>(
+  const [pendingImport, setPendingImport] = useState<ParsedShareLink | null>(
     () => parseShareSearchParams(searchParams),
   )
 
   const applyImport = () => {
     if (!pendingImport) return
     for (const slot of SLOTS) {
-      const shared = pendingImport[slot]
+      const shared = pendingImport.accounts[slot]
       if (shared) setAccount(slot, { username: shared.username, role: shared.role })
+    }
+    if (pendingImport.teamTag) {
+      setTeamName(pendingImport.teamTag)
+      setLocalTeamName(pendingImport.teamTag)
     }
     setPendingImport(null)
     setSearchParams({}, { replace: true })
@@ -68,11 +76,10 @@ export function DashboardPage() {
       {pendingImport && (
         <div className="mx-auto mt-4 flex max-w-2xl items-center justify-between gap-3 rounded-lg border border-amber-700 bg-amber-900/40 p-3 text-sm">
           <span className="text-amber-300">
-            This link includes a shared team setup
-            {Object.values(pendingImport).length > 0 &&
-              ` (${Object.values(pendingImport)
-                .map((a) => a?.username)
-                .join(', ')})`}
+            Shared team link:{' '}
+            <span className="font-semibold text-amber-200">
+              {pendingImport.teamTag ?? Object.values(pendingImport.accounts).map((a) => a?.username).join(', ')}
+            </span>
             . Load it? This will overwrite your current team.
           </span>
           <div className="flex shrink-0 gap-2">
@@ -94,14 +101,25 @@ export function DashboardPage() {
         </div>
       )}
 
-      <TeamSetup />
-      <div className="mx-auto max-w-2xl px-4 sm:px-6">
-        <ShareTeamButton />
+      <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6">
+        <div className="flex items-center gap-3">
+          <input
+            type="text"
+            value={localTeamName}
+            onChange={(e) => {
+              setLocalTeamName(e.target.value)
+              commitTeamName(e.target.value)
+            }}
+            className="min-w-0 flex-1 bg-transparent text-2xl font-bold text-gray-100 placeholder-slate-500 outline-none border-b border-transparent hover:border-slate-600 focus:border-amber-400 transition-colors pb-0.5"
+          />
+          <ShareTeamButton />
+        </div>
       </div>
+
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 p-4 sm:p-6 md:grid-cols-3">
-        <AccountCard account={team.accounts.main} />
-        <AccountCard account={team.accounts.alt1} />
-        <AccountCard account={team.accounts.alt2} />
+        <AccountCard account={team.accounts.main} slot="main" />
+        <AccountCard account={team.accounts.alt1} slot="alt1" />
+        <AccountCard account={team.accounts.alt2} slot="alt2" />
       </div>
 
       {sharedClanName && (
