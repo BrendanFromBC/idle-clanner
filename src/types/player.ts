@@ -16,6 +16,7 @@ export interface PlayerProfile {
   equipment: Record<string, number> // slot name -> item id, no entry if empty (-1)
   totalLevel: number
   bossKills: Record<string, number>
+  upgrades: Record<string, number> // key → tier/count; 0 = not purchased
 }
 
 export function toPlayerProfile(raw: RawPlayerProfile): PlayerProfile {
@@ -39,5 +40,6 @@ export function toPlayerProfile(raw: RawPlayerProfile): PlayerProfile {
     equipment,
     totalLevel,
     bossKills: raw.pvmStats,
+    upgrades: raw.upgrades,
   }
 }

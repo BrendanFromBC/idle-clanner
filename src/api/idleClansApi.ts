@@ -1,5 +1,6 @@
 import type {
   RawPlayerProfile,
+  RawClanProfile,
   RawMarketPrice,
   RawMarketPriceDetail,
   RawMarketPriceHistoryPoint,
@@ -29,4 +30,8 @@ export function fetchMarketPriceDetail(itemId: number): Promise<RawMarketPriceDe
 
 export function fetchMarketPriceHistory(itemId: number): Promise<RawMarketPriceHistoryPoint[]> {
   return getJson<RawMarketPriceHistoryPoint[]>(`/api/PlayerMarket/items/prices/history/${itemId}`)
+}
+
+export function fetchClanRecruitment(clanName: string): Promise<RawClanProfile> {
+  return getJson<RawClanProfile>(`/api/Clan/recruitment/${encodeURIComponent(clanName)}`)
 }

@@ -18,6 +18,29 @@ export interface RawPlayerProfile {
   activeServerId: string | null
 }
 
+export interface RawClanMember {
+  memberName: string
+  rank: number
+}
+
+export interface RawClanProfile {
+  clanName: string
+  tag: string
+  isPrestige: boolean
+  activityScore: number
+  minimumTotalLevelRequired: number
+  memberlist: RawClanMember[]
+  memberCount: number
+  isRecruiting: boolean
+  language: string
+  category: string
+  serializedSkills: string
+  serializedUpgrades: string
+  repeatableUpgradeCounts: Record<string, number>
+  recruitmentMessage: string | null
+  houseId: number
+}
+
 export interface RawMarketPrice {
   itemId: number
   lowestSellPrice: number

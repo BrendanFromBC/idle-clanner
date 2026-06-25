@@ -2,9 +2,11 @@ import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { TeamSetup } from '../components/team/TeamSetup'
 import { AccountCard } from '../components/team/AccountCard'
+import { ClanCard } from '../components/team/ClanCard'
 import { GearOwnershipChecklist } from '../components/gear/GearOwnershipChecklist'
 import { ShareTeamButton } from '../components/team/ShareTeamButton'
 import { useTeam, useTeamActions } from '../hooks/useTeam'
+import { usePlayerProfile } from '../hooks/usePlayerProfile'
 import { parseShareSearchParams, type SharedAccount } from '../utils/teamShareLink'
 
 const SLOTS = ['main', 'alt1', 'alt2'] as const
@@ -13,6 +15,30 @@ export function DashboardPage() {
   const team = useTeam()
   const { setAccount } = useTeamActions()
   const accountsWithUsernames = SLOTS.filter((slot) => team.accounts[slot].username)
+
+  // Fetch profiles for all 3 slots (disabled for unconfigured slots) to detect
+  // a shared clan — TanStack Query caches these so AccountCard pays no extra cost.
+  const mainProfile = usePlayerProfile(team.accounts.main.username)
+  const alt1Profile = usePlayerProfile(team.accounts.alt1.username)
+  const alt2Profile = usePlayerProfile(team.accounts.alt2.username)
+  const allProfileQueries = [mainProfile, alt1Profile, alt2Profile]
+
+  // All configured slots must have loaded profiles before we determine the clan.
+  const allConfiguredLoaded = SLOTS.every(
+    (slot, i) => !team.accounts[slot].username || allProfileQueries[i].data !== undefined,
+  )
+  const configuredProfileDatas = SLOTS.map((slot, i) =>
+    team.accounts[slot].username ? allProfileQueries[i].data : undefined,
+  ).filter((d) => d !== undefined)
+
+  const sharedClanName =
+    allConfiguredLoaded &&
+    configuredProfileDatas.length > 0 &&
+    configuredProfileDatas.every(
+      (p) => p?.guildName && p.guildName === configuredProfileDatas[0]?.guildName,
+    )
+      ? (configuredProfileDatas[0]?.guildName ?? null)
+      : null
 
   const [searchParams, setSearchParams] = useSearchParams()
   // Lazy initializer runs once on mount only — intentional. Re-deriving this
@@ -77,6 +103,12 @@ export function DashboardPage() {
         <AccountCard account={team.accounts.alt1} />
         <AccountCard account={team.accounts.alt2} />
       </div>
+
+      {sharedClanName && (
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <ClanCard clanName={sharedClanName} />
+        </div>
+      )}
 
       {accountsWithUsernames.length > 0 && (
         <div className="mx-auto max-w-5xl space-y-4 p-4 sm:p-6">
