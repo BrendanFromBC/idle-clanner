@@ -6,9 +6,11 @@ import { useMarketPrices } from '../hooks/useMarketPrices'
 import { GEAR } from '../data/gear'
 import { getEquippedItemId } from '../utils/equipmentSlots'
 import { GearUpgradeCard } from '../components/gear/GearUpgradeCard'
+import { ItemIcon } from '../components/ui/Icon'
 import { CardRowSkeletonList } from '../components/ui/Skeleton'
 import { ErrorMessage } from '../components/ui/ErrorMessage'
 import { EmptyState } from '../components/ui/EmptyState'
+import { useOwnedItemsStore } from '../store/ownedItemsStore'
 
 const SLOTS = ['main', 'alt1', 'alt2'] as const
 type Slot = (typeof SLOTS)[number]
@@ -25,6 +27,16 @@ const BIS_TOOL_GEAR = Object.values(
     return acc
   }, {}),
 )
+
+// Set of valid tool item IDs per skill — used to filter out combat weapons
+// that share the rightHand slot from appearing as "currently equipped" on
+// every tool card.
+const TOOL_IDS_BY_SKILL: Record<string, Set<number>> = GEAR
+  .filter((g) => g.category === 'tool' && g.skill)
+  .reduce<Record<string, Set<number>>>((acc, g) => {
+    ;(acc[g.skill!] ??= new Set()).add(g.id)
+    return acc
+  }, {})
 
 export function GearPage() {
   const team = useTeam()
@@ -71,6 +83,44 @@ export function GearPage() {
   )
 }
 
+function getSlotKey(item: (typeof GEAR)[number]): string {
+  return item.category === 'tool' ? (item.skill ?? item.slot) : item.slot
+}
+
+function getEquippedIdForItem(
+  equipment: Record<string, number>,
+  item: (typeof GEAR)[number],
+): number | null {
+  const equippedId = getEquippedItemId(equipment, item.slot)
+  if (item.category === 'tool' && equippedId !== null) {
+    return TOOL_IDS_BY_SKILL[item.skill ?? '']?.has(equippedId) ? equippedId : null
+  }
+  return equippedId
+}
+
+function SlotLabel(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+// If the weapon slot has a tool equipped, label it by the tool's skill rather
+// than "Weapon" — a pickaxe in your mainhand isn't a weapon.
+function getEquippedSlotLabel(key: string, equippedId: number | null): string {
+  if (key === 'weapon' && equippedId !== null) {
+    for (const [skill, ids] of Object.entries(TOOL_IDS_BY_SKILL)) {
+      if (ids.has(equippedId)) return SlotLabel(skill)
+    }
+  }
+  return SlotLabel(key)
+}
+
+function EmptySlotIcon() {
+  return (
+    <div className="flex h-8 w-8 items-center justify-center rounded border border-dashed border-slate-600">
+      <span className="text-slate-600 text-xs">—</span>
+    </div>
+  )
+}
+
 function AccountGearPanel({
   account,
   slot,
@@ -78,8 +128,10 @@ function AccountGearPanel({
   account: ReturnType<typeof useTeam>['accounts']['main']
   slot: Slot
 }) {
+  const [selectedKey, setSelectedKey] = useState<string | null>(null)
   const { data: profile, isLoading, isError } = usePlayerProfile(account.username)
   const { data: marketPrices } = useMarketPrices()
+  const ownedIds = useOwnedItemsStore((s) => s.ownedByAccount[slot])
 
   if (!account.username) {
     return (
@@ -96,11 +148,6 @@ function AccountGearPanel({
   if (isError) return <ErrorMessage>Couldn't find a player named "{account.username}".</ErrorMessage>
   if (!profile || !marketPrices) return null
 
-  // Role drives which gear set this account sees: "main" trains combat, the
-  // other roles (gatherer/crafter/support/unassigned) are skilling-focused.
-  // There's no per-alt "assigned skill" field on AccountSlot, so within the
-  // skilling set we rank by the player's own trained skill levels instead of
-  // guessing a single skill.
   const isCombatRole = account.role === 'main'
   const gearList = isCombatRole
     ? COMBAT_GEAR
@@ -108,20 +155,141 @@ function AccountGearPanel({
         (a, b) => (profile.skills[b.skill ?? '']?.level ?? 0) - (profile.skills[a.skill ?? '']?.level ?? 0),
       )
 
+  // Search equipped gear list first, then BiS tools — so clicking a tool in
+  // the self-reported section works even on combat-role accounts where gearList
+  // is COMBAT_GEAR and contains no tools.
+  const selectedItem = selectedKey
+    ? (gearList.find((g) => getSlotKey(g) === selectedKey) ?? BIS_TOOL_GEAR.find((g) => getSlotKey(g) === selectedKey) ?? null)
+    : null
+  const selectedCurrentId = selectedItem ? getEquippedIdForItem(profile.equipment, selectedItem) : null
+
   return (
-    <div className="space-y-2">
+    <div className="space-y-4">
       <p className="text-xs uppercase text-gray-500">
-        {isCombatRole ? 'Melee combat gear' : 'Skilling gear'} · role: {account.role}
+        {isCombatRole ? 'Combat loadout' : 'Skilling tools'} · role: {account.role}
       </p>
-      {gearList.map((item) => (
+
+      {selectedItem ? (
         <GearUpgradeCard
-          key={item.id}
-          bisItem={item}
-          currentItemId={getEquippedItemId(profile.equipment, item.slot)}
+          bisItem={selectedItem}
+          currentItemId={selectedCurrentId}
           marketPrices={marketPrices}
           slot={slot}
         />
-      ))}
+      ) : (
+        <div className="flex items-center justify-center rounded-lg border border-dashed border-slate-600 py-6 text-sm text-slate-500">
+          Select a slot below to see upgrade info
+        </div>
+      )}
+
+      <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
+        {gearList.map((item) => {
+          const key = getSlotKey(item)
+          const equippedId = getEquippedIdForItem(profile.equipment, item)
+          const isBis = equippedId === item.id
+          const hasEquipped = equippedId !== null
+          const isSelected = selectedKey === key
+
+          return (
+            <button
+              key={item.id}
+              type="button"
+              title={SlotLabel(key)}
+              onClick={() => setSelectedKey(isSelected ? null : key)}
+              className={`flex flex-col items-center gap-1.5 rounded-lg border p-2 text-center transition-colors ${
+                isSelected
+                  ? 'border-amber-400/60 bg-slate-700 ring-1 ring-amber-400/20'
+                  : 'border-slate-700 bg-slate-800 hover:border-slate-500 hover:bg-slate-750'
+              }`}
+            >
+              <div className="relative">
+                {hasEquipped ? (
+                  <ItemIcon
+                    itemId={equippedId}
+                    size={32}
+                    fallback={
+                      <div className="flex h-8 w-8 items-center justify-center rounded border border-slate-500 bg-slate-700">
+                        <span className="text-xs text-slate-400">?</span>
+                      </div>
+                    }
+                  />
+                ) : (
+                  <EmptySlotIcon />
+                )}
+                {isBis && (
+                  <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-emerald-400" title="BiS equipped" />
+                )}
+                {!isBis && hasEquipped && (
+                  <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-amber-400" title="Upgrade available" />
+                )}
+              </div>
+              <span className="w-full truncate text-xs text-gray-400">{getEquippedSlotLabel(key, equippedId)}</span>
+            </button>
+          )
+        })}
+      </div>
+
+      {(() => {
+        const reportedTools = BIS_TOOL_GEAR
+          .map((item) => ({ item, ownedTier: GEAR.filter((g) => g.category === 'tool' && g.skill === item.skill).find((g) => ownedIds.includes(g.id)) ?? null }))
+          .filter(({ ownedTier }) => ownedTier !== null) as { item: typeof gearList[number]; ownedTier: typeof GEAR[number] }[]
+
+        if (reportedTools.length === 0) return (
+          <div>
+            <p className="mb-2 text-xs uppercase text-gray-500">Self-reported tools</p>
+            <p className="text-xs text-slate-500">
+              No tools marked as owned yet. Set them in{' '}
+              <Link to="/" className="underline text-slate-400">Self-reported gear on the Dashboard</Link>.
+            </p>
+          </div>
+        )
+
+        return (
+          <div>
+            <p className="mb-2 text-xs uppercase text-gray-500">Self-reported tools</p>
+            <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
+              {reportedTools.map(({ item, ownedTier }) => {
+                const key = getSlotKey(item)
+                const isSelected = selectedKey === key
+                const isBis = ownedTier.id === item.id
+
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    title={SlotLabel(key)}
+                    onClick={() => setSelectedKey(isSelected ? null : key)}
+                    className={`flex flex-col items-center gap-1.5 rounded-lg border p-2 text-center transition-colors ${
+                      isSelected
+                        ? 'border-amber-400/60 bg-slate-700 ring-1 ring-amber-400/20'
+                        : 'border-slate-700 bg-slate-800 hover:border-slate-500 hover:bg-slate-750'
+                    }`}
+                  >
+                    <div className="relative">
+                      <ItemIcon
+                        itemId={ownedTier.id}
+                        size={32}
+                        fallback={
+                          <div className="flex h-8 w-8 items-center justify-center rounded border border-slate-500 bg-slate-700">
+                            <span className="text-xs text-slate-400">?</span>
+                          </div>
+                        }
+                      />
+                      {isBis ? (
+                        <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-emerald-400" title="BiS owned" />
+                      ) : (
+                        <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-amber-400" title="Upgrade available" />
+                      )}
+                    </div>
+                    <span className="w-full truncate text-xs text-gray-400">{SlotLabel(key)}</span>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        )
+      })()}
+
     </div>
   )
 }

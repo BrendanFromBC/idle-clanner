@@ -1,10 +1,19 @@
+import type React from 'react'
 import { ITEM_ICON_URLS, MONSTER_ICON_URLS, SKILL_ICON_URLS } from '../../data/icons'
 
-// Renders nothing if the wiki has no resolved icon for this id (see
-// scripts/generate-icons.mjs — ~91% item coverage, 100% monster coverage).
-export function ItemIcon({ itemId, size = 24 }: { itemId: number; size?: number }) {
+// Renders `fallback` (default: nothing) if the wiki has no resolved icon for
+// this id (~91% item coverage — some items have no matching wiki file).
+export function ItemIcon({
+  itemId,
+  size = 24,
+  fallback = null,
+}: {
+  itemId: number
+  size?: number
+  fallback?: React.ReactNode
+}) {
   const url = ITEM_ICON_URLS.get(itemId)
-  if (!url) return null
+  if (!url) return <>{fallback}</>
   return <img src={url} width={size} height={size} alt="" className="shrink-0" />
 }
 

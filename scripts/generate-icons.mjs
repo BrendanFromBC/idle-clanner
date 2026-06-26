@@ -49,7 +49,10 @@ const WIKI_TITLE_OVERRIDES = { attack: 'Combat' }
 
 function toWikiFileTitle(snakeCaseName) {
   if (WIKI_TITLE_OVERRIDES[snakeCaseName]) return `File:${WIKI_TITLE_OVERRIDES[snakeCaseName]}.png`
-  const sentenceCase = snakeCaseName
+  // Enchanted items have no visual difference from their base version — the
+  // wiki uses the same image file for both, without an "_enchanted" variant.
+  const baseName = snakeCaseName.replace(/_enchanted$/, '')
+  const sentenceCase = baseName
     .split('_')
     .map((word, i) => (i === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word))
     .join(' ')
