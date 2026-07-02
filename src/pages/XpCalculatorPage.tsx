@@ -90,7 +90,7 @@ export function XpCalculatorPage() {
   )
 }
 
-type SortKey = 'xpPerHour' | 'xpPerGold'
+type SortKey = 'xpPerHour' | 'goldPerHour'
 
 function SkillPanel({ username, slot: _slot, skillKey }: { username: string | null; slot: Slot; skillKey: string }) {
   const { data: profile, isLoading, isError } = usePlayerProfile(username)
@@ -113,12 +113,12 @@ function SkillPanel({ username, slot: _slot, skillKey }: { username: string | nu
 
   const sorted = useMemo(() => {
     if (sortBy === 'xpPerHour') return ranked
-    // XP/gold sort: activities with no cost data sink to the bottom
+    // Gold/hr sort: profit (negative cost) is best, null data sinks to bottom
     return [...ranked].sort((a, b) => {
-      if (a.xpPerGold === null && b.xpPerGold === null) return 0
-      if (a.xpPerGold === null) return 1
-      if (b.xpPerGold === null) return -1
-      return b.xpPerGold - a.xpPerGold
+      if (a.goldCostPerHour === null && b.goldCostPerHour === null) return 0
+      if (a.goldCostPerHour === null) return 1
+      if (b.goldCostPerHour === null) return -1
+      return a.goldCostPerHour - b.goldCostPerHour // most negative (profitable) first
     })
   }, [ranked, sortBy])
 
@@ -169,13 +169,13 @@ function SkillPanel({ username, slot: _slot, skillKey }: { username: string | nu
             </button>
             <button
               type="button"
-              onClick={() => setSortBy('xpPerGold')}
-              className={`w-16 text-right text-xs font-medium uppercase transition-colors ${sortBy === 'xpPerGold' ? 'text-amber-400' : 'text-gray-500 hover:text-gray-300'}`}
+              onClick={() => setSortBy('goldPerHour')}
+              className={`w-20 text-right text-xs font-medium uppercase transition-colors ${sortBy === 'goldPerHour' ? 'text-amber-400' : 'text-gray-500 hover:text-gray-300'}`}
             >
-              XP/gold {sortBy === 'xpPerGold' && '↓'}
+              Gold/hr {sortBy === 'goldPerHour' && '↓'}
             </button>
           </div>
-          {sorted.map(({ activity, boostedXpPerHour, baseXpPerHour, goldCostPerHour, xpPerGold }, i) => (
+          {sorted.map(({ activity, boostedXpPerHour, baseXpPerHour, goldCostPerHour }, i) => (
             <div
               key={activity.id}
               className={`grid grid-cols-[1fr_auto_auto] items-center gap-x-4 rounded-lg border px-3 py-2.5 text-sm ${
@@ -185,12 +185,6 @@ function SkillPanel({ username, slot: _slot, skillKey }: { username: string | nu
               <div>
                 <span className="font-medium text-gray-100">{toDisplayName(activity.name)}</span>
                 <span className="ml-2 text-xs text-gray-500">lv {activity.levelRequired}</span>
-                {goldCostPerHour !== null && goldCostPerHour < 0 && (
-                  <span className="ml-2 text-xs text-emerald-400">+{formatGold(-goldCostPerHour)}/hr profit</span>
-                )}
-                {goldCostPerHour !== null && goldCostPerHour > 0 && (
-                  <span className="ml-2 text-xs text-rose-400">{formatGold(goldCostPerHour)}/hr cost</span>
-                )}
               </div>
               <div className="text-right">
                 <span className={i === 0 && sortBy === 'xpPerHour' ? 'font-semibold text-amber-300' : 'text-gray-200'}>
@@ -200,13 +194,19 @@ function SkillPanel({ username, slot: _slot, skillKey }: { username: string | nu
                   <div className="text-xs text-gray-500">{formatXp(baseXpPerHour)} base</div>
                 )}
               </div>
-              <div className="w-16 text-right">
-                {xpPerGold !== null ? (
-                  <span className={i === 0 && sortBy === 'xpPerGold' ? 'font-semibold text-amber-300' : 'text-gray-300'}>
-                    {xpPerGold.toFixed(2)}
-                  </span>
-                ) : (
+              <div className="w-20 text-right">
+                {goldCostPerHour === null ? (
                   <span className="text-gray-600">—</span>
+                ) : goldCostPerHour < 0 ? (
+                  <span className={`font-medium ${i === 0 && sortBy === 'goldPerHour' ? 'text-amber-300' : 'text-emerald-400'}`}>
+                    +{formatGold(-goldCostPerHour)}
+                  </span>
+                ) : goldCostPerHour === 0 ? (
+                  <span className="text-gray-400">free</span>
+                ) : (
+                  <span className={`${i === 0 && sortBy === 'goldPerHour' ? 'font-medium text-amber-300' : 'text-rose-400'}`}>
+                    -{formatGold(goldCostPerHour)}
+                  </span>
                 )}
               </div>
             </div>
