@@ -5,6 +5,7 @@ import { GearPage } from './pages/GearPage'
 import { OptimizerPage } from './pages/OptimizerPage'
 import { LootPage } from './pages/LootPage'
 import { PlannerPage } from './pages/PlannerPage'
+import { XpCalculatorPage } from './pages/XpCalculatorPage'
 
 function IconDashboard() {
   return (
@@ -58,6 +59,15 @@ function IconLoot() {
   )
 }
 
+function IconXP() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  )
+}
+
 function IconPlanner() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -74,6 +84,7 @@ const NAV_ITEMS = [
   { to: '/gear', label: 'Gear', Icon: IconGear },
   { to: '/profit-calculator', label: 'Profit Calculator', Icon: IconProfit },
   { to: '/loot', label: 'Loot', Icon: IconLoot },
+  { to: '/xp-calculator', label: 'XP Calculator', Icon: IconXP },
   { to: '/planner', label: 'Planner', Icon: IconPlanner },
 ]
 
@@ -127,6 +138,7 @@ function App() {
           <Route path="/gear" element={<GearPage />} />
           <Route path="/profit-calculator" element={<OptimizerPage />} />
           <Route path="/loot" element={<LootPage />} />
+          <Route path="/xp-calculator" element={<XpCalculatorPage />} />
           <Route path="/planner" element={<PlannerPage />} />
         </Routes>
       </main>

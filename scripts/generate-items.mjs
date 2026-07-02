@@ -42,6 +42,11 @@ const entries = items.map((item) => ({
   // as monsters.ts's attackStyleWeakness — verified in src/utils/combatStyle.ts.
   attackInterval: item.AttackInterval || 0,
   style: item.Style || 0,
+  // XP boost — tools, capes, and skilling armour carry a SkillBoost. The Skill
+  // field is the game's internal numeric skill ID (see SKILL_ID_TO_NAME in
+  // src/utils/skillIds.ts). 0/0 means no boost (most items).
+  skillBoostSkill: item.SkillBoost?.Skill || 0,
+  skillBoostPercentage: item.SkillBoost?.BoostPercentage || 0,
 }))
 
 entries.sort((a, b) => a.id - b.id)
@@ -64,6 +69,8 @@ export interface ItemDefinition {
   defenceBonus: number
   attackInterval: number // weapons only, 0 otherwise
   style: number           // weapons only, 0 otherwise — raw code, see combatStyle.ts
+  skillBoostSkill: number      // game's internal numeric skill ID; 0 = no boost
+  skillBoostPercentage: number // XP boost %; 0 = no boost. See src/utils/skillIds.ts
 }
 
 export const ITEMS: ItemDefinition[] = `

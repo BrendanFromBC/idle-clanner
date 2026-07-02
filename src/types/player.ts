@@ -17,6 +17,7 @@ export interface PlayerProfile {
   totalLevel: number
   bossKills: Record<string, number>
   upgrades: Record<string, number> // key → tier/count; 0 = not purchased
+  enchantmentBoosts: Record<string, number> // skill name → total % boost from all equipped jewelry
 }
 
 export function toPlayerProfile(raw: RawPlayerProfile): PlayerProfile {
@@ -41,5 +42,6 @@ export function toPlayerProfile(raw: RawPlayerProfile): PlayerProfile {
     totalLevel,
     bossKills: raw.pvmStats,
     upgrades: raw.upgrades,
+    enchantmentBoosts: raw.enchantmentBoosts ?? {},
   }
 }

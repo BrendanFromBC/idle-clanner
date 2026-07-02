@@ -16,6 +16,8 @@ export interface ItemDefinition {
   defenceBonus: number
   attackInterval: number // weapons only, 0 otherwise
   style: number           // weapons only, 0 otherwise — raw code, see combatStyle.ts
+  skillBoostSkill: number      // game's internal numeric skill ID; 0 = no boost
+  skillBoostPercentage: number // XP boost %; 0 = no boost. See src/utils/skillIds.ts
 }
 
 export const ITEMS: ItemDefinition[] = [
@@ -32,7 +34,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 1,
@@ -47,7 +51,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 2,
@@ -62,7 +68,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 3,
@@ -77,7 +85,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 4,
@@ -92,7 +102,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 5,
@@ -107,7 +119,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 6,
@@ -122,7 +136,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 7,
@@ -137,7 +153,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 8,
@@ -152,7 +170,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 9,
@@ -167,7 +187,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 10,
@@ -182,7 +204,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 11,
@@ -197,7 +221,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 12,
@@ -212,7 +238,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 13,
@@ -227,7 +255,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 14,
@@ -242,7 +272,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 15,
@@ -257,7 +289,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 16,
@@ -272,7 +306,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 17,
@@ -287,7 +323,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 18,
@@ -302,7 +340,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 19,
@@ -317,7 +357,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 20,
@@ -332,7 +374,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 21,
@@ -347,7 +391,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 22,
@@ -362,7 +408,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 23,
@@ -377,7 +425,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 24,
@@ -392,7 +442,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 25,
@@ -407,7 +459,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 26,
@@ -422,7 +476,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 27,
@@ -437,7 +493,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 28,
@@ -452,7 +510,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 29,
@@ -467,7 +527,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 30,
@@ -482,7 +544,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 31,
@@ -497,7 +561,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 32,
@@ -512,7 +578,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 33,
@@ -527,7 +595,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 34,
@@ -542,7 +612,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 35,
@@ -557,7 +629,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 36,
@@ -572,7 +646,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 37,
@@ -587,7 +663,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 38,
@@ -602,7 +680,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 39,
@@ -617,7 +697,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 40,
@@ -632,7 +714,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 41,
@@ -647,7 +731,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 42,
@@ -662,7 +748,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 43,
@@ -677,7 +765,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 44,
@@ -692,7 +782,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 45,
@@ -707,7 +799,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 46,
@@ -722,7 +816,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 47,
@@ -737,7 +833,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 48,
@@ -752,7 +850,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 49,
@@ -767,7 +867,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 12,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 50,
@@ -782,7 +884,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 51,
@@ -797,7 +901,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 52,
@@ -812,7 +918,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 53,
@@ -827,7 +935,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 4
   },
   {
     "id": 54,
@@ -842,7 +952,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 4
   },
   {
     "id": 55,
@@ -857,7 +969,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 18,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 56,
@@ -872,7 +986,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 57,
@@ -887,7 +1003,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 5,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 58,
@@ -902,7 +1020,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 7,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 59,
@@ -917,7 +1037,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 6
   },
   {
     "id": 60,
@@ -932,7 +1054,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 6
   },
   {
     "id": 61,
@@ -947,7 +1071,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 28,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 62,
@@ -962,7 +1088,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 14,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 63,
@@ -977,7 +1105,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 7,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 64,
@@ -992,7 +1122,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 12,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 65,
@@ -1007,7 +1139,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 8
   },
   {
     "id": 66,
@@ -1022,7 +1156,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 8
   },
   {
     "id": 67,
@@ -1037,7 +1173,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 68,
@@ -1052,7 +1190,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 69,
@@ -1067,7 +1207,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 70,
@@ -1082,7 +1224,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 71,
@@ -1097,7 +1241,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 72,
@@ -1112,7 +1258,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 73,
@@ -1127,7 +1275,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 74,
@@ -1142,7 +1292,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 75,
@@ -1157,7 +1309,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 57,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 76,
@@ -1172,7 +1326,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 26,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 77,
@@ -1187,7 +1343,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 12,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 78,
@@ -1202,7 +1360,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 26,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 79,
@@ -1217,7 +1377,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 10
   },
   {
     "id": 80,
@@ -1232,7 +1394,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 10
   },
   {
     "id": 81,
@@ -1247,7 +1411,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 74,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 82,
@@ -1262,7 +1428,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 44,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 83,
@@ -1277,7 +1445,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 37,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 84,
@@ -1292,7 +1462,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 17,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 85,
@@ -1307,7 +1479,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 12
   },
   {
     "id": 86,
@@ -1322,7 +1496,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 12
   },
   {
     "id": 87,
@@ -1337,7 +1513,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 92,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 88,
@@ -1352,7 +1530,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 58,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 89,
@@ -1367,7 +1547,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 28,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 90,
@@ -1382,7 +1564,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 45,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 91,
@@ -1397,7 +1581,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 15
   },
   {
     "id": 92,
@@ -1412,7 +1598,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 15
   },
   {
     "id": 93,
@@ -1427,7 +1615,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 110,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 94,
@@ -1442,7 +1632,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 82,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 95,
@@ -1457,7 +1649,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 35,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 96,
@@ -1472,7 +1666,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 74,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 97,
@@ -1487,7 +1683,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 20
   },
   {
     "id": 98,
@@ -1502,7 +1700,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 20
   },
   {
     "id": 99,
@@ -1517,7 +1717,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 100,
@@ -1532,7 +1734,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 101,
@@ -1547,7 +1751,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 102,
@@ -1562,7 +1768,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 103,
@@ -1577,7 +1785,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 104,
@@ -1592,7 +1802,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 105,
@@ -1607,7 +1819,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 106,
@@ -1622,7 +1836,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 107,
@@ -1637,7 +1853,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 108,
@@ -1652,7 +1870,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 109,
@@ -1667,7 +1887,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 110,
@@ -1682,7 +1904,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 111,
@@ -1697,7 +1921,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 112,
@@ -1712,7 +1938,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 113,
@@ -1727,7 +1955,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 114,
@@ -1742,7 +1972,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 115,
@@ -1757,7 +1989,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 116,
@@ -1772,7 +2006,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 117,
@@ -1787,7 +2023,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 118,
@@ -1802,7 +2040,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 119,
@@ -1817,7 +2057,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 120,
@@ -1832,7 +2074,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 121,
@@ -1847,7 +2091,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 122,
@@ -1862,7 +2108,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 123,
@@ -1877,7 +2125,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 124,
@@ -1892,7 +2142,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 125,
@@ -1907,7 +2159,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 126,
@@ -1922,7 +2176,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 127,
@@ -1937,7 +2193,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 128,
@@ -1952,7 +2210,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 129,
@@ -1967,7 +2227,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 130,
@@ -1982,7 +2244,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 131,
@@ -1997,7 +2261,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 132,
@@ -2012,7 +2278,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 133,
@@ -2027,7 +2295,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 134,
@@ -2042,7 +2312,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 135,
@@ -2057,7 +2329,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 136,
@@ -2072,7 +2346,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 137,
@@ -2087,7 +2363,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 138,
@@ -2102,7 +2380,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 139,
@@ -2117,7 +2397,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 140,
@@ -2132,7 +2414,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 141,
@@ -2147,7 +2431,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 142,
@@ -2162,7 +2448,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 143,
@@ -2177,7 +2465,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 144,
@@ -2192,7 +2482,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 145,
@@ -2207,7 +2499,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 146,
@@ -2222,7 +2516,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 147,
@@ -2237,7 +2533,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 148,
@@ -2252,7 +2550,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 149,
@@ -2267,7 +2567,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 150,
@@ -2282,7 +2584,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 151,
@@ -2297,7 +2601,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 13,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 152,
@@ -2312,7 +2618,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 153,
@@ -2327,7 +2635,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 13,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 154,
@@ -2342,7 +2652,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 12,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 155,
@@ -2357,7 +2669,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 156,
@@ -2372,7 +2686,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 157,
@@ -2387,7 +2703,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 158,
@@ -2402,7 +2720,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 159,
@@ -2417,7 +2737,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 160,
@@ -2432,7 +2754,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 161,
@@ -2447,7 +2771,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 162,
@@ -2462,7 +2788,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 163,
@@ -2477,7 +2805,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 164,
@@ -2492,7 +2822,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 165,
@@ -2507,7 +2839,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 166,
@@ -2522,7 +2856,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 167,
@@ -2537,7 +2873,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 168,
@@ -2552,7 +2890,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 169,
@@ -2567,7 +2907,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 170,
@@ -2582,7 +2924,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 20,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 171,
@@ -2597,7 +2941,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 13,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 172,
@@ -2612,7 +2958,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 36,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 173,
@@ -2627,7 +2975,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 14,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 174,
@@ -2642,7 +2992,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 25,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 175,
@@ -2657,7 +3009,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 38,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 176,
@@ -2672,7 +3026,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 29,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 177,
@@ -2687,7 +3043,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 18,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 178,
@@ -2702,7 +3060,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 47,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 179,
@@ -2717,7 +3077,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 22,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 180,
@@ -2732,7 +3094,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 31,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 181,
@@ -2747,7 +3111,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 52,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 182,
@@ -2762,7 +3128,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 47,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 183,
@@ -2777,7 +3145,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 35,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 184,
@@ -2792,7 +3162,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 65,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 185,
@@ -2807,7 +3179,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 41,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 186,
@@ -2822,7 +3196,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 46,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 187,
@@ -2837,7 +3213,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 68,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 188,
@@ -2852,7 +3230,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 66,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 189,
@@ -2867,7 +3247,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 51,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 190,
@@ -2882,7 +3264,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 95,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 191,
@@ -2897,7 +3281,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 54,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 192,
@@ -2912,7 +3298,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 65,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 193,
@@ -2927,7 +3315,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 96,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 194,
@@ -2942,7 +3332,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 82,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 195,
@@ -2957,7 +3349,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 65,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 196,
@@ -2972,7 +3366,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 115,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 197,
@@ -2987,7 +3383,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 71,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 198,
@@ -3002,7 +3400,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 85,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 199,
@@ -3017,7 +3417,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 122,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 200,
@@ -3032,7 +3434,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 102,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 201,
@@ -3047,7 +3451,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 78,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 202,
@@ -3062,7 +3468,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 135,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 203,
@@ -3077,7 +3485,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 84,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 204,
@@ -3092,7 +3502,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 102,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 205,
@@ -3107,7 +3519,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 155,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 206,
@@ -3122,7 +3536,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 207,
@@ -3137,7 +3553,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 208,
@@ -3152,7 +3570,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 209,
@@ -3167,7 +3587,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 210,
@@ -3182,7 +3604,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 211,
@@ -3197,7 +3621,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 212,
@@ -3212,7 +3638,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 213,
@@ -3227,7 +3655,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 214,
@@ -3242,7 +3672,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 215,
@@ -3257,7 +3689,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 216,
@@ -3272,7 +3706,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 217,
@@ -3287,7 +3723,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 218,
@@ -3302,7 +3740,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 219,
@@ -3317,7 +3757,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 220,
@@ -3332,7 +3774,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 221,
@@ -3347,7 +3791,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 222,
@@ -3362,7 +3808,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 223,
@@ -3377,7 +3825,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 224,
@@ -3392,7 +3842,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 225,
@@ -3407,7 +3859,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 226,
@@ -3422,7 +3876,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 227,
@@ -3437,7 +3893,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 228,
@@ -3452,7 +3910,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 229,
@@ -3467,7 +3927,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 230,
@@ -3482,7 +3944,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 231,
@@ -3497,7 +3961,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 232,
@@ -3512,7 +3978,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 5,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 233,
@@ -3527,7 +3995,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 234,
@@ -3542,7 +4012,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 12,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 235,
@@ -3557,7 +4029,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 236,
@@ -3572,7 +4046,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 18,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 237,
@@ -3587,7 +4063,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 22,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 238,
@@ -3602,7 +4080,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 2,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 239,
@@ -3617,7 +4097,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 240,
@@ -3632,7 +4114,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 5,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 241,
@@ -3647,7 +4131,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 242,
@@ -3662,7 +4148,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 9,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 243,
@@ -3677,7 +4165,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 10,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 244,
@@ -3692,7 +4182,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 12,
     "defenceBonus": 12,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 245,
@@ -3707,7 +4199,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 246,
@@ -3722,7 +4216,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 247,
@@ -3737,7 +4233,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 248,
@@ -3752,7 +4250,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 249,
@@ -3767,7 +4267,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 250,
@@ -3782,7 +4284,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 251,
@@ -3797,7 +4301,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 26,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 252,
@@ -3812,7 +4318,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 17,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 253,
@@ -3827,7 +4335,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 29,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 254,
@@ -3842,7 +4352,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 20,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 255,
@@ -3857,7 +4369,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 34,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 256,
@@ -3872,7 +4386,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 25,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 257,
@@ -3887,7 +4403,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 44,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 258,
@@ -3902,7 +4420,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 14,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 259,
@@ -3917,7 +4437,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 23,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 260,
@@ -3932,7 +4454,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 261,
@@ -3947,7 +4471,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 262,
@@ -3962,7 +4488,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 263,
@@ -3977,7 +4505,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 264,
@@ -3992,7 +4522,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 265,
@@ -4007,7 +4539,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 266,
@@ -4022,7 +4556,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 267,
@@ -4037,7 +4573,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 268,
@@ -4052,7 +4590,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 269,
@@ -4067,7 +4607,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 270,
@@ -4082,7 +4624,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 271,
@@ -4097,7 +4641,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 272,
@@ -4112,7 +4658,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 273,
@@ -4127,7 +4675,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 274,
@@ -4142,7 +4692,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 275,
@@ -4157,7 +4709,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 276,
@@ -4172,7 +4726,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 277,
@@ -4187,7 +4743,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 7,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 278,
@@ -4202,7 +4760,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 17,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 279,
@@ -4217,7 +4777,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 12,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 280,
@@ -4232,7 +4794,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 42,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 281,
@@ -4247,7 +4811,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 35,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 282,
@@ -4262,7 +4828,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 283,
@@ -4277,7 +4845,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 284,
@@ -4292,7 +4862,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 4
   },
   {
     "id": 285,
@@ -4307,7 +4879,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 4
   },
   {
     "id": 286,
@@ -4322,7 +4896,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 4
   },
   {
     "id": 287,
@@ -4337,7 +4913,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 4
   },
   {
     "id": 288,
@@ -4352,7 +4930,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 4
   },
   {
     "id": 289,
@@ -4367,7 +4947,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 4
   },
   {
     "id": 290,
@@ -4382,7 +4964,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 4
   },
   {
     "id": 291,
@@ -4397,7 +4981,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 6
   },
   {
     "id": 292,
@@ -4412,7 +4998,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 6
   },
   {
     "id": 293,
@@ -4427,7 +5015,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 6
   },
   {
     "id": 294,
@@ -4442,7 +5032,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 6
   },
   {
     "id": 295,
@@ -4457,7 +5049,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 6
   },
   {
     "id": 296,
@@ -4472,7 +5066,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 6
   },
   {
     "id": 297,
@@ -4487,7 +5083,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 6
   },
   {
     "id": 298,
@@ -4502,7 +5100,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 8
   },
   {
     "id": 299,
@@ -4517,7 +5117,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 8
   },
   {
     "id": 300,
@@ -4532,7 +5134,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 8
   },
   {
     "id": 301,
@@ -4547,7 +5151,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 8
   },
   {
     "id": 302,
@@ -4562,7 +5168,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 8
   },
   {
     "id": 303,
@@ -4577,7 +5185,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 8
   },
   {
     "id": 304,
@@ -4592,7 +5202,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 8
   },
   {
     "id": 305,
@@ -4607,7 +5219,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 10
   },
   {
     "id": 306,
@@ -4622,7 +5236,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 10
   },
   {
     "id": 307,
@@ -4637,7 +5253,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 10
   },
   {
     "id": 308,
@@ -4652,7 +5270,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 10
   },
   {
     "id": 309,
@@ -4667,7 +5287,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 10
   },
   {
     "id": 310,
@@ -4682,7 +5304,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 10
   },
   {
     "id": 311,
@@ -4697,7 +5321,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 10
   },
   {
     "id": 312,
@@ -4712,7 +5338,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 12
   },
   {
     "id": 313,
@@ -4727,7 +5355,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 12
   },
   {
     "id": 314,
@@ -4742,7 +5372,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 12
   },
   {
     "id": 315,
@@ -4757,7 +5389,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 12
   },
   {
     "id": 316,
@@ -4772,7 +5406,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 12
   },
   {
     "id": 317,
@@ -4787,7 +5423,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 12
   },
   {
     "id": 318,
@@ -4802,7 +5440,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 12
   },
   {
     "id": 319,
@@ -4817,7 +5457,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 15
   },
   {
     "id": 320,
@@ -4832,7 +5474,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 15
   },
   {
     "id": 321,
@@ -4847,7 +5491,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 15
   },
   {
     "id": 322,
@@ -4862,7 +5508,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 15
   },
   {
     "id": 323,
@@ -4877,7 +5525,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 15
   },
   {
     "id": 324,
@@ -4892,7 +5542,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 15
   },
   {
     "id": 325,
@@ -4907,7 +5559,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 15
   },
   {
     "id": 326,
@@ -4922,7 +5576,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 20
   },
   {
     "id": 327,
@@ -4937,7 +5593,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 20
   },
   {
     "id": 328,
@@ -4952,7 +5610,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 20
   },
   {
     "id": 329,
@@ -4967,7 +5627,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 20
   },
   {
     "id": 330,
@@ -4982,7 +5644,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 20
   },
   {
     "id": 331,
@@ -4997,7 +5661,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 20
   },
   {
     "id": 332,
@@ -5012,7 +5678,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 20
   },
   {
     "id": 333,
@@ -5027,7 +5695,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 334,
@@ -5042,7 +5712,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 335,
@@ -5057,7 +5729,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 336,
@@ -5072,7 +5746,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 337,
@@ -5087,7 +5763,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 338,
@@ -5102,7 +5780,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 339,
@@ -5117,7 +5797,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 340,
@@ -5132,7 +5814,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 341,
@@ -5147,7 +5831,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 342,
@@ -5162,7 +5848,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 343,
@@ -5177,7 +5865,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 344,
@@ -5192,7 +5882,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 345,
@@ -5207,7 +5899,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 346,
@@ -5222,7 +5916,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 347,
@@ -5237,7 +5933,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 348,
@@ -5252,7 +5950,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 349,
@@ -5267,7 +5967,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 350,
@@ -5282,7 +5984,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 351,
@@ -5297,7 +6001,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 352,
@@ -5312,7 +6018,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 353,
@@ -5327,7 +6035,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 354,
@@ -5342,7 +6052,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 355,
@@ -5357,7 +6069,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 356,
@@ -5372,7 +6086,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 357,
@@ -5387,7 +6103,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 358,
@@ -5402,7 +6120,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 359,
@@ -5417,7 +6137,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 360,
@@ -5432,7 +6154,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 361,
@@ -5447,7 +6171,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 362,
@@ -5462,7 +6188,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 363,
@@ -5477,7 +6205,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 364,
@@ -5492,7 +6222,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 365,
@@ -5507,7 +6239,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 366,
@@ -5522,7 +6256,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 367,
@@ -5537,7 +6273,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 368,
@@ -5552,7 +6290,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 369,
@@ -5567,7 +6307,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 370,
@@ -5582,7 +6324,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 371,
@@ -5597,7 +6341,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 372,
@@ -5612,7 +6358,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 373,
@@ -5627,7 +6375,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 374,
@@ -5642,7 +6392,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 375,
@@ -5657,7 +6409,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 376,
@@ -5672,7 +6426,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 377,
@@ -5687,7 +6443,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 378,
@@ -5702,7 +6460,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 379,
@@ -5717,7 +6477,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 380,
@@ -5732,7 +6494,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 381,
@@ -5747,7 +6511,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 382,
@@ -5762,7 +6528,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 383,
@@ -5777,7 +6545,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 384,
@@ -5792,7 +6562,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 385,
@@ -5807,7 +6579,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 386,
@@ -5822,7 +6596,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 1,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 387,
@@ -5837,7 +6613,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 388,
@@ -5852,7 +6630,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 389,
@@ -5867,7 +6647,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4400,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 390,
@@ -5882,7 +6664,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 391,
@@ -5897,7 +6681,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 392,
@@ -5912,7 +6698,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 393,
@@ -5927,7 +6715,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4250,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 394,
@@ -5942,7 +6732,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 22,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 395,
@@ -5957,7 +6749,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 396,
@@ -5972,7 +6766,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 397,
@@ -5987,7 +6783,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 398,
@@ -6002,7 +6800,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 399,
@@ -6017,7 +6817,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 400,
@@ -6032,7 +6834,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 401,
@@ -6047,7 +6851,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 402,
@@ -6062,7 +6868,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 403,
@@ -6077,7 +6885,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 404,
@@ -6092,7 +6902,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 405,
@@ -6107,7 +6919,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 406,
@@ -6122,7 +6936,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 407,
@@ -6137,7 +6953,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 408,
@@ -6152,7 +6970,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 409,
@@ -6167,7 +6987,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 410,
@@ -6182,7 +7004,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 411,
@@ -6197,7 +7021,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 412,
@@ -6212,7 +7038,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 413,
@@ -6227,7 +7055,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 414,
@@ -6242,7 +7072,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 415,
@@ -6257,7 +7089,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 416,
@@ -6272,7 +7106,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 417,
@@ -6287,7 +7123,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 418,
@@ -6302,7 +7140,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 419,
@@ -6317,7 +7157,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 420,
@@ -6332,7 +7174,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 421,
@@ -6347,7 +7191,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 422,
@@ -6362,7 +7208,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 423,
@@ -6377,7 +7225,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 424,
@@ -6392,7 +7242,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 425,
@@ -6407,7 +7259,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 426,
@@ -6422,7 +7276,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 427,
@@ -6437,7 +7293,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 428,
@@ -6452,7 +7310,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 429,
@@ -6467,7 +7327,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 430,
@@ -6482,7 +7344,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 431,
@@ -6497,7 +7361,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 432,
@@ -6512,7 +7378,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 433,
@@ -6527,7 +7395,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 434,
@@ -6542,7 +7412,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 435,
@@ -6557,7 +7429,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 436,
@@ -6572,7 +7446,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 437,
@@ -6587,7 +7463,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 438,
@@ -6602,7 +7480,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 439,
@@ -6617,7 +7497,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 440,
@@ -6632,7 +7514,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 441,
@@ -6647,7 +7531,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 442,
@@ -6662,7 +7548,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 443,
@@ -6677,7 +7565,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 444,
@@ -6692,7 +7582,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 445,
@@ -6707,7 +7599,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 446,
@@ -6722,7 +7616,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 447,
@@ -6737,7 +7633,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 448,
@@ -6752,7 +7650,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 449,
@@ -6767,7 +7667,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 450,
@@ -6782,7 +7684,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 451,
@@ -6797,7 +7701,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 452,
@@ -6812,7 +7718,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 453,
@@ -6827,7 +7735,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 5
   },
   {
     "id": 454,
@@ -6842,7 +7752,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 4,
+    "skillBoostPercentage": 5
   },
   {
     "id": 455,
@@ -6857,7 +7769,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 5
   },
   {
     "id": 456,
@@ -6872,7 +7786,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 5
   },
   {
     "id": 457,
@@ -6887,7 +7803,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 5
   },
   {
     "id": 458,
@@ -6902,7 +7820,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 5
   },
   {
     "id": 459,
@@ -6917,7 +7837,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 3,
+    "skillBoostPercentage": 5
   },
   {
     "id": 460,
@@ -6932,7 +7854,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 18,
+    "skillBoostPercentage": 5
   },
   {
     "id": 461,
@@ -6947,7 +7871,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 5
   },
   {
     "id": 462,
@@ -6962,7 +7888,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 5
   },
   {
     "id": 463,
@@ -6977,7 +7905,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 5
   },
   {
     "id": 464,
@@ -6992,7 +7922,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 6,
+    "skillBoostPercentage": 0
   },
   {
     "id": 465,
@@ -7007,7 +7939,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 5,
+    "skillBoostPercentage": 5
   },
   {
     "id": 466,
@@ -7022,7 +7956,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 5
   },
   {
     "id": 467,
@@ -7037,7 +7973,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 5
   },
   {
     "id": 468,
@@ -7052,7 +7990,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 1,
+    "skillBoostPercentage": 5
   },
   {
     "id": 469,
@@ -7067,7 +8007,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 5
   },
   {
     "id": 470,
@@ -7082,7 +8024,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 2,
+    "skillBoostPercentage": 5
   },
   {
     "id": 471,
@@ -7097,7 +8041,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 5
   },
   {
     "id": 472,
@@ -7112,7 +8058,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 10
   },
   {
     "id": 473,
@@ -7127,7 +8075,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 4,
+    "skillBoostPercentage": 10
   },
   {
     "id": 474,
@@ -7142,7 +8092,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 10
   },
   {
     "id": 475,
@@ -7157,7 +8109,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 10
   },
   {
     "id": 476,
@@ -7172,7 +8126,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 10
   },
   {
     "id": 477,
@@ -7187,7 +8143,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 10
   },
   {
     "id": 478,
@@ -7202,7 +8160,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 3,
+    "skillBoostPercentage": 10
   },
   {
     "id": 479,
@@ -7217,7 +8177,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 18,
+    "skillBoostPercentage": 10
   },
   {
     "id": 480,
@@ -7232,7 +8194,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 10
   },
   {
     "id": 481,
@@ -7247,7 +8211,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 10
   },
   {
     "id": 482,
@@ -7262,7 +8228,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 10
   },
   {
     "id": 483,
@@ -7277,7 +8245,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 6,
+    "skillBoostPercentage": 0
   },
   {
     "id": 484,
@@ -7292,7 +8262,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 5,
+    "skillBoostPercentage": 10
   },
   {
     "id": 485,
@@ -7307,7 +8279,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 10
   },
   {
     "id": 486,
@@ -7322,7 +8296,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 10
   },
   {
     "id": 487,
@@ -7337,7 +8313,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 1,
+    "skillBoostPercentage": 10
   },
   {
     "id": 488,
@@ -7352,7 +8330,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 10
   },
   {
     "id": 489,
@@ -7367,7 +8347,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 2,
+    "skillBoostPercentage": 10
   },
   {
     "id": 490,
@@ -7382,7 +8364,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 10
   },
   {
     "id": 491,
@@ -7397,7 +8381,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 15
   },
   {
     "id": 492,
@@ -7412,7 +8398,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 4,
+    "skillBoostPercentage": 15
   },
   {
     "id": 493,
@@ -7427,7 +8415,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 15
   },
   {
     "id": 494,
@@ -7442,7 +8432,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 15
   },
   {
     "id": 495,
@@ -7457,7 +8449,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 15
   },
   {
     "id": 496,
@@ -7472,7 +8466,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 15
   },
   {
     "id": 497,
@@ -7487,7 +8483,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 3,
+    "skillBoostPercentage": 15
   },
   {
     "id": 498,
@@ -7502,7 +8500,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 18,
+    "skillBoostPercentage": 15
   },
   {
     "id": 499,
@@ -7517,7 +8517,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 15
   },
   {
     "id": 500,
@@ -7532,7 +8534,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 15
   },
   {
     "id": 501,
@@ -7547,7 +8551,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 15
   },
   {
     "id": 502,
@@ -7562,7 +8568,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 6,
+    "skillBoostPercentage": 0
   },
   {
     "id": 503,
@@ -7577,7 +8585,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 5,
+    "skillBoostPercentage": 15
   },
   {
     "id": 504,
@@ -7592,7 +8602,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 15
   },
   {
     "id": 505,
@@ -7607,7 +8619,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 15
   },
   {
     "id": 506,
@@ -7622,7 +8636,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 1,
+    "skillBoostPercentage": 15
   },
   {
     "id": 507,
@@ -7637,7 +8653,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 15
   },
   {
     "id": 508,
@@ -7652,7 +8670,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 2,
+    "skillBoostPercentage": 15
   },
   {
     "id": 509,
@@ -7667,7 +8687,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 15
   },
   {
     "id": 510,
@@ -7682,7 +8704,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 20
   },
   {
     "id": 511,
@@ -7697,7 +8721,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 4,
+    "skillBoostPercentage": 20
   },
   {
     "id": 512,
@@ -7712,7 +8738,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 20
   },
   {
     "id": 513,
@@ -7727,7 +8755,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 20
   },
   {
     "id": 514,
@@ -7742,7 +8772,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 20
   },
   {
     "id": 515,
@@ -7757,7 +8789,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 20
   },
   {
     "id": 516,
@@ -7772,7 +8806,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 3,
+    "skillBoostPercentage": 20
   },
   {
     "id": 517,
@@ -7787,7 +8823,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 18,
+    "skillBoostPercentage": 20
   },
   {
     "id": 518,
@@ -7802,7 +8840,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 20
   },
   {
     "id": 519,
@@ -7817,7 +8857,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 20
   },
   {
     "id": 520,
@@ -7832,7 +8874,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 20
   },
   {
     "id": 521,
@@ -7847,7 +8891,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 6,
+    "skillBoostPercentage": 0
   },
   {
     "id": 522,
@@ -7862,7 +8908,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 5,
+    "skillBoostPercentage": 20
   },
   {
     "id": 523,
@@ -7877,7 +8925,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 20
   },
   {
     "id": 524,
@@ -7892,7 +8942,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 20
   },
   {
     "id": 525,
@@ -7907,7 +8959,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 1,
+    "skillBoostPercentage": 20
   },
   {
     "id": 526,
@@ -7922,7 +8976,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 20
   },
   {
     "id": 527,
@@ -7937,7 +8993,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 2,
+    "skillBoostPercentage": 20
   },
   {
     "id": 528,
@@ -7952,7 +9010,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 20
   },
   {
     "id": 529,
@@ -7967,7 +9027,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 530,
@@ -7982,7 +9044,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 531,
@@ -7997,7 +9061,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 532,
@@ -8012,7 +9078,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 533,
@@ -8027,7 +9095,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 4
   },
   {
     "id": 534,
@@ -8042,7 +9112,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 6
   },
   {
     "id": 535,
@@ -8057,7 +9129,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 8
   },
   {
     "id": 536,
@@ -8072,7 +9146,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 10
   },
   {
     "id": 537,
@@ -8087,7 +9163,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 12
   },
   {
     "id": 538,
@@ -8102,7 +9180,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 15
   },
   {
     "id": 539,
@@ -8117,7 +9197,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 20
   },
   {
     "id": 540,
@@ -8132,7 +9214,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 4
   },
   {
     "id": 541,
@@ -8147,7 +9231,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 6
   },
   {
     "id": 542,
@@ -8162,7 +9248,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 8
   },
   {
     "id": 543,
@@ -8177,7 +9265,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 10
   },
   {
     "id": 544,
@@ -8192,7 +9282,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 12
   },
   {
     "id": 545,
@@ -8207,7 +9299,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 15
   },
   {
     "id": 546,
@@ -8222,7 +9316,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 20
   },
   {
     "id": 547,
@@ -8237,7 +9333,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 548,
@@ -8252,7 +9350,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 549,
@@ -8267,7 +9367,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 550,
@@ -8282,7 +9384,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 551,
@@ -8297,7 +9401,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 552,
@@ -8312,7 +9418,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 4
   },
   {
     "id": 553,
@@ -8327,7 +9435,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 6
   },
   {
     "id": 554,
@@ -8342,7 +9452,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 8
   },
   {
     "id": 555,
@@ -8357,7 +9469,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 10
   },
   {
     "id": 556,
@@ -8372,7 +9486,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 12
   },
   {
     "id": 557,
@@ -8387,7 +9503,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 15
   },
   {
     "id": 558,
@@ -8402,7 +9520,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 20
   },
   {
     "id": 559,
@@ -8417,7 +9537,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 560,
@@ -8432,7 +9554,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 561,
@@ -8447,7 +9571,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 562,
@@ -8462,7 +9588,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 563,
@@ -8477,7 +9605,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 37,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 564,
@@ -8492,7 +9622,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 565,
@@ -8507,7 +9639,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 65,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 566,
@@ -8522,7 +9656,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 567,
@@ -8537,7 +9673,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 74,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 568,
@@ -8552,7 +9690,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 569,
@@ -8567,7 +9707,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 570,
@@ -8582,7 +9724,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 571,
@@ -8597,7 +9741,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 5,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 572,
@@ -8612,7 +9758,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 5,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 573,
@@ -8627,7 +9775,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 574,
@@ -8642,7 +9792,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 94,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 575,
@@ -8657,7 +9809,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 78,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 576,
@@ -8672,7 +9826,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 92,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 577,
@@ -8687,7 +9843,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 578,
@@ -8702,7 +9860,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 69,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 579,
@@ -8717,7 +9877,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 580,
@@ -8732,7 +9894,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 581,
@@ -8747,7 +9911,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 55,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 582,
@@ -8762,7 +9928,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 45,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 583,
@@ -8777,7 +9945,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 55,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 584,
@@ -8792,7 +9962,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 32,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 585,
@@ -8807,7 +9979,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 586,
@@ -8822,7 +9996,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 587,
@@ -8837,7 +10013,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 588,
@@ -8852,7 +10030,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 2
   },
   {
     "id": 589,
@@ -8867,7 +10047,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 2
   },
   {
     "id": 590,
@@ -8882,7 +10064,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 2
   },
   {
     "id": 591,
@@ -8897,7 +10081,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 2
   },
   {
     "id": 592,
@@ -8912,7 +10098,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 2
   },
   {
     "id": 593,
@@ -8927,7 +10115,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 2
   },
   {
     "id": 594,
@@ -8942,7 +10132,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 2
   },
   {
     "id": 595,
@@ -8957,7 +10149,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 2
   },
   {
     "id": 596,
@@ -8972,7 +10166,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 2
   },
   {
     "id": 597,
@@ -8987,7 +10183,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 2
   },
   {
     "id": 598,
@@ -9002,7 +10200,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 2
   },
   {
     "id": 599,
@@ -9017,7 +10217,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 2
   },
   {
     "id": 600,
@@ -9032,7 +10234,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 601,
@@ -9047,7 +10251,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 602,
@@ -9062,7 +10268,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 603,
@@ -9077,7 +10285,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 604,
@@ -9092,7 +10302,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 605,
@@ -9107,7 +10319,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 606,
@@ -9122,7 +10336,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 607,
@@ -9137,7 +10353,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 608,
@@ -9152,7 +10370,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 609,
@@ -9167,7 +10387,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 610,
@@ -9182,7 +10404,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 611,
@@ -9197,7 +10421,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 612,
@@ -9212,7 +10438,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 613,
@@ -9227,7 +10455,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 18,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 614,
@@ -9242,7 +10472,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 12,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 615,
@@ -9257,7 +10489,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 616,
@@ -9272,7 +10506,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 617,
@@ -9287,7 +10523,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 13,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 618,
@@ -9302,7 +10540,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 619,
@@ -9317,7 +10557,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 620,
@@ -9332,7 +10574,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 621,
@@ -9347,7 +10591,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 622,
@@ -9362,7 +10608,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 623,
@@ -9377,7 +10625,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 624,
@@ -9392,7 +10642,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 625,
@@ -9407,7 +10659,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 626,
@@ -9422,7 +10676,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 627,
@@ -9437,7 +10693,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 628,
@@ -9452,7 +10710,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 629,
@@ -9467,7 +10727,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 630,
@@ -9482,7 +10744,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 631,
@@ -9497,7 +10761,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 632,
@@ -9512,7 +10778,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 633,
@@ -9527,7 +10795,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 634,
@@ -9542,7 +10812,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 635,
@@ -9557,7 +10829,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 636,
@@ -9572,7 +10846,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 637,
@@ -9587,7 +10863,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 638,
@@ -9602,7 +10880,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 639,
@@ -9617,7 +10897,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 640,
@@ -9632,7 +10914,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 641,
@@ -9647,7 +10931,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 642,
@@ -9662,7 +10948,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 643,
@@ -9677,7 +10965,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 644,
@@ -9692,7 +10982,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 645,
@@ -9707,7 +10999,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 646,
@@ -9722,7 +11016,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 647,
@@ -9737,7 +11033,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 648,
@@ -9752,7 +11050,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 649,
@@ -9767,7 +11067,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 650,
@@ -9782,7 +11084,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 651,
@@ -9797,7 +11101,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 652,
@@ -9812,7 +11118,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 653,
@@ -9827,7 +11135,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 654,
@@ -9842,7 +11152,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 655,
@@ -9857,7 +11169,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 656,
@@ -9872,7 +11186,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 657,
@@ -9887,7 +11203,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 658,
@@ -9902,7 +11220,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 659,
@@ -9917,7 +11237,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 660,
@@ -9932,7 +11254,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 661,
@@ -9947,7 +11271,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 662,
@@ -9962,7 +11288,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 663,
@@ -9977,7 +11305,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 664,
@@ -9992,7 +11322,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 10,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 665,
@@ -10007,7 +11339,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 10,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 666,
@@ -10022,7 +11356,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 667,
@@ -10037,7 +11373,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 668,
@@ -10052,7 +11390,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 669,
@@ -10067,7 +11407,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 4,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 670,
@@ -10082,7 +11424,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 671,
@@ -10097,7 +11441,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 672,
@@ -10112,7 +11458,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 3,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 673,
@@ -10127,7 +11475,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 52,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 674,
@@ -10142,7 +11492,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 2
   },
   {
     "id": 675,
@@ -10157,7 +11509,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 18,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 676,
@@ -10172,7 +11526,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 677,
@@ -10187,7 +11543,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 22,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 678,
@@ -10202,7 +11560,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 10,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 679,
@@ -10217,7 +11577,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 680,
@@ -10232,7 +11594,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 681,
@@ -10247,7 +11611,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 682,
@@ -10262,7 +11628,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 683,
@@ -10277,7 +11645,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 684,
@@ -10292,7 +11662,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 685,
@@ -10307,7 +11679,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 686,
@@ -10322,7 +11696,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 687,
@@ -10337,7 +11713,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 688,
@@ -10352,7 +11730,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 689,
@@ -10367,7 +11747,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 690,
@@ -10382,7 +11764,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 691,
@@ -10397,7 +11781,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 692,
@@ -10412,7 +11798,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 693,
@@ -10427,7 +11815,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 694,
@@ -10442,7 +11832,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 695,
@@ -10457,7 +11849,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 696,
@@ -10472,7 +11866,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 697,
@@ -10487,7 +11883,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 698,
@@ -10502,7 +11900,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 699,
@@ -10517,7 +11917,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 700,
@@ -10532,7 +11934,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 15,
     "defenceBonus": 16,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 701,
@@ -10547,7 +11951,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 28,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 702,
@@ -10562,7 +11968,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 703,
@@ -10577,7 +11985,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 704,
@@ -10592,7 +12002,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 705,
@@ -10607,7 +12019,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 706,
@@ -10622,7 +12036,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 707,
@@ -10637,7 +12053,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 708,
@@ -10652,7 +12070,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 709,
@@ -10667,7 +12087,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 710,
@@ -10682,7 +12104,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 711,
@@ -10697,7 +12121,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 712,
@@ -10712,7 +12138,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 713,
@@ -10727,7 +12155,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 714,
@@ -10742,7 +12172,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 715,
@@ -10757,7 +12189,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 716,
@@ -10772,7 +12206,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 717,
@@ -10787,7 +12223,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 718,
@@ -10802,7 +12240,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 719,
@@ -10817,7 +12257,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 720,
@@ -10832,7 +12274,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 721,
@@ -10847,7 +12291,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 722,
@@ -10862,7 +12308,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 723,
@@ -10877,7 +12325,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 724,
@@ -10892,7 +12342,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 725,
@@ -10907,7 +12359,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 726,
@@ -10922,7 +12376,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 727,
@@ -10937,7 +12393,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 728,
@@ -10952,7 +12410,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 729,
@@ -10967,7 +12427,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 730,
@@ -10982,7 +12444,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 731,
@@ -10997,7 +12461,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 732,
@@ -11012,7 +12478,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 733,
@@ -11027,7 +12495,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 734,
@@ -11042,7 +12512,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 735,
@@ -11057,7 +12529,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 736,
@@ -11072,7 +12546,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 737,
@@ -11087,7 +12563,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 738,
@@ -11102,7 +12580,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 739,
@@ -11117,7 +12597,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 740,
@@ -11132,7 +12614,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 741,
@@ -11147,7 +12631,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 742,
@@ -11162,7 +12648,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 5
   },
   {
     "id": 743,
@@ -11177,7 +12665,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 744,
@@ -11192,7 +12682,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 745,
@@ -11207,7 +12699,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 746,
@@ -11222,7 +12716,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 747,
@@ -11237,7 +12733,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 748,
@@ -11252,7 +12750,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 749,
@@ -11267,7 +12767,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 750,
@@ -11282,7 +12784,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 751,
@@ -11297,7 +12801,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 752,
@@ -11312,7 +12818,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 753,
@@ -11327,7 +12835,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 754,
@@ -11342,7 +12852,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 755,
@@ -11357,7 +12869,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 756,
@@ -11372,7 +12886,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 757,
@@ -11387,7 +12903,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 758,
@@ -11402,7 +12920,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 759,
@@ -11417,7 +12937,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 760,
@@ -11432,7 +12954,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 12,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 761,
@@ -11447,7 +12971,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 762,
@@ -11462,7 +12988,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 22,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 763,
@@ -11477,7 +13005,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 764,
@@ -11492,7 +13022,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 765,
@@ -11507,7 +13039,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 766,
@@ -11522,7 +13056,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 767,
@@ -11537,7 +13073,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 768,
@@ -11552,7 +13090,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 769,
@@ -11567,7 +13107,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 770,
@@ -11582,7 +13124,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 771,
@@ -11597,7 +13141,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 9,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 772,
@@ -11612,7 +13158,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 12,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 773,
@@ -11627,7 +13175,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 15,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 774,
@@ -11642,7 +13192,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 20,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 775,
@@ -11657,7 +13209,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 776,
@@ -11672,7 +13226,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 777,
@@ -11687,7 +13243,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 778,
@@ -11702,7 +13260,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 779,
@@ -11717,7 +13277,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 780,
@@ -11732,7 +13294,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 781,
@@ -11747,7 +13311,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 782,
@@ -11762,7 +13328,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 783,
@@ -11777,7 +13345,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 784,
@@ -11792,7 +13362,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 785,
@@ -11807,7 +13379,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 786,
@@ -11822,7 +13396,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 787,
@@ -11837,7 +13413,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 788,
@@ -11852,7 +13430,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 25,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 789,
@@ -11867,7 +13447,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 790,
@@ -11882,7 +13464,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 791,
@@ -11897,7 +13481,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 87,
     "defenceBonus": 0,
     "attackInterval": 2750,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 792,
@@ -11912,7 +13498,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 118,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 793,
@@ -11927,7 +13515,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 2500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 794,
@@ -11942,7 +13532,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 95,
     "defenceBonus": 0,
     "attackInterval": 3000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 795,
@@ -11957,7 +13549,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 796,
@@ -11972,7 +13566,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 149,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 797,
@@ -11987,7 +13583,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 115,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 798,
@@ -12002,7 +13600,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 172,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 799,
@@ -12017,7 +13617,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 4750,
-    "style": 6
+    "style": 6,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 800,
@@ -12032,7 +13634,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 8,
+    "skillBoostPercentage": 25
   },
   {
     "id": 801,
@@ -12047,7 +13651,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 12,
+    "skillBoostPercentage": 25
   },
   {
     "id": 802,
@@ -12062,7 +13668,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 10,
+    "skillBoostPercentage": 25
   },
   {
     "id": 803,
@@ -12077,7 +13685,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 15,
+    "skillBoostPercentage": 25
   },
   {
     "id": 804,
@@ -12092,7 +13702,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 14,
+    "skillBoostPercentage": 25
   },
   {
     "id": 805,
@@ -12107,7 +13719,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 13,
+    "skillBoostPercentage": 25
   },
   {
     "id": 806,
@@ -12122,7 +13736,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 9,
+    "skillBoostPercentage": 25
   },
   {
     "id": 807,
@@ -12137,7 +13753,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 25
   },
   {
     "id": 808,
@@ -12152,7 +13770,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 25
   },
   {
     "id": 809,
@@ -12167,7 +13787,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 19,
+    "skillBoostPercentage": 25
   },
   {
     "id": 810,
@@ -12182,7 +13804,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 25
   },
   {
     "id": 811,
@@ -12197,7 +13821,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 2
+    "style": 2,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 25
   },
   {
     "id": 812,
@@ -12212,7 +13838,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 2,
     "defenceBonus": 14,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 813,
@@ -12227,7 +13855,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 12,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 814,
@@ -12242,7 +13872,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 815,
@@ -12257,7 +13889,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 816,
@@ -12272,7 +13906,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 817,
@@ -12287,7 +13923,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 818,
@@ -12302,7 +13940,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 819,
@@ -12317,7 +13957,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 820,
@@ -12332,7 +13974,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 821,
@@ -12347,7 +13991,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 822,
@@ -12362,7 +14008,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 823,
@@ -12377,7 +14025,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 824,
@@ -12392,7 +14042,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 825,
@@ -12407,7 +14059,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 826,
@@ -12422,7 +14076,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 827,
@@ -12437,7 +14093,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 828,
@@ -12452,7 +14110,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 829,
@@ -12467,7 +14127,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 830,
@@ -12482,7 +14144,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 831,
@@ -12497,7 +14161,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 832,
@@ -12512,7 +14178,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 833,
@@ -12527,7 +14195,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 29,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 834,
@@ -12542,7 +14212,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 36,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 835,
@@ -12557,7 +14229,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 34,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 836,
@@ -12572,7 +14246,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 837,
@@ -12587,7 +14263,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 838,
@@ -12602,7 +14280,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 839,
@@ -12617,7 +14297,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 18,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 840,
@@ -12632,7 +14314,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 13,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 841,
@@ -12647,7 +14331,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 842,
@@ -12662,7 +14348,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 128,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 3
+    "style": 3,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 843,
@@ -12677,7 +14365,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 146,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 1
+    "style": 1,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 844,
@@ -12692,7 +14382,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 106,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 845,
@@ -12707,7 +14399,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 2
   },
   {
     "id": 846,
@@ -12722,7 +14416,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 2
   },
   {
     "id": 847,
@@ -12737,7 +14433,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 17,
+    "skillBoostPercentage": 2
   },
   {
     "id": 848,
@@ -12752,7 +14450,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 2
   },
   {
     "id": 849,
@@ -12767,7 +14467,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 2
   },
   {
     "id": 850,
@@ -12782,7 +14484,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 16,
+    "skillBoostPercentage": 2
   },
   {
     "id": 851,
@@ -12797,7 +14501,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 2
   },
   {
     "id": 852,
@@ -12812,7 +14518,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 2
   },
   {
     "id": 853,
@@ -12827,7 +14535,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 7,
+    "skillBoostPercentage": 2
   },
   {
     "id": 854,
@@ -12842,7 +14552,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 855,
@@ -12857,7 +14569,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 856,
@@ -12872,7 +14586,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 857,
@@ -12887,7 +14603,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 858,
@@ -12902,7 +14620,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 859,
@@ -12917,7 +14637,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 860,
@@ -12932,7 +14654,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 861,
@@ -12947,7 +14671,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 862,
@@ -12962,7 +14688,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 863,
@@ -12977,7 +14705,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 864,
@@ -12992,7 +14722,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 865,
@@ -13007,7 +14739,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 866,
@@ -13022,7 +14756,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 867,
@@ -13037,7 +14773,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 868,
@@ -13052,7 +14790,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 869,
@@ -13067,7 +14807,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 870,
@@ -13082,7 +14824,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 871,
@@ -13097,7 +14841,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 872,
@@ -13112,7 +14858,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 873,
@@ -13127,7 +14875,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 874,
@@ -13142,7 +14892,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 875,
@@ -13157,7 +14909,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 876,
@@ -13172,7 +14926,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 877,
@@ -13187,7 +14943,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 878,
@@ -13202,7 +14960,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 879,
@@ -13217,7 +14977,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 880,
@@ -13232,7 +14994,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 881,
@@ -13247,7 +15011,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 882,
@@ -13262,7 +15028,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 10,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 883,
@@ -13277,7 +15045,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 884,
@@ -13292,7 +15062,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 885,
@@ -13307,7 +15079,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 30,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 886,
@@ -13322,7 +15096,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 887,
@@ -13337,7 +15113,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 888,
@@ -13352,7 +15130,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 889,
@@ -13367,7 +15147,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 890,
@@ -13382,7 +15164,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 891,
@@ -13397,7 +15181,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 892,
@@ -13412,7 +15198,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 893,
@@ -13427,7 +15215,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 894,
@@ -13442,7 +15232,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 97,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 895,
@@ -13457,7 +15249,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 896,
@@ -13472,7 +15266,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 2
   },
   {
     "id": 897,
@@ -13487,7 +15283,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 2
   },
   {
     "id": 898,
@@ -13502,7 +15300,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 11,
+    "skillBoostPercentage": 2
   },
   {
     "id": 899,
@@ -13517,7 +15317,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 900,
@@ -13532,7 +15334,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 901,
@@ -13547,7 +15351,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 902,
@@ -13562,7 +15368,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 1000000,
     "defenceBonus": 1000000,
     "attackInterval": 100,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 903,
@@ -13577,7 +15385,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 68,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 904,
@@ -13592,7 +15402,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 905,
@@ -13607,7 +15419,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 906,
@@ -13622,7 +15436,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 907,
@@ -13637,7 +15453,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 21,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 908,
@@ -13652,7 +15470,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 909,
@@ -13667,7 +15487,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 910,
@@ -13682,7 +15504,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 911,
@@ -13697,7 +15521,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 912,
@@ -13712,7 +15538,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 913,
@@ -13727,7 +15555,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 914,
@@ -13742,7 +15572,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 915,
@@ -13757,7 +15589,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 916,
@@ -13772,7 +15606,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 917,
@@ -13787,7 +15623,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 918,
@@ -13802,7 +15640,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 52,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 919,
@@ -13817,7 +15657,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 920,
@@ -13832,7 +15674,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 15,
     "defenceBonus": 45,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 921,
@@ -13847,7 +15691,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 922,
@@ -13862,7 +15708,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 92,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 923,
@@ -13877,7 +15725,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 130,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 924,
@@ -13892,7 +15742,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 98,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 925,
@@ -13907,7 +15759,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 45,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 926,
@@ -13922,7 +15776,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 927,
@@ -13937,7 +15793,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 928,
@@ -13952,7 +15810,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 3500,
-    "style": 5
+    "style": 5,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 929,
@@ -13967,7 +15827,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 930,
@@ -13982,7 +15844,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 20,
+    "skillBoostPercentage": 6
   },
   {
     "id": 931,
@@ -13997,7 +15861,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 20,
+    "skillBoostPercentage": 12
   },
   {
     "id": 932,
@@ -14012,7 +15878,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 20,
+    "skillBoostPercentage": 18
   },
   {
     "id": 933,
@@ -14027,7 +15895,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 20,
+    "skillBoostPercentage": 24
   },
   {
     "id": 934,
@@ -14042,7 +15912,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 935,
@@ -14057,7 +15929,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 936,
@@ -14072,7 +15946,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 937,
@@ -14087,7 +15963,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 938,
@@ -14102,7 +15980,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 939,
@@ -14117,7 +15997,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 940,
@@ -14132,7 +16014,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 941,
@@ -14147,7 +16031,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 942,
@@ -14162,7 +16048,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 943,
@@ -14177,7 +16065,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 944,
@@ -14192,7 +16082,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 945,
@@ -14207,7 +16099,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 946,
@@ -14222,7 +16116,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 947,
@@ -14237,7 +16133,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 6,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 948,
@@ -14252,7 +16150,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 4
   },
   {
     "id": 949,
@@ -14267,7 +16167,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 6
   },
   {
     "id": 950,
@@ -14282,7 +16184,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 7,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 8
   },
   {
     "id": 951,
@@ -14297,7 +16201,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 11,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 10
   },
   {
     "id": 952,
@@ -14312,7 +16218,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 16,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 12
   },
   {
     "id": 953,
@@ -14327,7 +16235,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 21,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 15
   },
   {
     "id": 954,
@@ -14342,7 +16252,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 30,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 20
   },
   {
     "id": 955,
@@ -14357,7 +16269,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 34,
     "defenceBonus": 0,
     "attackInterval": 4000,
-    "style": 4
+    "style": 4,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 25
   },
   {
     "id": 956,
@@ -14372,7 +16286,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 957,
@@ -14387,7 +16303,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 958,
@@ -14402,7 +16320,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 959,
@@ -14417,7 +16337,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 960,
@@ -14432,7 +16354,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 961,
@@ -14447,7 +16371,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 962,
@@ -14462,7 +16388,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 963,
@@ -14477,7 +16405,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 964,
@@ -14492,7 +16422,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 965,
@@ -14507,7 +16439,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 966,
@@ -14522,7 +16456,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 68,
     "defenceBonus": 0,
     "attackInterval": 3800,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 967,
@@ -14537,7 +16473,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 65,
     "defenceBonus": 0,
     "attackInterval": 3600,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 968,
@@ -14552,7 +16490,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 969,
@@ -14567,7 +16507,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 970,
@@ -14582,7 +16524,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 971,
@@ -14597,7 +16541,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 972,
@@ -14612,7 +16558,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 973,
@@ -14627,7 +16575,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 974,
@@ -14642,7 +16592,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 975,
@@ -14657,7 +16609,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 976,
@@ -14672,7 +16626,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 3,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 977,
@@ -14687,7 +16643,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 978,
@@ -14702,7 +16660,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 979,
@@ -14717,7 +16677,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 980,
@@ -14732,7 +16694,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 981,
@@ -14747,7 +16711,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 982,
@@ -14762,7 +16728,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 983,
@@ -14777,7 +16745,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 984,
@@ -14792,7 +16762,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 985,
@@ -14807,7 +16779,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 986,
@@ -14822,7 +16796,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 22,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 987,
@@ -14837,7 +16813,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 988,
@@ -14852,7 +16830,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 9,
     "defenceBonus": 10,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 989,
@@ -14867,7 +16847,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 17,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 990,
@@ -14882,7 +16864,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 4,
     "defenceBonus": 8,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 5
   },
   {
     "id": 991,
@@ -14897,7 +16881,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 5,
     "defenceBonus": 9,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 10
   },
   {
     "id": 992,
@@ -14912,7 +16898,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 6,
     "defenceBonus": 11,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 15
   },
   {
     "id": 993,
@@ -14927,7 +16915,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 8,
     "defenceBonus": 15,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 21,
+    "skillBoostPercentage": 20
   },
   {
     "id": 994,
@@ -14942,7 +16932,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 35,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 995,
@@ -14957,7 +16949,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 65,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 996,
@@ -14972,7 +16966,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 997,
@@ -14987,7 +16983,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   },
   {
     "id": 998,
@@ -15002,7 +17000,9 @@ export const ITEMS: ItemDefinition[] = [
     "accuracyBonus": 0,
     "defenceBonus": 0,
     "attackInterval": 0,
-    "style": 0
+    "style": 0,
+    "skillBoostSkill": 0,
+    "skillBoostPercentage": 0
   }
 ]
 
